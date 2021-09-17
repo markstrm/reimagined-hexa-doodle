@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using UnityEngine;
 
@@ -12,6 +14,8 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector2 movement;
     private Vector2 _MousePos;
+
+    private bool canShoot = true;
 
     private void Awake()
     {
@@ -60,11 +64,20 @@ public class PlayerMovement : MonoBehaviour
     {
         if (context.performed)
         {
+            if (!canShoot) return;
+
             Bullet bullet = Instantiate(this.bulletPrefab, this.transform.position, this.transform.rotation); //spawns the bullet and gives it a position and rotatio. Will spawn at the players positon and in the same rotation as the player.
             bullet.Project(this.transform.up); //projects in the same positon as the player
-
+            StartCoroutine(CanShoot());
         }
 
+    }
+
+    IEnumerator CanShoot()
+    {
+        canShoot = false;
+        yield return new WaitForSeconds(0.35f);
+        canShoot = true;
     }
 
 }
