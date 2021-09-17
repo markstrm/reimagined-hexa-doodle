@@ -25,9 +25,8 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        transform.localPosition += Vector3.right * speed * movement.x;
-        transform.localPosition += Vector3.up * speed * movement.y;
-
+        transform.localPosition += Vector3.right * speed * Time.deltaTime * movement.x;
+        transform.localPosition += Vector3.up * speed * Time.deltaTime* movement.y;
 
     }
 
