@@ -7,7 +7,7 @@ public class WaveSpawner : MonoBehaviour
     public enum SpawnState { Spawning, Waiting, Counting }; //store the possible states that the wavespawner can be in.
 
    [System.Serializable] //allows us to change the values of instances of this class in the unity inspector.
-    public class Wave
+    public class Wave //to define what a wave is in our game
     {
         public string _name;
         public Transform _enemy; //reference to the prefab that we want to instantiate
@@ -37,8 +37,7 @@ public class WaveSpawner : MonoBehaviour
         {
             if(_EnemyIsAlive() == false)
             {
-                Debug.Log("Wave completed!");
-                return;
+                WaveCompleted();
                 //Begin a new round
             }
             else
@@ -62,12 +61,27 @@ public class WaveSpawner : MonoBehaviour
         }
     }
 
+    void WaveCompleted()
+    {
+        Debug.Log("Wave Comleted!");
+        
+        _state = SpawnState.Counting;
+        _waveCountdown = _timeBetweenWaves;
+
+        if(_nextWave + 1 > waves.Length -1) //if next wave is bigger than number of waves that we have
+        {
+            _nextWave = 1;
+        }
+        _nextWave++;
+        Debug.Log("ALL WAVES COMPLETE! Looping...");
+    }
+
     bool _EnemyIsAlive()
     {
         _searchCountdown -= Time.deltaTime;
         if (_searchCountdown <= 0f) //for performance, checks every second if there are any enemies alive, instead of every frame.
         {
-            _searchCountdown = 1f;
+            _searchCountdown = 1f; //if searchCountdown reaches 0 and there still is enemies alive
             if (GameObject.FindGameObjectWithTag("Enemy") == null) //checks if there are still any enemies alive
             {
                 return false; //returns false if no enemies are found alive
@@ -76,7 +90,7 @@ public class WaveSpawner : MonoBehaviour
         return true;
     }
 
-    IEnumerator SpawnWave(Wave _wave) //we want to be able to wait x seconds inside the method
+    IEnumerator SpawnWave(Wave _wave) //we want to be able to wait x seconds inside the method | need to use systems.collections for IEnumerator
     {
         Debug.Log("Spawning Wave: " + _wave._name);
         _state = SpawnState.Spawning; // now we are spawning a wave
