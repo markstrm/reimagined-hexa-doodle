@@ -27,7 +27,7 @@ public class EnemyFollowPlayer : MonoBehaviour
 
         float _distanceFromPlayer = Vector2.Distance(_player.position, transform.position); //distance between the player and the enemy
         RotateTowards(_player.position);
-        if (_distanceFromPlayer < _lineOfSight && _distanceFromPlayer>_shootingRange) 
+        if (_distanceFromPlayer < _lineOfSight && _distanceFromPlayer > _shootingRange) 
         {
             transform.position = Vector2.MoveTowards(this.transform.position, _player.position, _movementSpeed * Time.deltaTime); //our position, player position
         }   
