@@ -778,8 +778,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _movementSpeed: 5
-  _lineOfSight: 15
-  _shootingRange: 10
+  _lineOfSight: 30
+  _shootingRange: 15
   _fireRate: 1
   _bullet: {fileID: 4577341841675433198, guid: 6736d709680019e499793be2ad19075c, type: 3}
   _bulletParent: {fileID: 1344257443}
