@@ -7,6 +7,10 @@ public class EnemyFollowPlayer : MonoBehaviour
     public float _movementSpeed;
     public float _lineOfSight;
     public float _shootingRange;
+    public float _fireRate = 1f;
+
+    private float _nextFireTime;
+
     public GameObject _bullet; //the bullet that the enemy will shoot
     public GameObject _bulletParent; //the place where the bullet will be shot from
     private Transform _player; //target the player
@@ -27,6 +31,11 @@ public class EnemyFollowPlayer : MonoBehaviour
         {
             transform.position = Vector2.MoveTowards(this.transform.position, _player.position, _movementSpeed * Time.deltaTime); //our position, player position
         }   
+        else if(_distanceFromPlayer <= _shootingRange && _nextFireTime <Time.time)
+        {
+            Instantiate(_bullet, _bulletParent.transform.position, Quaternion.identity);
+            _nextFireTime = Time.time + _fireRate;
+        }
     }
 
     private void OnDrawGizmosSelected() //draws a circle with a size that we can decide

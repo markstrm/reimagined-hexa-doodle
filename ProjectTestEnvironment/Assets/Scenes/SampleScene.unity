@@ -876,7 +876,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _movementSpeed: 5
   _lineOfSight: 15
-  _shootingRange: 4
+  _shootingRange: 7.99
+  _fireRate: 1
   _bullet: {fileID: 4577341841675433198, guid: 6736d709680019e499793be2ad19075c, type: 3}
   _bulletParent: {fileID: 840070099}
 --- !u!212 &623023621
@@ -918,7 +919,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: bf192112e0141fb448c64d41e5cc386f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -954,7 +955,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 840070100}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BulletParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
