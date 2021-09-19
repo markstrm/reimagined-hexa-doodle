@@ -9,7 +9,7 @@ public class EnemyFollowPlayer : MonoBehaviour
     public float _shootingRange;
     public float _stationaryRange;
     public float _fireRate = 0.4f;
-    public float _scoreValue = 100;
+    public int _scoreValue = 100;
     public float _health = 100;
 
     private float _nextFireTime;
@@ -68,6 +68,7 @@ public class EnemyFollowPlayer : MonoBehaviour
 
     private void Die()//enemy death
     {
+        FindObjectOfType<GameSession>().AddToScore(_scoreValue);
         Destroy(gameObject);
         //instantiate death particles here
     }
