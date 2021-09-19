@@ -14,8 +14,8 @@ public class EnemyBullet : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody2D>(); //reference to the rigidbody
         _target = GameObject.FindGameObjectWithTag("Player"); //when spawn, will look at the player
         Vector2 _moveDirection = (_target.transform.position - transform.position).normalized * _speed;
-        _rigidbody.velocity = new Vector2(_moveDirection.x, _moveDirection.y);
-        Destroy(this.gameObject, 2);
+        _rigidbody.velocity = _moveDirection * _speed;
+        //Destroy(this.gameObject, 2);
 
         transform.eulerAngles = new Vector3(0, 0, Vector2ToAngle(_moveDirection) - 90f);
     }

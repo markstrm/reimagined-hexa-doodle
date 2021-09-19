@@ -17,6 +17,8 @@ public class PlayerMovement : MonoBehaviour
 
     private bool canShoot = true;
 
+    public int _health = 300;
+
     private void Awake()
     {
         _Input = new PlayerInputActions();
@@ -27,8 +29,6 @@ public class PlayerMovement : MonoBehaviour
     {
         transform.localPosition += Vector3.right * speed * Time.deltaTime * movement.x;
         transform.localPosition += Vector3.up * speed * Time.deltaTime * movement.y;
-
-
     }
 
     private void FixedUpdate()
@@ -66,7 +66,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (!canShoot) return;
 
-            Bullet bullet = Instantiate(this.bulletPrefab, this.transform.position, this.transform.rotation); //spawns the bullet and gives it a position and rotatio. Will spawn at the players positon and in the same rotation as the player.
+            Bullet bullet = Instantiate(this.bulletPrefab, this.transform.position, this.transform.rotation); //spawns the bullet and gives it a position and rotation. Will spawn at the players positon and in the same rotation as the player.
             bullet.Project(this.transform.up); //projects in the same positon as the player
             StartCoroutine(CanShoot());
         }
@@ -78,6 +78,27 @@ public class PlayerMovement : MonoBehaviour
         canShoot = false;
         yield return new WaitForSeconds(0.35f);
         canShoot = true;
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        DamageDealer damageDealer = other.gameObject.GetComponent<DamageDealer>();
+        ProcessHit(damageDealer);
+    }
+
+    private void ProcessHit(DamageDealer damageDealer)//calculates damage received
+    {
+        _health -= damageDealer.GetDamage();
+        damageDealer.Hit();
+        if (_health <= 0)
+        {
+            Die();
+        }
+    }
+
+    private void Die()//player death
+    {
+        Destroy(gameObject);
+        //instantiate death particles here
     }
 
 }

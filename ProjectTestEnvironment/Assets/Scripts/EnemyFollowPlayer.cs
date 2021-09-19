@@ -7,7 +7,10 @@ public class EnemyFollowPlayer : MonoBehaviour
     public float _movementSpeed;
     public float _lineOfSight;
     public float _shootingRange;
+    public float _stationaryRange;
     public float _fireRate = 0.4f;
+    public float _scoreValue = 100;
+    public float _health = 100;
 
     private float _nextFireTime;
 
@@ -27,25 +30,18 @@ public class EnemyFollowPlayer : MonoBehaviour
 
         float _distanceFromPlayer = Vector2.Distance(_player.position, transform.position); //distance between the player and the enemy
         RotateTowards(_player.position);
-        if (_distanceFromPlayer < _lineOfSight && _distanceFromPlayer > _shootingRange) 
+        if (_distanceFromPlayer < _lineOfSight && _distanceFromPlayer > _stationaryRange) 
         {
             transform.position = Vector2.MoveTowards(this.transform.position, _player.position, _movementSpeed * Time.deltaTime); //our position, player position
         }   
-        else if(_distanceFromPlayer <= _shootingRange && _nextFireTime <Time.time)
+        if(_distanceFromPlayer < _shootingRange && _nextFireTime <Time.time)
         {
             Instantiate(_bullet, _bulletParent.transform.position, Quaternion.identity);
             _nextFireTime = Time.time + _fireRate;
         }
     }
 
-    private void OnDrawGizmosSelected() //draws a circle with a size that we can decide
-    {
-        Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(transform.position, _lineOfSight);
-        Gizmos.DrawWireSphere(transform.position, _shootingRange);
-    }
-
-    private void RotateTowards(Vector2 target)
+    private void RotateTowards(Vector2 target)//rotates to face the player continuosly
     {
         var offset = 90f;
         Vector2 direction = target - (Vector2)transform.position;
@@ -53,4 +49,35 @@ public class EnemyFollowPlayer : MonoBehaviour
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(Vector3.forward * (angle + offset));
     }
+
+    private void OnTriggerEnter2D(Collider2D other)//receives damage from player bullet
+    {
+        DamageDealer damageDealer = other.gameObject.GetComponent<DamageDealer>();
+        ProcessHit(damageDealer);
+    }
+
+    private void ProcessHit(DamageDealer damageDealer)//calculates damage received
+    {
+        _health -= damageDealer.GetDamage();
+        damageDealer.Hit();
+        if (_health <= 0)
+        {
+            Die();
+        }
+    }
+
+    private void Die()//enemy death
+    {
+        Destroy(gameObject);
+        //instantiate death particles here
+    }
+
+    private void OnDrawGizmosSelected() //draws a circle with a size that we can decide
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(transform.position, _lineOfSight);
+        Gizmos.DrawWireSphere(transform.position, _shootingRange);
+        Gizmos.DrawWireSphere(transform.position, _stationaryRange);
+    }
+
 }

@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 571360587607765987}
   - component: {fileID: 571360587607765984}
   - component: {fileID: 571360587607765985}
-  m_Layer: 0
+  - component: {fileID: 3840847128969209164}
+  m_Layer: 6
   m_Name: Enemy1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -97,11 +98,60 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _movementSpeed: 5
-  _lineOfSight: 30
+  _lineOfSight: 25
   _shootingRange: 15
+  _stationaryRange: 8
   _fireRate: 1
+  _scoreValue: 100
+  _health: 100
   _bullet: {fileID: 4577341841675433198, guid: 6736d709680019e499793be2ad19075c, type: 3}
   _bulletParent: {fileID: 571360587888133842}
+--- !u!60 &3840847128969209164
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 571360587607766014}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.64, y: 0.64}
+    newSize: {x: 0.64, y: 0.64}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.14033392, y: 0.17825098}
+      - {x: 0.14108123, y: 0.022049278}
+      - {x: 0.08314397, y: 0.023070972}
+      - {x: 0.050685093, y: 0.06557922}
+      - {x: -0.041080505, y: 0.074013874}
+      - {x: -0.08046879, y: 0.023507088}
+      - {x: -0.1405144, y: 0.021128945}
+      - {x: -0.14187561, y: 0.17825097}
+      - {x: -0.23033392, y: 0.18066753}
+      - {x: -0.25704277, y: 0.17791721}
+      - {x: -0.25945902, y: -0.17945926}
+      - {x: -0.13604134, y: -0.18066753}
+      - {x: -0.13591444, y: -0.023257568}
+      - {x: -0.08140452, y: -0.019586831}
+      - {x: -0.026581954, y: -0.07796386}
+      - {x: 0.041498538, y: -0.07631135}
+      - {x: 0.08434865, y: -0.023575507}
+      - {x: 0.13843381, y: -0.019775301}
+      - {x: 0.14149968, y: -0.1744072}
+      - {x: 0.2582509, y: -0.1818758}
+      - {x: 0.25462618, y: 0.1770427}
 --- !u!1 &571360587888133842
 GameObject:
   m_ObjectHideFlags: 0
@@ -111,7 +161,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 571360587888133845}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: BulletParent
   m_TagString: Enemy
   m_Icon: {fileID: 0}
