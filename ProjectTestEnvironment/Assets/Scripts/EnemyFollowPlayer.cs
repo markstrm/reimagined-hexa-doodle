@@ -72,7 +72,7 @@ public class EnemyFollowPlayer : MonoBehaviour
     {
         FindObjectOfType<GameSession>().AddToScore(_scoreValue);
         Destroy(gameObject);
-        GameObject explosion = Instantiate(_deathVFX, transform.position, transform.rotation);
+        GameObject explosion = Instantiate(_deathVFX, transform.position, transform.rotation);//explosion vfx
         Destroy(explosion, _durationOfExplosion);
     }
 
