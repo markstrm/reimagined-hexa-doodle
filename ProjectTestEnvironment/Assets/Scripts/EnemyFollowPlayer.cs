@@ -11,6 +11,8 @@ public class EnemyFollowPlayer : MonoBehaviour
     public float _fireRate = 0.4f;
     public int _scoreValue = 100;
     public float _health = 100;
+    public GameObject _deathVFX;
+    public float _durationOfExplosion = 1f;
 
     private float _nextFireTime;
 
@@ -70,7 +72,8 @@ public class EnemyFollowPlayer : MonoBehaviour
     {
         FindObjectOfType<GameSession>().AddToScore(_scoreValue);
         Destroy(gameObject);
-        //instantiate death particles here
+        GameObject explosion = Instantiate(_deathVFX, transform.position, transform.rotation);
+        Destroy(explosion, _durationOfExplosion);
     }
 
     private void OnDrawGizmosSelected() //draws a circle with a size that we can decide
