@@ -80,7 +80,7 @@ public class WaveSpawner : MonoBehaviour
 
         if(_nextWave + 1 > waves.Length -1) //if next wave is bigger than number of waves that we have
         {
-            _nextWave = 0;      //when all waves are completed, reset to x wave. 
+            _nextWave = 2;      //when all waves are completed, reset to x wave. 
         }
         else
         {

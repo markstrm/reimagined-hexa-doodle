@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54b1abf9bc36f224db15adf1b2e8cef7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _movementSpeed: 5
+  _movementSpeed: 7
   _lineOfSight: 90
   _shootingRange: 20
   _stationaryRange: 8

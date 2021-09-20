@@ -85,6 +85,16 @@ public class PlayerMovement : MonoBehaviour
         ProcessHit(damageDealer);
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Enemy")
+        {
+            this.gameObject.SetActive(false);
+
+            FindObjectOfType<GameSession>().PlayerDied(); //slow and costly function
+        }
+    }
+
     private void ProcessHit(DamageDealer damageDealer)//calculates damage received
     {
         _health -= damageDealer.GetDamage();
