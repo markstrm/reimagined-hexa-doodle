@@ -104,8 +104,8 @@ MonoBehaviour:
   _fireRate: 1
   _scoreValue: 100
   _health: 200
-  _deathVFX: {fileID: 3644796759415655205, guid: b87ef5c8480b14c41943b9d419821d21, type: 3}
-  _durationOfExplosion: 0.4
+  _deathVFX: {fileID: 4803261777714319761, guid: 318aa05ff3dce6a44a71d539c60148b4, type: 3}
+  _durationOfExplosion: 1
   _bullet: {fileID: 4577341841675433198, guid: 6736d709680019e499793be2ad19075c, type: 3}
   _bulletParent: {fileID: 571360587888133842}
 --- !u!60 &3840847128969209164
