@@ -20,6 +20,13 @@ public class EnemyFollowPlayer : MonoBehaviour
 
     private float _nextFireTime;
 
+    public float _shieldDuration = 1f;
+    public float _shieldDelay = 1f;
+    public Color _shieldColor;
+
+    SpriteRenderer sr;
+    Color defaultColor;
+
     public GameObject _bullet; //the bullet that the enemy will shoot
     public GameObject _bulletParent; //the place where the bullet will be shot from
     private Transform _player; //target the player
@@ -30,6 +37,8 @@ public class EnemyFollowPlayer : MonoBehaviour
         //_player = GameObject.FindGameObjectWithTag("Player").transform;
 
        gameSession = GameObject.Find("Game Session").GetComponent<GameSession>();
+        sr = GetComponent<SpriteRenderer>();
+        defaultColor = sr.color;//saves default sprite color
     }
 
     // Update is called once per frame
@@ -81,6 +90,31 @@ public class EnemyFollowPlayer : MonoBehaviour
         {
             Die();
         }
+        else
+        {
+            StartCoroutine(_DamageEffectSequence());
+        }
+    }
+
+    IEnumerator _DamageEffectSequence()
+    {
+
+        // tint the sprite with damage color
+        sr.color = _shieldColor;
+
+        // you can delay the animation
+        yield return new WaitForSeconds(_shieldDelay);
+
+        // lerp animation with given duration in seconds
+        for (float t = 0; t < 1.0f; t += Time.deltaTime / _shieldDuration)
+        {
+            sr.color = Color.Lerp(_shieldColor, defaultColor, t);
+
+            yield return null;
+        }
+
+        // restore origin color
+        sr.color = defaultColor;
     }
 
     private void Die()//enemy death
