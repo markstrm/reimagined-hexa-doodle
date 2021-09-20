@@ -25,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
     {
         _Input = new PlayerInputActions();
         _Rigidbody = GetComponent<Rigidbody2D>();
+        SetUpSingleton();
     }
 
     void Update()
@@ -91,9 +92,9 @@ public class PlayerMovement : MonoBehaviour
     {
         if(collision.gameObject.tag == "Enemy")
         {
-            this.gameObject.SetActive(false);
+            
 
-            FindObjectOfType<GameSession>().PlayerDied(); //slow and costly function
+            Die();
         }
     }
 
@@ -109,9 +110,24 @@ public class PlayerMovement : MonoBehaviour
 
     private void Die()//player death
     {
-        Destroy(gameObject);
+
+        FindObjectOfType<GameSession>().PlayerDied(); //slow and costly function
+
         GameObject explosion = Instantiate(_deathVFX, transform.position, transform.rotation);//explosion vfx
         Destroy(explosion, _durationOfExplosion);
+        this.gameObject.SetActive(false);
     }
 
+    private void SetUpSingleton()
+    {
+        int numberGameSessions = FindObjectsOfType<GameSession>().Length;
+        if (numberGameSessions > 1)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            //DontDestroyOnLoad(gameObject);
+        }
+    }
 }

@@ -12,6 +12,10 @@ public class EnemyFollowPlayer : MonoBehaviour
     public int _scoreValue = 100;
     public float _health = 100;
     public GameObject _deathVFX;
+
+    GameSession gameSession;
+
+    // public GameObject _BulletHolder;
     public float _durationOfExplosion = 1f;
 
     private float _nextFireTime;
@@ -23,23 +27,34 @@ public class EnemyFollowPlayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _player = GameObject.FindGameObjectWithTag("Player").transform;
+        //_player = GameObject.FindGameObjectWithTag("Player").transform;
+
+       gameSession = GameObject.Find("Game Session").GetComponent<GameSession>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(_player == null)
+        {
+            _player = GameObject.FindGameObjectWithTag("Player").transform;
+        }
 
-        float _distanceFromPlayer = Vector2.Distance(_player.position, transform.position); //distance between the player and the enemy
-        RotateTowards(_player.position);
-        if (_distanceFromPlayer < _lineOfSight && _distanceFromPlayer > _stationaryRange) 
+        if(_player != null)
         {
-            transform.position = Vector2.MoveTowards(this.transform.position, _player.position, _movementSpeed * Time.deltaTime); //our position, player position
-        }   
-        if(_distanceFromPlayer < _shootingRange && _nextFireTime <Time.time)
-        {
-            Instantiate(_bullet, _bulletParent.transform.position, Quaternion.identity);
-            _nextFireTime = Time.time + _fireRate;
+
+            float _distanceFromPlayer = Vector2.Distance(_player.position, transform.position); //distance between the player and the enemy
+            RotateTowards(_player.position);
+            if (_distanceFromPlayer < _lineOfSight && _distanceFromPlayer > _stationaryRange) 
+            {
+                transform.position = Vector2.MoveTowards(this.transform.position, _player.position, _movementSpeed * Time.deltaTime); //our position, player position
+            }   
+            if(gameSession.isAlive && _distanceFromPlayer < _shootingRange && _nextFireTime < Time.time)
+            {
+                Instantiate(_bullet, _bulletParent.transform.position, Quaternion.identity);
+
+                _nextFireTime = Time.time + _fireRate;
+            }
         }
     }
 

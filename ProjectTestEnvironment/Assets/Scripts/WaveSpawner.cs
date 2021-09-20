@@ -6,6 +6,9 @@ public class WaveSpawner : MonoBehaviour
 {
     public enum SpawnState { Spawning, Waiting, Counting }; //store the possible states that the wavespawner can be in.
 
+    public GameObject _EnemyHolder;
+   
+
    [System.Serializable] //allows us to change the values of instances of this class in the unity inspector.
     public class Wave //to define what a wave is in our game
     {
@@ -13,12 +16,13 @@ public class WaveSpawner : MonoBehaviour
         public Transform _enemy; //reference to the prefab that we want to instantiate
         public int _amount;
         public float _spawnRate;
+       
     }
 
     public Wave[] waves;
     public Transform[] spawnPoint; //array with all the possible spawn locations
 
-    private int _nextWave = 0;  //store index of the wave
+    public int _nextWave = 0;  //store index of the wave
     private float _searchCountdown = 1f;
 
     public float _timeBetweenWaves = 5f; //store time between waves
@@ -119,7 +123,14 @@ public class WaveSpawner : MonoBehaviour
         _state = SpawnState.Waiting; // when we are done spawning a wave, we want to wait for the next round (player kills all the enemies)
         yield break;
     }
-        
+    /**public void ResetWave() 
+    {
+        for (int i = 0; i < _BulletHolder.transform.childCount; i++) //loop through the enemies that we want to spawn
+        {
+            Destroy(_BulletHolder.transform.GetChild(i).gameObject);
+        }
+    } **/
+    
     void SpawnEnemy(Transform _enemy)
     {
        
@@ -127,7 +138,7 @@ public class WaveSpawner : MonoBehaviour
 
         
         Transform _sp = spawnPoint[Random.Range(0, spawnPoint.Length)];
-        Instantiate(_enemy, _sp.position, _sp.rotation);  //spawn enemy
+        Instantiate(_enemy, _sp.position, _sp.rotation, _EnemyHolder.transform);  //spawn enemy
 
     }
 

@@ -1,45 +1,59 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameSession : MonoBehaviour
 {
 
     int score = 0;
     public int _lives = 3;
+    public bool isAlive = true;
     public float _respawnTime = 2.0f;
     public float _respawnInvulnerabilityTime = 3.0f;
 
     public PlayerMovement player;
+    private WaveSpawner EnemySpawner;
+
+    private void Awake()
+    {
+        EnemySpawner = GameObject.FindGameObjectWithTag("EnemySpawner").GetComponent<WaveSpawner>();
+        SetUpSingleton();
+    }
 
     public void PlayerDied()
     {
-        this._lives--;
+        _lives--;
+       // EnemySpawner.ResetWave();
 
-        if(this._lives <= 0) //check lives left
+        if(_lives <= 0) //check lives left
         {
             GameOver();
         }
         else
         {
-            Invoke(nameof(Respawn), this._respawnTime);
+            isAlive = false;
+            Invoke(nameof(Respawn), _respawnTime);
         }
       
     }
 
     private void Respawn()
     {
+        player.transform.position = Vector3.zero; //spawns the player at the center of the board
+        // call method to disable collider
 
-        this.player.transform.position = Vector3.zero; //spawns the player at the center of the board
-        this.player.gameObject.layer = LayerMask.NameToLayer("Ignore Collisions"); //when player respawns, temporarily change layer to ignore all collisions
-        this.player.gameObject.SetActive(true);
+        player.GetComponent<PolygonCollider2D>().enabled = false;
+        //this.player.gameObject.layer = LayerMask.NameToLayer("Ignore Collisions"); //when player respawns, temporarily change layer to ignore all collisions
+        player.gameObject.SetActive(true);
         
-        Invoke(nameof(TurnOnCollisions), this._respawnInvulnerabilityTime); //3s after spawning, set the layer back to player to enable collisions
+        Invoke(nameof(TurnOnCollisions), _respawnInvulnerabilityTime); //3s after spawning, set the layer back to player to enable collisions
+        isAlive = true;
     }
 
     private void TurnOnCollisions()
     {
-        this.player.gameObject.layer = LayerMask.NameToLayer("Player");
+        player.GetComponent<PolygonCollider2D>().enabled = true;
     }
 
     private void GameOver()
@@ -47,17 +61,18 @@ public class GameSession : MonoBehaviour
         //here we can place gameover text
         //score text etc - press X to play again
         //destroy all other game objects??
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
         this._lives = 3;
         this.score = 0;
 
-        Invoke(nameof(Respawn), this._respawnTime);
+        player._health = 300;
+        EnemySpawner._nextWave = 0;
+        //Invoke(nameof(Respawn), this._respawnTime);
         //later
     }
 
-    private void Awake()
-    {
-        SetUpSingleton();
-    }
+  
 
     private void SetUpSingleton()
     {
@@ -68,7 +83,7 @@ public class GameSession : MonoBehaviour
         }
         else
         {
-            DontDestroyOnLoad(gameObject);
+            //DontDestroyOnLoad(gameObject);
         }
     }
 
