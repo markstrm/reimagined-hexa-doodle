@@ -32,12 +32,9 @@ public class PlayerMovement : MonoBehaviour
     {
         _Input = new PlayerInputActions();
         _Rigidbody = GetComponent<Rigidbody2D>();
-<<<<<<< HEAD
         SetUpSingleton();
-=======
         sr = GetComponent<SpriteRenderer>();
         defaultColor = sr.color;//saves default sprite color
->>>>>>> e0804acc61a895738d48cf6cdef001d101bd7e95
     }
 
 
