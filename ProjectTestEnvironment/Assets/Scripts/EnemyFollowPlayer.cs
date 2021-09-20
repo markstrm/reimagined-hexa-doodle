@@ -71,9 +71,10 @@ public class EnemyFollowPlayer : MonoBehaviour
     private void Die()//enemy death
     {
         FindObjectOfType<GameSession>().AddToScore(_scoreValue);
-        Destroy(gameObject);
         GameObject explosion = Instantiate(_deathVFX, transform.position, transform.rotation);//explosion vfx
-        Destroy(explosion, _durationOfExplosion);
+        //Destroy(explosion, _durationOfExplosion);
+        Destroy(gameObject);
+
     }
 
     private void OnDrawGizmosSelected() //draws a circle with a size that we can decide
