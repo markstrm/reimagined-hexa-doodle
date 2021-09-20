@@ -113,10 +113,13 @@ public class PlayerMovement : MonoBehaviour
     {
         _health -= damageDealer.GetDamage();
         damageDealer.Hit();
-        StartCoroutine(_DamageEffectSequence());
         if (_health <= 0)
         {
             Die();
+        }
+        else
+        {
+            StartCoroutine(_DamageEffectSequence());
         }
     }
 
