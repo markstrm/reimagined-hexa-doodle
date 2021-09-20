@@ -18,6 +18,8 @@ public class PlayerMovement : MonoBehaviour
     private bool canShoot = true;
 
     public int _health = 300;
+    public GameObject _deathVFX;
+    public float _durationOfExplosion = 2f;
 
     private void Awake()
     {
@@ -108,7 +110,8 @@ public class PlayerMovement : MonoBehaviour
     private void Die()//player death
     {
         Destroy(gameObject);
-        //instantiate death particles here
+        GameObject explosion = Instantiate(_deathVFX, transform.position, transform.rotation);//explosion vfx
+        Destroy(explosion, _durationOfExplosion);
     }
 
 }
