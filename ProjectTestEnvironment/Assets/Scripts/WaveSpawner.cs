@@ -16,11 +16,13 @@ public class WaveSpawner : MonoBehaviour
     }
 
     public Wave[] waves;
+    public Transform[] spawnPoint; //array with all the possible spawn locations
+
     private int _nextWave = 0;  //store index of the wave
     private float _searchCountdown = 1f;
 
     public float _timeBetweenWaves = 5f; //store time between waves
-    public float _waveCountdown;
+    private float _waveCountdown;
 
    
 
@@ -28,6 +30,12 @@ public class WaveSpawner : MonoBehaviour
 
     private void Start()
     {
+        if(spawnPoint.Length == 0)
+        {
+            Debug.LogError("No spawn points referenced");
+        }
+
+
         _waveCountdown = _timeBetweenWaves;
     }
 
@@ -35,10 +43,12 @@ public class WaveSpawner : MonoBehaviour
     {
         if (_state == SpawnState.Waiting) //checks if the player has killed all the enemis.
         {
-            if(_EnemyIsAlive() == false)
+            if(_EnemyIsAlive() == false) //is any enemy still alive
             {
                 WaveCompleted();
                 //Begin a new round
+                
+                //Give the player a reward/more points for clearing a round. "round bonus" can be put here. ---------------HIGHSCORE--------------
             }
             else
             {
@@ -70,7 +80,7 @@ public class WaveSpawner : MonoBehaviour
 
         if(_nextWave + 1 > waves.Length -1) //if next wave is bigger than number of waves that we have
         {
-            _nextWave = 1;
+            _nextWave = 1;      //when all waves are completed, reset to x wave. 
         }
         _nextWave++;
         Debug.Log("ALL WAVES COMPLETE! Looping...");
@@ -110,7 +120,10 @@ public class WaveSpawner : MonoBehaviour
     {
        
         Debug.Log("Spawning Enemy: " + _enemy.name);
-        Instantiate(_enemy, transform.position, transform.rotation);  //spawn enemy
+
+        
+        Transform _sp = spawnPoint[Random.Range(0, spawnPoint.Length)];
+        Instantiate(_enemy, _sp.position, _sp.rotation);  //spawn enemy
 
     }
 

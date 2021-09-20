@@ -98,12 +98,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _movementSpeed: 5
-  _lineOfSight: 25
-  _shootingRange: 15
+  _lineOfSight: 90
+  _shootingRange: 20
   _stationaryRange: 8
   _fireRate: 1
   _scoreValue: 100
-  _health: 100
+  _health: 200
   _deathVFX: {fileID: 3644796759415655205, guid: b87ef5c8480b14c41943b9d419821d21, type: 3}
   _durationOfExplosion: 0.4
   _bullet: {fileID: 4577341841675433198, guid: 6736d709680019e499793be2ad19075c, type: 3}
