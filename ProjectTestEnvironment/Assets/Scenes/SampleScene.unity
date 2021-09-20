@@ -371,6 +371,9 @@ MonoBehaviour:
   _health: 300
   _deathVFX: {fileID: 4803261777714319761, guid: 87cbd56028703304b975033d754bfefe, type: 3}
   _durationOfExplosion: 2
+  _shieldDuration: 0.4
+  _shieldDelay: 0
+  _shieldColor: {r: 0.10332859, g: 0.15686275, b: 0.8113208, a: 0.94509804}
 --- !u!114 &356091700
 MonoBehaviour:
   m_ObjectHideFlags: 0

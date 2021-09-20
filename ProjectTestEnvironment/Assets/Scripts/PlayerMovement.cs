@@ -21,11 +21,22 @@ public class PlayerMovement : MonoBehaviour
     public GameObject _deathVFX;
     public float _durationOfExplosion = 2f;
 
+    public float _shieldDuration = 1f;
+    public float _shieldDelay = 1f;
+    public Color _shieldColor;
+
+    SpriteRenderer sr;
+    Color defaultColor;
+
     private void Awake()
     {
         _Input = new PlayerInputActions();
         _Rigidbody = GetComponent<Rigidbody2D>();
+        sr = GetComponent<SpriteRenderer>();
+        defaultColor = sr.color;//saves default sprite color
     }
+
+
 
     void Update()
     {
@@ -101,10 +112,32 @@ public class PlayerMovement : MonoBehaviour
     {
         _health -= damageDealer.GetDamage();
         damageDealer.Hit();
+        StartCoroutine(_DamageEffectSequence());
         if (_health <= 0)
         {
             Die();
         }
+    }
+
+    IEnumerator _DamageEffectSequence()
+    {
+
+        // tint the sprite with damage color
+        sr.color = _shieldColor;
+
+        // you can delay the animation
+        yield return new WaitForSeconds(_shieldDelay);
+
+        // lerp animation with given duration in seconds
+        for (float t = 0; t < 1.0f; t += Time.deltaTime / _shieldDuration)
+        {
+            sr.color = Color.Lerp(_shieldColor, defaultColor, t);
+
+            yield return null;
+        }
+
+        // restore origin color
+        sr.color = defaultColor;
     }
 
     private void Die()//player death
