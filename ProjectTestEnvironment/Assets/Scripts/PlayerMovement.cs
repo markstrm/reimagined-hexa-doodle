@@ -76,12 +76,10 @@ public class PlayerMovement : MonoBehaviour
 
         if (movement.magnitude > 0) //checks for player movement to activate trail
         {
-            Debug.Log("trail");
             PlayerTrail.Play();
         }
         if (movement.magnitude == 0 && PlayerTrail.isPlaying)
         {
-            Debug.Log("stop");
             PlayerTrail.Stop();
         }
     }
