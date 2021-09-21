@@ -26,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
     public float _shieldDelay = 1f;
     public Color _shieldColor;
 
-    public GameObject _movementTrail;
+    public ParticleSystem PlayerTrail;
 
     SpriteRenderer sr;
     Color defaultColor;
@@ -47,6 +47,8 @@ public class PlayerMovement : MonoBehaviour
     {
         transform.localPosition += Vector3.right * speed * Time.deltaTime * movement.normalized.x;
         transform.localPosition += Vector3.up * speed * Time.deltaTime * movement.normalized.y;
+
+
     }
 
     private void FixedUpdate()
@@ -71,6 +73,17 @@ public class PlayerMovement : MonoBehaviour
     public void Move(InputAction.CallbackContext context)
     {
         movement = context.ReadValue<Vector2>();
+
+        if (movement.magnitude > 0) //checks for player movement to activate trail
+        {
+            Debug.Log("trail");
+            PlayerTrail.Play();
+        }
+        if (movement.magnitude == 0 && PlayerTrail.isPlaying)
+        {
+            Debug.Log("stop");
+            PlayerTrail.Stop();
+        }
     }
 
     private void OnMousePos(InputAction.CallbackContext context)
