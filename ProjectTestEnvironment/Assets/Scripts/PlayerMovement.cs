@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 _MousePos;
 
     private bool canShoot = true;
+    private float _oldPos;
 
     public int _health = 300;
     public GameObject _deathVFX;
@@ -25,6 +26,8 @@ public class PlayerMovement : MonoBehaviour
     public float _shieldDelay = 1f;
     public Color _shieldColor;
 
+    public GameObject _movementTrail;
+
     SpriteRenderer sr;
     Color defaultColor;
 
@@ -33,16 +36,17 @@ public class PlayerMovement : MonoBehaviour
         _Input = new PlayerInputActions();
         _Rigidbody = GetComponent<Rigidbody2D>();
         SetUpSingleton();
+        _oldPos = transform.position.x;
         sr = GetComponent<SpriteRenderer>();
         defaultColor = sr.color;//saves default sprite color
-    }
 
+    }
 
 
     void Update()
     {
-        transform.localPosition += Vector3.right * speed * Time.deltaTime * movement.x;
-        transform.localPosition += Vector3.up * speed * Time.deltaTime * movement.y;
+        transform.localPosition += Vector3.right * speed * Time.deltaTime * movement.normalized.x;
+        transform.localPosition += Vector3.up * speed * Time.deltaTime * movement.normalized.y;
     }
 
     private void FixedUpdate()
@@ -84,7 +88,6 @@ public class PlayerMovement : MonoBehaviour
             bullet.Project(this.transform.up); //projects in the same positon as the player
             StartCoroutine(CanShoot());
         }
-
     }
 
     IEnumerator CanShoot()
