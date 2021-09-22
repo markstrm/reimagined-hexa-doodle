@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class GameSession : MonoBehaviour
 {
 
+   public Animator animator;
+
     int score = 0;
     public int _lives = 3;
     public bool isAlive = true;
@@ -14,6 +16,19 @@ public class GameSession : MonoBehaviour
 
     public PlayerMovement player;
     private WaveSpawner EnemySpawner;
+
+    //Animation States
+
+
+    void Start()
+    {
+    GetComponent<Animator>();
+
+     animator.SetBool("Respawn",true);
+
+    }
+
+
 
     private void Awake()
     {
@@ -52,6 +67,9 @@ public class GameSession : MonoBehaviour
         player.gameObject.SetActive(true);
 
         // animation?
+        animator.SetBool("Respawn", false);
+        
+      
         
         Invoke(nameof(TurnOnCollisions), _respawnInvulnerabilityTime); //3s after spawning, set the layer back to player to enable collisions
         isAlive = true;
@@ -60,6 +78,8 @@ public class GameSession : MonoBehaviour
     private void TurnOnCollisions()
     {
         player.GetComponent<PolygonCollider2D>().enabled = true;
+
+        animator.SetBool("Respawn", true);
     }
 
     private void GameOver()
