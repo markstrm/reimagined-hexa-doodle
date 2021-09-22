@@ -986,7 +986,7 @@ Camera:
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
+  m_ClearFlags: 2
   m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -1028,7 +1028,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.6899986, y: -0.6000004, z: -10}
+  m_LocalPosition: {x: -5.689999, y: -0.6000004, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1886,7 +1886,11 @@ MonoBehaviour:
   - _name: The end is near
     _enemy: {fileID: 571360587607765987, guid: c5647c074b834dd43ba53a8dc65b0d9c, type: 3}
     _amount: 10
-    _spawnRate: 3
+    _spawnRate: 2
+  - _name: MADNESS
+    _enemy: {fileID: 571360587607765987, guid: c5647c074b834dd43ba53a8dc65b0d9c, type: 3}
+    _amount: 30
+    _spawnRate: 7
   spawnPoint:
   - {fileID: 942077432167369361}
   - {fileID: 1295529104}
@@ -8309,7 +8313,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2059238922}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.6899986, y: -0.6000004, z: -10}
+  m_LocalPosition: {x: -5.689999, y: -0.6000004, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 425623936}
