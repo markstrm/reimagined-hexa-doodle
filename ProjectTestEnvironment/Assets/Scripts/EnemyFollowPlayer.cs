@@ -27,6 +27,15 @@ public class EnemyFollowPlayer : MonoBehaviour
     SpriteRenderer sr;
     Color defaultColor;
 
+    public AudioClip _deathSFX;
+    public float _deathSFXVol = 0.7f;
+
+    public AudioClip _bulletSFX;
+    public float _bulletSFXVol = 0.7f;
+
+    public AudioClip _shieldHitSFX;
+    public float _shieldHitSFXVol = 0.7f;
+
     public GameObject _bullet; //the bullet that the enemy will shoot
     public GameObject _bulletParent; //the place where the bullet will be shot from
     private Transform _player; //target the player
@@ -63,7 +72,7 @@ public class EnemyFollowPlayer : MonoBehaviour
             if(gameSession.isAlive && _distanceFromPlayer < _shootingRange && _nextFireTime < Time.time)
             {
                 Instantiate(_bullet, _bulletParent.transform.position, Quaternion.identity);
-
+                AudioSource.PlayClipAtPoint(_bulletSFX, transform.position, _bulletSFXVol);
                 _nextFireTime = Time.time + _fireRate;
             }
         }
@@ -94,6 +103,7 @@ public class EnemyFollowPlayer : MonoBehaviour
         }
         else
         {
+            AudioSource.PlayClipAtPoint(_shieldHitSFX, transform.position, _shieldHitSFXVol);
             StartCoroutine(_DamageEffectSequence());
         }
     }
@@ -125,6 +135,7 @@ public class EnemyFollowPlayer : MonoBehaviour
         GameObject explosion = Instantiate(_deathVFX, transform.position, transform.rotation);//explosion vfx
         //Destroy(explosion, _durationOfExplosion);
         Destroy(gameObject);
+        AudioSource.PlayClipAtPoint(_deathSFX, transform.position, _deathSFXVol);
 
     }
 

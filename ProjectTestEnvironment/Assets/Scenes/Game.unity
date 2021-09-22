@@ -369,12 +369,19 @@ MonoBehaviour:
   speed: 12
   _Camera: {fileID: 519420031}
   bulletPrefab: {fileID: 3577999947024319260, guid: 5f8dc7cb48b2fba4f8976bbffab4419c, type: 3}
+  minTolerance: 0.5
   _health: 300
   _deathVFX: {fileID: 4803261777714319761, guid: 87cbd56028703304b975033d754bfefe, type: 3}
   _durationOfExplosion: 2
   _shieldDuration: 0.4
   _shieldDelay: 0
   _shieldColor: {r: 0.10332859, g: 0.15686275, b: 0.8113208, a: 0.94509804}
+  _deathSFX: {fileID: 8300000, guid: 97e59177993a42241ba86e0564808dcb, type: 3}
+  _deathSFXVol: 1
+  _bulletSFX: {fileID: 8300000, guid: a6e6a3d2736805d449800f69976aaa71, type: 3}
+  _bulletSFXVol: 1
+  _shieldHitSFX: {fileID: 8300000, guid: 64103bed04460d9489fbc8312ab4d949, type: 3}
+  _shieldHitSFXVol: 1.5
   PlayerTrail: {fileID: 1788416444}
 --- !u!114 &356091700
 MonoBehaviour:
@@ -532,12 +539,18 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.5, y: -0.5}
-      - {x: -0.5, y: -0.40625}
-      - {x: -0.046875, y: 0.5}
-      - {x: 0.046875, y: 0.5}
-      - {x: 0.5, y: -0.40625}
-      - {x: 0.5, y: -0.5}
+    - - {x: 0.13969207, y: -0.55371326}
+      - {x: -0.12571383, y: -0.56751776}
+      - {x: -0.1362536, y: -0.3130141}
+      - {x: -0.82227945, y: -0.1700471}
+      - {x: -0.8184428, y: 0.015782714}
+      - {x: -0.18309665, y: 0.07445225}
+      - {x: -0.11977148, y: 0.3503702}
+      - {x: 0.11977148, y: 0.34653354}
+      - {x: 0.21603346, y: 0.053369075}
+      - {x: 0.7914758, y: -0.011474952}
+      - {x: 0.8261163, y: -0.15686706}
+      - {x: 0.1278441, y: -0.31200367}
 --- !u!1 &425623935
 GameObject:
   m_ObjectHideFlags: 3

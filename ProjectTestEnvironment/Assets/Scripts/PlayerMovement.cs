@@ -18,6 +18,8 @@ public class PlayerMovement : MonoBehaviour
     private bool canShoot = true;
     private float _oldPos;
 
+    [SerializeField] private float minTolerance;
+
     public int _health = 300;
     public GameObject _deathVFX;
     public float _durationOfExplosion = 2f;
@@ -25,6 +27,15 @@ public class PlayerMovement : MonoBehaviour
     public float _shieldDuration = 1f;
     public float _shieldDelay = 1f;
     public Color _shieldColor;
+
+    public AudioClip _deathSFX;
+    public float _deathSFXVol = 0.7f;
+
+    public AudioClip _bulletSFX;
+    public float _bulletSFXVol = 0.7f;
+
+    public AudioClip _shieldHitSFX;
+    public float _shieldHitSFXVol = 0.7f;
 
     public ParticleSystem PlayerTrail;
 
@@ -54,8 +65,13 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         Vector2 facingDirection = _MousePos - _Rigidbody.position;
-        float angle = Mathf.Atan2(facingDirection.y, facingDirection.x) * Mathf.Rad2Deg -90;
-        _Rigidbody.MoveRotation(angle);
+   
+        if(Mathf.Abs(facingDirection.x) > minTolerance && Mathf.Abs(facingDirection.y) > minTolerance)
+        {
+            float angle = Mathf.Atan2(facingDirection.y, facingDirection.x) * Mathf.Rad2Deg - 90;
+            _Rigidbody.MoveRotation(angle);
+        }
+        
     }
 
     private void OnEnable()
@@ -97,6 +113,7 @@ public class PlayerMovement : MonoBehaviour
 
             Bullet bullet = Instantiate(this.bulletPrefab, this.transform.position, this.transform.rotation); //spawns the bullet and gives it a position and rotation. Will spawn at the players positon and in the same rotation as the player.
             bullet.Project(this.transform.up); //projects in the same positon as the player
+            AudioSource.PlayClipAtPoint(_bulletSFX, transform.position, _bulletSFXVol);
             StartCoroutine(CanShoot());
         }
     }
@@ -131,6 +148,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
+            AudioSource.PlayClipAtPoint(_shieldHitSFX, transform.position, _shieldHitSFXVol);
             StartCoroutine(_DamageEffectSequence());
         }
     }
@@ -162,6 +180,7 @@ public class PlayerMovement : MonoBehaviour
         FindObjectOfType<GameSession>().PlayerDied(); //slow and costly function
 
         GameObject explosion = Instantiate(_deathVFX, transform.position, transform.rotation);//explosion vfx
+        AudioSource.PlayClipAtPoint(_deathSFX, transform.position, _deathSFXVol);
         Destroy(explosion, _durationOfExplosion);
         this.gameObject.SetActive(false);
     }
