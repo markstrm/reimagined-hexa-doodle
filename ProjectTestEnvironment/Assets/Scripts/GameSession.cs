@@ -41,6 +41,8 @@ public class GameSession : MonoBehaviour
     private void Respawn()
     {
         player.transform.position = Vector3.zero; //spawns the player at the center of the board
+
+
         // call method to disable collider
 
         player._health = 300;
@@ -48,6 +50,8 @@ public class GameSession : MonoBehaviour
         player.GetComponent<PolygonCollider2D>().enabled = false;
         //this.player.gameObject.layer = LayerMask.NameToLayer("Ignore Collisions"); //when player respawns, temporarily change layer to ignore all collisions
         player.gameObject.SetActive(true);
+
+        // animation?
         
         Invoke(nameof(TurnOnCollisions), _respawnInvulnerabilityTime); //3s after spawning, set the layer back to player to enable collisions
         isAlive = true;
