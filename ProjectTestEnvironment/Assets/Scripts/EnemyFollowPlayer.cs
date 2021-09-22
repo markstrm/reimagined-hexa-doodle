@@ -39,6 +39,8 @@ public class EnemyFollowPlayer : MonoBehaviour
        gameSession = GameObject.Find("Game Session").GetComponent<GameSession>();
         sr = GetComponent<SpriteRenderer>();
         defaultColor = sr.color;//saves default sprite color
+
+        _movementSpeed = Random.Range(6, 9); //random movementspeed to try mitigate the clumping
     }
 
     // Update is called once per frame
