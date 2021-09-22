@@ -109,6 +109,12 @@ MonoBehaviour:
   _shieldDuration: 0.2
   _shieldDelay: 0
   _shieldColor: {r: 0.6886792, g: 0, b: 0, a: 0.94509804}
+  _deathSFX: {fileID: 8300000, guid: fcaef2f7d0ced574b93c664dc374c02d, type: 3}
+  _deathSFXVol: 1
+  _bulletSFX: {fileID: 8300000, guid: 1fa7474420b16ff48b60baf0f7ec641b, type: 3}
+  _bulletSFXVol: 1
+  _shieldHitSFX: {fileID: 8300000, guid: e0a3a802126109d4aa9c53c840fdf173, type: 3}
+  _shieldHitSFXVol: 1
   _bullet: {fileID: 4577341841675433198, guid: 6736d709680019e499793be2ad19075c, type: 3}
   _bulletParent: {fileID: 571360587888133842}
 --- !u!61 &4232416716614913637
