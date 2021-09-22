@@ -369,6 +369,7 @@ MonoBehaviour:
   speed: 12
   _Camera: {fileID: 519420031}
   bulletPrefab: {fileID: 3577999947024319260, guid: 5f8dc7cb48b2fba4f8976bbffab4419c, type: 3}
+  minTolerance: 0.5
   _health: 300
   _deathVFX: {fileID: 4803261777714319761, guid: 87cbd56028703304b975033d754bfefe, type: 3}
   _durationOfExplosion: 2
