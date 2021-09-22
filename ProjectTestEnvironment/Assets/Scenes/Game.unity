@@ -376,6 +376,12 @@ MonoBehaviour:
   _shieldDuration: 0.4
   _shieldDelay: 0
   _shieldColor: {r: 0.10332859, g: 0.15686275, b: 0.8113208, a: 0.94509804}
+  _deathSFX: {fileID: 8300000, guid: 97e59177993a42241ba86e0564808dcb, type: 3}
+  _deathSFXVol: 1
+  _bulletSFX: {fileID: 8300000, guid: a6e6a3d2736805d449800f69976aaa71, type: 3}
+  _bulletSFXVol: 1
+  _shieldHitSFX: {fileID: 8300000, guid: 64103bed04460d9489fbc8312ab4d949, type: 3}
+  _shieldHitSFXVol: 1.5
   PlayerTrail: {fileID: 1788416444}
 --- !u!114 &356091700
 MonoBehaviour:
