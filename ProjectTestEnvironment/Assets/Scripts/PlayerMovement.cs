@@ -50,16 +50,15 @@ public class PlayerMovement : MonoBehaviour
         _oldPos = transform.position.x;
         sr = GetComponent<SpriteRenderer>();
         defaultColor = sr.color;//saves default sprite color
-
     }
 
 
     void Update()
     {
-        transform.localPosition += Vector3.right * speed * Time.deltaTime * movement.normalized.x;
-        transform.localPosition += Vector3.up * speed * Time.deltaTime * movement.normalized.y;
+        transform.position += Vector3.right * speed * Time.deltaTime * movement.normalized.x;
+        transform.position += Vector3.up * speed * Time.deltaTime * movement.normalized.y;
 
-
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -72f, 72f), Mathf.Clamp(transform.position.y, -48f, 48f));
     }
 
     private void FixedUpdate()
@@ -77,7 +76,6 @@ public class PlayerMovement : MonoBehaviour
     private void OnEnable()
     {
         _Input.Enable();
-
         _Input.Player.MousePos.performed += OnMousePos;
     }
 
