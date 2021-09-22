@@ -18,6 +18,8 @@ public class PlayerMovement : MonoBehaviour
     private bool canShoot = true;
     private float _oldPos;
 
+    [SerializeField] private float minTolerance;
+
     public int _health = 300;
     public GameObject _deathVFX;
     public float _durationOfExplosion = 2f;
@@ -63,8 +65,13 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         Vector2 facingDirection = _MousePos - _Rigidbody.position;
-        float angle = Mathf.Atan2(facingDirection.y, facingDirection.x) * Mathf.Rad2Deg -90;
-        _Rigidbody.MoveRotation(angle);
+   
+        if(Mathf.Abs(facingDirection.x) > minTolerance && Mathf.Abs(facingDirection.y) > minTolerance)
+        {
+            float angle = Mathf.Atan2(facingDirection.y, facingDirection.x) * Mathf.Rad2Deg - 90;
+            _Rigidbody.MoveRotation(angle);
+        }
+        
     }
 
     private void OnEnable()
