@@ -150,19 +150,6 @@ public class PlayerMovement : MonoBehaviour
             }
         }
     }
-
-    public void Shoot3(InputAction.CallbackContext context)
-    {
-        if (context.performed)
-        {
-            if (!canShootL) return;
-
-            var laser = Instantiate(PlayerLaser, rightFireLoc.transform.position, rightFireLoc.transform.rotation);
-            laser.Project(rightFireLoc.transform.up);
-            AudioSource.PlayClipAtPoint(_laserSFX, transform.position, _bulletSFXVol);
-            StartCoroutine(CanShootL());
-        }
-    }
     
     IEnumerator CanShootL()
     {
