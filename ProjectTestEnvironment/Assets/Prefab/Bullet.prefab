@@ -135,6 +135,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 100
+  _ionBurstSFX: {fileID: 8300000, guid: 649b6394dbfbec34a93f01126f126017, type: 3}
+  _ionBurstSFXVol: 1
+  _burstVFX: {fileID: 1625442881287431557, guid: 46c81d1e24eef5247a32c72f053cbd88, type: 3}
 --- !u!58 &9209276451009569779
 CircleCollider2D:
   m_ObjectHideFlags: 0
