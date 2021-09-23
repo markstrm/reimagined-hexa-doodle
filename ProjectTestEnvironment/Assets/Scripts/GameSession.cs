@@ -66,6 +66,9 @@ public class GameSession : MonoBehaviour
         //this.player.gameObject.layer = LayerMask.NameToLayer("Ignore Collisions"); //when player respawns, temporarily change layer to ignore all collisions
         player.gameObject.SetActive(true);
 
+        player.canShoot = true;
+        player.canShootL = true;
+
         // animation?
         animator.SetBool("Respawn", false);
         

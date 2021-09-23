@@ -19,8 +19,8 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 movement;
     private Vector2 _MousePos;
 
-    private bool canShoot = true;
-    private bool canShootL = true;
+    public bool canShoot = true;
+    public bool canShootL = true;
     private float _oldPos;
     [SerializeField] private float minTolerance;
 
