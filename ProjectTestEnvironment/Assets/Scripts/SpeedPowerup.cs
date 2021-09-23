@@ -7,13 +7,11 @@ public class SpeedPowerup : MonoBehaviour
     // Start is called before the first frame update
 
     Rigidbody2D rb;
-    PlayerMovement movement;
 
     private void Awake()
     {
 
         rb=GetComponent<Rigidbody2D>();
-        movement = GetComponent<PlayerMovement>();
 
     }
     private void OnTriggerEnter2D(Collider2D other)
@@ -23,19 +21,17 @@ public class SpeedPowerup : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             Debug.Log("Speedy");
-            Pickup();
-            
-
+            Pickup(other.gameObject.GetComponent<PlayerMovement>());
         }
 
     }
 
-    void Pickup()
+    void Pickup(PlayerMovement player)
     {
-        
 
 
-        movement.speed = 24f;
+
+        player.speed = 24f;
         
 
         Destroy(gameObject);
