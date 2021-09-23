@@ -44,14 +44,6 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
-                },
-                {
-                    "name": "Fire3",
-                    "type": "Button",
-                    "id": "0a87196b-abc8-405f-b978-7cc7d981d801",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -234,7 +226,7 @@
                 {
                     "name": "",
                     "id": "05f6913d-c316-48b2-a6bb-e225f14c7960",
-                    "path": "<Keyboard>/space",
+                    "path": "<Mouse>/rightButton",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
@@ -294,17 +286,6 @@
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "Fire2",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "995d74fe-0bc1-4e49-9308-24e784fa85c8",
-                    "path": "<Mouse>/rightButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "Fire3",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
