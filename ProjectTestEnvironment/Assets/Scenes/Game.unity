@@ -3085,7 +3085,7 @@ MonoBehaviour:
   waves:
   - _name: Alien Invasion
     _enemy: {fileID: 571360587607765987, guid: c5647c074b834dd43ba53a8dc65b0d9c, type: 3}
-    _amount: 2
+    _amount: 0
     _spawnRate: 1
   - _name: Alien Invasion 2.0
     _enemy: {fileID: 571360587607765987, guid: c5647c074b834dd43ba53a8dc65b0d9c, type: 3}
@@ -10907,7 +10907,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8328106044283500468
 Transform:
   m_ObjectHideFlags: 0
