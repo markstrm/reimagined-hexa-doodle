@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 571360587607765987}
   - component: {fileID: 571360587607765984}
   - component: {fileID: 571360587607765985}
-  - component: {fileID: 4232416716614913637}
+  - component: {fileID: 4872768088973936229}
   m_Layer: 6
   m_Name: Enemy1
   m_TagString: Enemy
@@ -117,8 +117,8 @@ MonoBehaviour:
   _shieldHitSFXVol: 1
   _bullet: {fileID: 4577341841675433198, guid: 6736d709680019e499793be2ad19075c, type: 3}
   _bulletParent: {fileID: 571360587888133842}
---- !u!61 &4232416716614913637
-BoxCollider2D:
+--- !u!60 &4872768088973936229
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -130,7 +130,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.002516508, y: 0.0050326586}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -140,9 +140,35 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.6528811, y: 1.3490219}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.6611571, y: -0.03736648}
+      - {x: 0.6062092, y: 0.14663206}
+      - {x: 0.5255788, y: 0.38284123}
+      - {x: 0.33673587, y: 0.43368325}
+      - {x: 0.17078876, y: 0.474888}
+      - {x: 0.033683166, y: 0.555052}
+      - {x: -0.079158135, y: 0.555052}
+      - {x: -0.1912609, y: 0.49947327}
+      - {x: -0.5428413, y: 0.4086313}
+      - {x: -0.66284126, y: 0.042525966}
+      - {x: -0.64452547, y: -0.15778932}
+      - {x: -0.55947334, y: -0.33841988}
+      - {x: -0.26999998, y: -0.3181046}
+      - {x: -0.122210845, y: -0.36620918}
+      - {x: -0.068316266, y: -0.42589393}
+      - {x: 0.01944542, y: -0.44006416}
+      - {x: 0.05168421, y: -0.42284122}
+      - {x: 0.1116842, y: -0.34147254}
+      - {x: 0.26831627, y: -0.31199926}
+      - {x: 0.53642064, y: -0.34147254}
+    - - {x: -0.19, y: 0.11}
+      - {x: -0.21, y: 0.11}
+      - {x: -0.19, y: -0.03}
+      - {x: -0.21, y: -0.01}
+    - - {x: 0.19, y: 0.11}
+      - {x: 0.17, y: 0.11}
+      - {x: 0.19, y: -0.03}
 --- !u!1 &571360587888133842
 GameObject:
   m_ObjectHideFlags: 0
