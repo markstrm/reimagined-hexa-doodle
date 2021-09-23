@@ -8,10 +8,13 @@ using TMPro;
 
 public class SettingsMenu : MonoBehaviour
 {
+    private const int defaultQualityIndex = 3;
 
-    public AudioMixer audioMixer;
+    [SerializeField] private AudioMixer audioMixer;
 
-    public TMP_Dropdown resolutionDropdown;
+    [SerializeField] private TMP_Dropdown resolutionDropdown;
+
+    [SerializeField] private TMP_Dropdown qualityDropdown;
 
     Resolution[] resolutions;
 
@@ -40,6 +43,9 @@ public class SettingsMenu : MonoBehaviour
         resolutionDropdown.AddOptions(options);
         resolutionDropdown.value = currentResolutionIndex;
         resolutionDropdown.RefreshShownValue();
+
+        qualityDropdown.value = defaultQualityIndex;
+        qualityDropdown.RefreshShownValue();
     }
 
     public void SetResolution(int resolutionIndex)
@@ -57,6 +63,7 @@ public class SettingsMenu : MonoBehaviour
 
     public void SetQuality(int qualityIndex)
     {
+
         QualitySettings.SetQualityLevel(qualityIndex);
     }
 
