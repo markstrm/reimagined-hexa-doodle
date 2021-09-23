@@ -7,13 +7,16 @@ public class WaveSpawner : MonoBehaviour
     public enum SpawnState { Spawning, Waiting, Counting }; //store the possible states that the wavespawner can be in.
 
     public GameObject _EnemyHolder;
-   
+    public GameSession gameSession;
 
-   [System.Serializable] //allows us to change the values of instances of this class in the unity inspector.
+    //public Transform _enemy2;
+
+    [System.Serializable] //allows us to change the values of instances of this class in the unity inspector.
     public class Wave //to define what a wave is in our game
     {
         public string _name;
         public Transform _enemy; //reference to the prefab that we want to instantiate
+        
         public int _amount;
         public float _spawnRate;
        
@@ -45,6 +48,9 @@ public class WaveSpawner : MonoBehaviour
 
     private void Update()
     {
+        //SpawnEnemy2(Transform _enemy2);
+
+
         if (_state == SpawnState.Waiting) //checks if the player has killed all the enemis.
         {
             if(_EnemyIsAlive() == false) //is any enemy still alive
@@ -107,6 +113,24 @@ public class WaveSpawner : MonoBehaviour
         }
         return true;
     }
+
+   /** IEnumerator SpawnEnemy2(Transform _enemy2)
+    {
+        int score = gameSession.GetScore();
+
+        if (score == 500)
+        {
+            for (int i = 0; i < 1; i++)
+            {
+                Transform _sp = spawnPoint[Random.Range(0, spawnPoint.Length)];
+                Instantiate(_enemy2, _sp.position, _sp.rotation, _EnemyHolder.transform);
+                score = score + 100;
+                yield return new WaitForSeconds(1f);
+            }
+            yield break;
+        }
+    }
+   **/
 
     IEnumerator SpawnWave(Wave _wave) //we want to be able to wait x seconds inside the method | need to use systems.collections for IEnumerator
     {

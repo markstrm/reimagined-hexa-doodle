@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameSession : MonoBehaviour
 {
-
+    
    public Animator animator;
 
     int score = 0;
