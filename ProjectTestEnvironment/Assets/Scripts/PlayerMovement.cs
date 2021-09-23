@@ -11,6 +11,10 @@ public class PlayerMovement : MonoBehaviour
     PlayerInputActions _Input;
     Rigidbody2D _Rigidbody;
     public Bullet bulletPrefab;
+    public Laser PlayerLaser;
+    public GameObject centralFireLoc;
+    public GameObject leftFireLoc;
+    public GameObject rightFireLoc;
 
     private Vector2 movement;
     private Vector2 _MousePos;
@@ -36,6 +40,9 @@ public class PlayerMovement : MonoBehaviour
 
     public AudioClip _shieldHitSFX;
     public float _shieldHitSFXVol = 0.7f;
+
+    public AudioClip _laserSFX;
+    public float _laserSFXVol = 0.7f;
 
     public ParticleSystem PlayerTrail;
 
@@ -109,7 +116,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (!canShoot) return;
 
-            Bullet bullet = Instantiate(this.bulletPrefab, this.transform.position, this.transform.rotation); //spawns the bullet and gives it a position and rotation. Will spawn at the players positon and in the same rotation as the player.
+            Bullet bullet = Instantiate(bulletPrefab, centralFireLoc.transform.position, transform.rotation); //spawns the bullet and gives it a position and rotation. Will spawn at the players positon and in the same rotation as the player.
             bullet.Project(this.transform.up); //projects in the same positon as the player
             AudioSource.PlayClipAtPoint(_bulletSFX, transform.position, _bulletSFXVol);
             StartCoroutine(CanShoot());
@@ -122,6 +129,31 @@ public class PlayerMovement : MonoBehaviour
         yield return new WaitForSeconds(0.35f);
         canShoot = true;
     }
+
+    public void Shoot2(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            if (!canShoot) return;
+
+            var laser = Instantiate(PlayerLaser, leftFireLoc.transform.position, transform.rotation);
+            laser.Project(transform.up);
+            AudioSource.PlayClipAtPoint(_laserSFX, transform.position, _bulletSFXVol);
+        }
+    }
+
+    public void Shoot3(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            if (!canShoot) return;
+
+            var laser = Instantiate(PlayerLaser, rightFireLoc.transform.position, transform.rotation);
+            laser.Project(transform.up);
+            AudioSource.PlayClipAtPoint(_laserSFX, transform.position, _bulletSFXVol);
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         DamageDealer damageDealer = other.gameObject.GetComponent<DamageDealer>();
