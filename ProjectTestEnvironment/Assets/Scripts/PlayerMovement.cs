@@ -20,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 _MousePos;
 
     private bool canShoot = true;
+    private bool canShootL = true;
     private float _oldPos;
 
     [SerializeField] private float minTolerance;
@@ -126,7 +127,7 @@ public class PlayerMovement : MonoBehaviour
     IEnumerator CanShoot()
     {
         canShoot = false;
-        yield return new WaitForSeconds(0.35f);
+        yield return new WaitForSeconds(3f);
         canShoot = true;
     }
 
@@ -134,11 +135,12 @@ public class PlayerMovement : MonoBehaviour
     {
         if (context.performed)
         {
-            if (!canShoot) return;
+            if (!canShootL) return;
 
-            var laser = Instantiate(PlayerLaser, leftFireLoc.transform.position, transform.rotation);
-            laser.Project(transform.up);
+            var laser = Instantiate(PlayerLaser, leftFireLoc.transform.position, leftFireLoc.transform.rotation);
+            laser.Project(leftFireLoc.transform.up);
             AudioSource.PlayClipAtPoint(_laserSFX, transform.position, _bulletSFXVol);
+            StartCoroutine(CanShootL());
         }
     }
 
@@ -146,12 +148,20 @@ public class PlayerMovement : MonoBehaviour
     {
         if (context.performed)
         {
-            if (!canShoot) return;
+            if (!canShootL) return;
 
-            var laser = Instantiate(PlayerLaser, rightFireLoc.transform.position, transform.rotation);
-            laser.Project(transform.up);
+            var laser = Instantiate(PlayerLaser, rightFireLoc.transform.position, rightFireLoc.transform.rotation);
+            laser.Project(rightFireLoc.transform.up);
             AudioSource.PlayClipAtPoint(_laserSFX, transform.position, _bulletSFXVol);
+            StartCoroutine(CanShootL());
         }
+    }
+    
+    IEnumerator CanShootL()
+    {
+        canShootL = false;
+        yield return new WaitForSeconds(0.1f);
+        canShootL = true;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
