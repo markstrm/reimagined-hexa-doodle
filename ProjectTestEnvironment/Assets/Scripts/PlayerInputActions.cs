@@ -57,14 +57,6 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
-                },
-                {
-                    ""name"": ""Fire3"",
-                    ""type"": ""Button"",
-                    ""id"": ""0a87196b-abc8-405f-b978-7cc7d981d801"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -247,7 +239,7 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""05f6913d-c316-48b2-a6bb-e225f14c7960"",
-                    ""path"": ""<Keyboard>/space"",
+                    ""path"": ""<Mouse>/rightButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard&Mouse"",
@@ -307,17 +299,6 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""Fire2"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""995d74fe-0bc1-4e49-9308-24e784fa85c8"",
-                    ""path"": ""<Mouse>/rightButton"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""Fire3"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -900,7 +881,6 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
         m_Player_Fire = m_Player.FindAction("Fire", throwIfNotFound: true);
         m_Player_MousePos = m_Player.FindAction("MousePos", throwIfNotFound: true);
         m_Player_Fire2 = m_Player.FindAction("Fire2", throwIfNotFound: true);
-        m_Player_Fire3 = m_Player.FindAction("Fire3", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -967,7 +947,6 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_Fire;
     private readonly InputAction m_Player_MousePos;
     private readonly InputAction m_Player_Fire2;
-    private readonly InputAction m_Player_Fire3;
     public struct PlayerActions
     {
         private @PlayerInputActions m_Wrapper;
@@ -977,7 +956,6 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
         public InputAction @Fire => m_Wrapper.m_Player_Fire;
         public InputAction @MousePos => m_Wrapper.m_Player_MousePos;
         public InputAction @Fire2 => m_Wrapper.m_Player_Fire2;
-        public InputAction @Fire3 => m_Wrapper.m_Player_Fire3;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1002,9 +980,6 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                 @Fire2.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire2;
                 @Fire2.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire2;
                 @Fire2.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire2;
-                @Fire3.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire3;
-                @Fire3.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire3;
-                @Fire3.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire3;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -1024,9 +999,6 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                 @Fire2.started += instance.OnFire2;
                 @Fire2.performed += instance.OnFire2;
                 @Fire2.canceled += instance.OnFire2;
-                @Fire3.started += instance.OnFire3;
-                @Fire3.performed += instance.OnFire3;
-                @Fire3.canceled += instance.OnFire3;
             }
         }
     }
@@ -1188,7 +1160,6 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
         void OnFire(InputAction.CallbackContext context);
         void OnMousePos(InputAction.CallbackContext context);
         void OnFire2(InputAction.CallbackContext context);
-        void OnFire3(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

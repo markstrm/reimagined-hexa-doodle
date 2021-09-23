@@ -136,10 +136,18 @@ public class PlayerMovement : MonoBehaviour
         {
             if (!canShootL) return;
 
-            var laser = Instantiate(PlayerLaser, leftFireLoc.transform.position, leftFireLoc.transform.rotation);
-            laser.Project(leftFireLoc.transform.up);
-            AudioSource.PlayClipAtPoint(_laserSFX, transform.position, _bulletSFXVol);
-            StartCoroutine(CanShootL());
+            {
+                var laser = Instantiate(PlayerLaser, leftFireLoc.transform.position, leftFireLoc.transform.rotation);
+                laser.Project(leftFireLoc.transform.up);
+                AudioSource.PlayClipAtPoint(_laserSFX, transform.position, _bulletSFXVol);
+                StartCoroutine(CanShootL());
+            }
+            {
+                var laser = Instantiate(PlayerLaser, rightFireLoc.transform.position, rightFireLoc.transform.rotation);
+                laser.Project(rightFireLoc.transform.up);
+                AudioSource.PlayClipAtPoint(_laserSFX, transform.position, _bulletSFXVol);
+                StartCoroutine(CanShootL());
+            }
         }
     }
 

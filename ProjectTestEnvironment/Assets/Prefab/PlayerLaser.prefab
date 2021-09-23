@@ -133,7 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20849bff4d00bfe478e7f45ef95c19c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 100
+  damage: 10
   _ionBurstSFX: {fileID: 0}
   _ionBurstSFXVol: 0
   _burstVFX: {fileID: 0}
