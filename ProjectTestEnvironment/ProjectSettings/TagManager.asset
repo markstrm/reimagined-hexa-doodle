@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - EnemySpawner
   - Enemy Projectile
+  - Laser
   layers:
   - Default
   - TransparentFX
