@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float speed;
+    public float speed;
     [SerializeField] Camera _Camera;
 
     PlayerInputActions _Input;
@@ -22,7 +22,6 @@ public class PlayerMovement : MonoBehaviour
     private bool canShoot = true;
     private bool canShootL = true;
     private float _oldPos;
-
     [SerializeField] private float minTolerance;
 
     public int _health = 300;

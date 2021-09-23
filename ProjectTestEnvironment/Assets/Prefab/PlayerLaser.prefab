@@ -133,14 +133,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20849bff4d00bfe478e7f45ef95c19c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< Updated upstream
   damage: 100
-=======
-  damage: 20
-  _ionBurstSFX: {fileID: 8300000, guid: 649b6394dbfbec34a93f01126f126017, type: 3}
-  _ionBurstSFXVol: 1
-  _burstVFX: {fileID: 1625442881287431557, guid: 46c81d1e24eef5247a32c72f053cbd88, type: 3}
->>>>>>> Stashed changes
+  _ionBurstSFX: {fileID: 0}
+  _ionBurstSFXVol: 0
+  _burstVFX: {fileID: 0}
 --- !u!70 &-6641391899937262949
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
