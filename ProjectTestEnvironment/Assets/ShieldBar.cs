@@ -11,12 +11,12 @@ public class ShieldBar : MonoBehaviour
 
     public void SetMaxHealth(int health)
     {
-        slider.maxValue = health - 100;
-        slider.value = health - 100;
+        slider.maxValue = health ;
+        slider.value = health;
     }
     public void SetShield(int health)
     {
 
-        slider.value = health - 100;
+        slider.value = health;
     }
 }
