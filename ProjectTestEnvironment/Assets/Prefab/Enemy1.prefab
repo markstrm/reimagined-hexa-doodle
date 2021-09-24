@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 571360587607765984}
   - component: {fileID: 571360587607765985}
   - component: {fileID: 4872768088973936229}
+  - component: {fileID: -200259641264465060}
   m_Layer: 6
   m_Name: Enemy1
   m_TagString: Enemy
@@ -111,6 +112,7 @@ MonoBehaviour:
   _shieldDelay: 0
   _shieldColor: {r: 0.6886792, g: 0, b: 0, a: 0.94509804}
   _respawnInvulnerabilityTime: 1.5
+  animator: {fileID: 0}
   _deathSFX: {fileID: 8300000, guid: fcaef2f7d0ced574b93c664dc374c02d, type: 3}
   _deathSFXVol: 1
   _bulletSFX: {fileID: 8300000, guid: 1fa7474420b16ff48b60baf0f7ec641b, type: 3}
@@ -171,6 +173,25 @@ PolygonCollider2D:
     - - {x: 0.19, y: 0.11}
       - {x: 0.17, y: 0.11}
       - {x: 0.19, y: -0.03}
+--- !u!95 &-200259641264465060
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 571360587607766014}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 629ea27f64835694fbb8d788772480c0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &571360587888133842
 GameObject:
   m_ObjectHideFlags: 0

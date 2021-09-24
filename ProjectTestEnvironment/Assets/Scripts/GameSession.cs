@@ -152,6 +152,7 @@ public class GameSession : MonoBehaviour
 
         Transform _sp = spawnPoint[Random.Range(0, spawnPoint.Length)];
         Instantiate(_enemy, _sp.position, _sp.rotation, _EnemyHolder.transform);  //spawn enemy
+
     }
 
     public void ResetGame()
