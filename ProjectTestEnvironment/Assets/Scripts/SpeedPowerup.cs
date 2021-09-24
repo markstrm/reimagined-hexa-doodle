@@ -20,7 +20,7 @@ public class SpeedPowerup : MonoBehaviour
         rb=GetComponent<Rigidbody2D>();
 
     }
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other) // If Player collides with powerup
     {
 
 
@@ -32,7 +32,7 @@ public class SpeedPowerup : MonoBehaviour
 
     }
 
-    void Pickup(PlayerMovement player)
+    void Pickup(PlayerMovement player) // the powerup speed buff given to the player and also starts a timer in the Playermovement script. Also destroys the powerup object
     {
 
         player.speed = speedboost;

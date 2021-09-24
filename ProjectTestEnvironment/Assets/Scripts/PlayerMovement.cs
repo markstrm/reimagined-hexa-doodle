@@ -244,7 +244,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
 
-    public void Speedtimer()
+    public void Speedtimer() // to indentify if the bool is true so that it can start the timer 
     {
 
         if(Speedtime == true){
@@ -257,7 +257,7 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    IEnumerator SpeedboostDuration()
+    IEnumerator SpeedboostDuration() // The timer that has the duration of the boost before turning the player back to it's orginal speed
     {
         GetComponent<PlayerMovement>();
 
