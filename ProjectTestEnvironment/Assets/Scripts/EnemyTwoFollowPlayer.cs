@@ -18,8 +18,35 @@ public class EnemyTwoFollowPlayer : MonoBehaviour
     private float _previousShootTime;
     private Transform[] _wayPoints;
     private GameObject _waypointsGO;
+
+    public float _health = 600;
+    public int _scoreValue = 300;
+
+    public float _shieldDuration = 1f;
+    public float _shieldDelay = 1f;
+    public Color _shieldColor;
+    public float _durationOfExplosion = 1f;
+
+    SpriteRenderer sr;
+    Color defaultColor;
+
+    public GameObject _deathVFX;
+    public AudioClip _deathSFX;
+    public float _deathSFXVol = 0.7f;
+    public AudioClip _bulletSFX;
+    public float _bulletSFXVol = 0.7f;
+    public AudioClip _shieldHitSFX;
+    public float _shieldHitSFXVol = 0.7f;
+
+    GameSession gameSession;
+    public GameObject _bullet; //the bullet that the enemy will shoot
+    public GameObject _bulletParent; //the place where the bullet will be shot from
+
     private void Start()
     {
+        gameSession = GameObject.Find("Game Session").GetComponent<GameSession>();
+        sr = GetComponent<SpriteRenderer>();
+        defaultColor = sr.color;//saves default sprite color
         GameObject go = GameObject.FindWithTag("Player");
         if (go == null) return;
         _playerTransform = go.transform;
@@ -49,10 +76,14 @@ public class EnemyTwoFollowPlayer : MonoBehaviour
             }
             FollowWaypoints();
             // TODO Fix alive check
-            if (Time.time - _previousShootTime >= fireRate)
+            if (gameSession.isAlive)
             {
-                Shoot();
+                if (Time.time - _previousShootTime >= fireRate)
+                {
+                    Shoot();
+                }
             }
+            
         }
         else
         {
@@ -104,9 +135,62 @@ public class EnemyTwoFollowPlayer : MonoBehaviour
         _currentWaypoint = closestWaypoint;
     }
 
+    private void OnTriggerEnter2D(Collider2D other)//receives damage from player bullet
+    {
+        DamageDealer damageDealer = other.gameObject.GetComponent<DamageDealer>();
+        ProcessHit(damageDealer);
+    }
+
+    private void ProcessHit(DamageDealer damageDealer)//calculates damage received
+    {
+        _health -= damageDealer.GetDamage();
+        damageDealer.Hit();
+        if (_health <= 0)
+        {
+            Die();
+        }
+        else
+        {
+            AudioSource.PlayClipAtPoint(_shieldHitSFX, transform.position, _shieldHitSFXVol);
+            StartCoroutine(_DamageEffectSequence());
+        }
+    }
+    IEnumerator _DamageEffectSequence()
+    {
+
+        // tint the sprite with damage color
+        sr.color = _shieldColor;
+
+        // you can delay the animation
+        yield return new WaitForSeconds(_shieldDelay);
+
+        // lerp animation with given duration in seconds
+        for (float t = 0; t < 1.0f; t += Time.deltaTime / _shieldDuration)
+        {
+            sr.color = Color.Lerp(_shieldColor, defaultColor, t);
+
+            yield return null;
+        }
+
+        // restore origin color
+        sr.color = defaultColor;
+    }
+
+    private void Die()//enemy death
+    {
+        FindObjectOfType<GameSession>().AddToScore(_scoreValue);
+        GameObject explosion = Instantiate(_deathVFX, transform.position, transform.rotation);//explosion vfx
+        //Destroy(explosion, _durationOfExplosion);
+        Destroy(gameObject);
+        AudioSource.PlayClipAtPoint(_deathSFX, transform.position, _deathSFXVol);
+
+    }
+
     private void Shoot()
     {
         // TODO Add Instantiate bullet
+        Instantiate(_bullet, _bulletParent.transform.position, Quaternion.identity);
+        AudioSource.PlayClipAtPoint(_bulletSFX, transform.position, _bulletSFXVol);
         _previousShootTime = Time.time;
     }
 
