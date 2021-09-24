@@ -42,6 +42,8 @@ public class EnemyTwoFollowPlayer : MonoBehaviour
     public GameObject _bullet; //the bullet that the enemy will shoot
     public GameObject _bulletParent; //the place where the bullet will be shot from
 
+    private int spawnedEnemiesAmount = 0;
+
     private void Start()
     {
         gameSession = GameObject.Find("Game Session").GetComponent<GameSession>();

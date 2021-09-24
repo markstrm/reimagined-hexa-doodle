@@ -15,6 +15,11 @@ public class GameSession : MonoBehaviour
     public float _respawnInvulnerabilityTime = 3.0f;
 
     public PlayerMovement player;
+    //public EnemyTwoFollowPlayer enemy;
+    public Transform _enemy; //reference to the prefab that we want to instantiate
+    public Transform[] spawnPoint; //array with all the possible spawn locations
+
+    public GameObject _EnemyHolder;
     private WaveSpawner EnemySpawner;
     public LifeCounter lifeCounter;
 
@@ -26,6 +31,11 @@ public class GameSession : MonoBehaviour
     GetComponent<Animator>();
 
      animator.SetBool("Respawn",true);
+
+        if (spawnPoint.Length == 0)
+        {
+            Debug.LogError("No spawn points referenced");
+        }
 
     }
 
@@ -125,6 +135,19 @@ public class GameSession : MonoBehaviour
     public void AddToScore(int scoreValue)
     {
         score += scoreValue;
+        if(score == 500 || score == 1500 || score == 2500 || score == 3000 || score == 3800 || score == 4500 || score == 5500 || score == 6000 || score == 6500 || score == 8000)
+        {
+            SpawnEnemy(_enemy);
+        }
+    }
+
+    void SpawnEnemy(Transform _enemy) 
+    {
+        Debug.Log("Spawning Enemy: " + _enemy.name);
+
+
+        Transform _sp = spawnPoint[Random.Range(0, spawnPoint.Length)];
+        Instantiate(_enemy, _sp.position, _sp.rotation, _EnemyHolder.transform);  //spawn enemy
     }
 
     public void ResetGame()

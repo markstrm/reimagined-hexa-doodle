@@ -14,6 +14,7 @@ public class EnemyFollowPlayer : MonoBehaviour
     public GameObject _deathVFX;
 
     GameSession gameSession;
+    public Transform[] spawnPoint; //array with all the possible spawn locations for enemy2
 
     // public GameObject _BulletHolder;
     public float _durationOfExplosion = 1f;
