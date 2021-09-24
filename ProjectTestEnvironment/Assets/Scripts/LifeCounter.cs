@@ -16,8 +16,7 @@ public class LifeCounter : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(livesRemaining);
-
+       
         for (int i = 0; i < transform.childCount; i++)
         {
             transform.GetChild(i).gameObject.SetActive(i < livesRemaining);
