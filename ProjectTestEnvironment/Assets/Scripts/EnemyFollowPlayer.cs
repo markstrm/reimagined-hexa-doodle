@@ -59,9 +59,9 @@ public class EnemyFollowPlayer : MonoBehaviour
         this.GetComponent<PolygonCollider2D>().enabled = false;
         this.gameObject.SetActive(true);
 
-        GetComponent<Animator>();
-     
-        //animator.SetBool("EnemyRespawn", false);
+        animator = gameObject.GetComponent<Animator>();
+
+        animator.SetTrigger("EnemyRespawn2");
         Invoke(nameof(TurnOnCollisions), _respawnInvulnerabilityTime);
 
 
@@ -71,7 +71,7 @@ public class EnemyFollowPlayer : MonoBehaviour
     {
         this.GetComponent<PolygonCollider2D>().enabled = true;
 
-        //animator.SetBool("EnemyRespawn", true);
+        // animator.SetBool("EnemyRespawn", true);
     }
 
     // Update is called once per frame
