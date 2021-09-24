@@ -28,6 +28,9 @@ public class EnemyFollowPlayer : MonoBehaviour
     SpriteRenderer sr;
     Color defaultColor;
 
+    public float _respawnInvulnerabilityTime = 3.0f;
+    //public Animator animator;
+
     public AudioClip _deathSFX;
     public float _deathSFXVol = 0.7f;
 
@@ -46,11 +49,24 @@ public class EnemyFollowPlayer : MonoBehaviour
     {
         //_player = GameObject.FindGameObjectWithTag("Player").transform;
 
-       gameSession = GameObject.Find("Game Session").GetComponent<GameSession>();
+        gameSession = GameObject.Find("Game Session").GetComponent<GameSession>();
         sr = GetComponent<SpriteRenderer>();
         defaultColor = sr.color;//saves default sprite color
 
         _movementSpeed = Random.Range(6, 9); //random movementspeed to try mitigate the clumping
+        this.GetComponent<PolygonCollider2D>().enabled = false;
+        this.gameObject.SetActive(true);
+
+        //animator.SetBool("Respawn", true);
+        Invoke(nameof(TurnOnCollisions), _respawnInvulnerabilityTime);
+
+    }
+
+    private void TurnOnCollisions()
+    {
+        this.GetComponent<PolygonCollider2D>().enabled = true;
+
+        //animator.SetBool("Respawn", true);
     }
 
     // Update is called once per frame
