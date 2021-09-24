@@ -7,7 +7,7 @@ public class LifeCounter : MonoBehaviour
 {
 
     //public Image[] Life;
-    public int livesRemaining = 2;
+    public int livesRemaining = 3;
 
     public void LoseLife()
     {
