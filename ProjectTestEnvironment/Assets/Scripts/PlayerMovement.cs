@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 movement;
     private Vector2 _MousePos;
 
+    public bool Speedtime = false;
     public bool canShoot = true;
     public bool canShootL = true;
     private float _oldPos;
@@ -241,4 +242,30 @@ public class PlayerMovement : MonoBehaviour
             //DontDestroyOnLoad(gameObject);
         }
     }
+
+
+    public void Speedtimer()
+    {
+
+        if(Speedtime == true){
+
+            StartCoroutine(SpeedboostDuration());
+
+
+        }
+        
+
+    }
+
+    IEnumerator SpeedboostDuration()
+    {
+        GetComponent<PlayerMovement>();
+
+        yield return new WaitForSeconds(3f);
+        speed = 12f;
+        Speedtime = false;
+        yield break;
+    }
+
+
 }

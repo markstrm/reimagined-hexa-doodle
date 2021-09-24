@@ -6,6 +6,12 @@ public class SpeedPowerup : MonoBehaviour
 {
     // Start is called before the first frame update
 
+    public PlayerMovement player;
+
+    [SerializeField]
+    private float speedboost;
+    
+
     Rigidbody2D rb;
 
     private void Awake()
@@ -29,14 +35,18 @@ public class SpeedPowerup : MonoBehaviour
     void Pickup(PlayerMovement player)
     {
 
+        player.speed = speedboost;
+        player.Speedtime = true;
+        player.Speedtimer();
 
-
-        player.speed = 24f;
         
 
         Destroy(gameObject);
 
     }
+
+ 
+
 
 
 }
