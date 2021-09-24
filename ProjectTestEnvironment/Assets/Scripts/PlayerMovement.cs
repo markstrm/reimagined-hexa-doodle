@@ -32,6 +32,8 @@ public class PlayerMovement : MonoBehaviour
     public float _shieldDelay = 1f;
     public Color _shieldColor;
 
+    public ShieldBar shieldBar;
+
     public AudioClip _deathSFX;
     public float _deathSFXVol = 0.7f;
 
@@ -57,6 +59,8 @@ public class PlayerMovement : MonoBehaviour
         _oldPos = transform.position.x;
         sr = GetComponent<SpriteRenderer>();
         defaultColor = sr.color;//saves default sprite color
+        shieldBar.SetMaxHealth(_health);
+        
     }
 
 
@@ -66,6 +70,7 @@ public class PlayerMovement : MonoBehaviour
         transform.position += Vector3.up * speed * Time.deltaTime * movement.normalized.y;
 
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, -72f, 72f), Mathf.Clamp(transform.position.y, -48f, 48f));
+        shieldBar.SetShield(_health);
     }
 
     private void FixedUpdate()
@@ -185,6 +190,7 @@ public class PlayerMovement : MonoBehaviour
             AudioSource.PlayClipAtPoint(_shieldHitSFX, transform.position, _shieldHitSFXVol);
             StartCoroutine(_DamageEffectSequence());
         }
+        shieldBar.SetShield(_health);
     }
 
     IEnumerator _DamageEffectSequence()
