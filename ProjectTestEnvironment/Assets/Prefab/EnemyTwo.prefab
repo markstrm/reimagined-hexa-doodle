@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 10
-  fireRate: 1
+  fireRate: 2
   shootingDistance: 17
   _health: 3000
   _scoreValue: 0

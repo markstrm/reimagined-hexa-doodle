@@ -6,7 +6,8 @@ using UnityEngine.SceneManagement;
 public class GameSession : MonoBehaviour
 {
     
-   public Animator animator;
+    public Animator animator;
+    public GameOverScreen gameOverScreen;
 
     int score = 0;
     public int _lives = 3;
@@ -98,21 +99,24 @@ public class GameSession : MonoBehaviour
 
     private void GameOver()
     {
+
+        gameOverScreen.Setup(score);
+
         //here we can place gameover text
         //score text etc - press X to play again
         //destroy all other game objects??
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
-        this._lives = 3;
-        this.score = 0;
+        // this._lives = 3;
+        // this.score = 0;
 
-        player._health = 300;
-        EnemySpawner._nextWave = 0;
+        //player._health = 300;
+        //EnemySpawner._nextWave = 0;
         //Invoke(nameof(Respawn), this._respawnTime);
         //later
     }
 
-  
+
 
     private void SetUpSingleton()
     {
