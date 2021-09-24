@@ -16,6 +16,7 @@ public class GameSession : MonoBehaviour
 
     public PlayerMovement player;
     private WaveSpawner EnemySpawner;
+    public LifeCounter lifeCounter;
 
     //Animation States
 
@@ -50,7 +51,7 @@ public class GameSession : MonoBehaviour
             isAlive = false;
             Invoke(nameof(Respawn), _respawnTime);
         }
-      
+
     }
 
     private void Respawn()

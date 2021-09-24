@@ -33,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
     public Color _shieldColor;
 
     public ShieldBar shieldBar;
+    public LifeCounter lifeCounter;
 
     public AudioClip _deathSFX;
     public float _deathSFXVol = 0.7f;
@@ -60,7 +61,9 @@ public class PlayerMovement : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         defaultColor = sr.color;//saves default sprite color
         shieldBar.SetMaxHealth(_health);
-        
+
+
+
     }
 
 
@@ -223,6 +226,7 @@ public class PlayerMovement : MonoBehaviour
         AudioSource.PlayClipAtPoint(_deathSFX, transform.position, _deathSFXVol);
         Destroy(explosion, _durationOfExplosion);
         this.gameObject.SetActive(false);
+        lifeCounter.LoseLife();
     }
 
     private void SetUpSingleton()
