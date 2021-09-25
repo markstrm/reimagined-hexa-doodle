@@ -110,10 +110,10 @@ MonoBehaviour:
   _shieldColor: {r: 1, g: 0.051016767, b: 0, a: 0}
   _durationOfExplosion: 1
   _deathVFX: {fileID: 5985129658539636249, guid: 35c97697b8be84f41b40f67e904e06de, type: 3}
-  _deathSFX: {fileID: 8300000, guid: fcaef2f7d0ced574b93c664dc374c02d, type: 3}
+  _deathSFX: {fileID: 8300000, guid: 809a2733e91839b419bfb12fd676942f, type: 3}
   _deathSFXVol: 0.7
-  _bulletSFX: {fileID: 8300000, guid: 1fa7474420b16ff48b60baf0f7ec641b, type: 3}
-  _bulletSFXVol: 0.7
+  _bulletSFX: {fileID: 8300000, guid: 53f88ee4fc14c9245ad065effe0d48f2, type: 3}
+  _bulletSFXVol: 2
   _shieldHitSFX: {fileID: 8300000, guid: e0a3a802126109d4aa9c53c840fdf173, type: 3}
   _shieldHitSFXVol: 0.7
   healthBar: {fileID: 0}
