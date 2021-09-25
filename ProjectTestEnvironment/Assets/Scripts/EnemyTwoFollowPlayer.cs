@@ -51,6 +51,8 @@ public class EnemyTwoFollowPlayer : MonoBehaviour
 
     private void Start()
     {
+        movementSpeed = Random.Range(8, 12); //random movementspeed to try mitigate the clumping
+
         gameSession = GameObject.Find("Game Session").GetComponent<GameSession>();
         sr = GetComponent<SpriteRenderer>();
         defaultColor = sr.color;//saves default sprite color

@@ -16,10 +16,14 @@ public class SettingsMenu : MonoBehaviour
 
     [SerializeField] private TMP_Dropdown qualityDropdown;
 
+    public Texture2D cursorArrow; //reference to our new cursor
+
     Resolution[] resolutions;
 
     void Start()
     {
+        Cursor.SetCursor(cursorArrow, Vector2.zero, CursorMode.ForceSoftware);
+
         resolutions = Screen.resolutions;
 
         resolutionDropdown.ClearOptions();

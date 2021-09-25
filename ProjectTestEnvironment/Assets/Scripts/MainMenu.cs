@@ -15,7 +15,7 @@ public class MainMenu : MonoBehaviour
 
     IEnumerator LoadLevel(int levelIndex)
     {
-        transition.SetTrigger("Start");
+        //transition.SetTrigger("Start");
 
         yield return new WaitForSeconds(0);
 

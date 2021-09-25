@@ -5,9 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class GameSession : MonoBehaviour
 {
-    
     public Animator animator;
     public GameOverScreen gameOverScreen;
+    public WinScreen winScreen;
 
     int score = 0;
     public int _lives = 3;
@@ -16,31 +16,18 @@ public class GameSession : MonoBehaviour
     public float _respawnInvulnerabilityTime = 3.0f;
 
     public PlayerMovement player;
-    //public EnemyTwoFollowPlayer enemy;
-   //    public Transform _enemy; //reference to the prefab that we want to instantiate
-   //    public Transform[] spawnPoint; //array with all the possible spawn locations
+    public EnemyTwoFollowPlayer enemy;
+    public Transform _enemy; //reference to the prefab that we want to instantiate
+    public Transform[] spawnPoint; //array with all the possible spawn locations
 
-   //    public GameObject _EnemyHolder;
+    public GameObject _EnemyHolder;
     private WaveSpawner EnemySpawner;
     public LifeCounter lifeCounter;
-
-    //Animation States
-
-
     void Start()
     {
     GetComponent<Animator>();
-
      animator.SetBool("Respawn",true);
-
-       /** if (spawnPoint.Length == 0)
-        {
-            Debug.LogError("No spawn points referenced");
-        }
-       **/
     }
-
-
 
     private void Awake()
     {
@@ -51,8 +38,6 @@ public class GameSession : MonoBehaviour
     public void PlayerDied()
     {
         _lives--;
-       // EnemySpawner.ResetWave();
-
         if(_lives <= 0) //check lives left
         {
             GameOver();
@@ -62,16 +47,11 @@ public class GameSession : MonoBehaviour
             isAlive = false;
             Invoke(nameof(Respawn), _respawnTime);
         }
-
     }
 
     private void Respawn()
     {
         player.transform.position = Vector3.zero; //spawns the player at the center of the board
-
-
-        // call method to disable collider
-
         player._health = 300;
 
         player.GetComponent<PolygonCollider2D>().enabled = false;
@@ -80,12 +60,8 @@ public class GameSession : MonoBehaviour
 
         player.canShoot = true;
         player.canShootL = true;
-
-        // animation?
         animator.SetBool("Respawn", false);
-        
-      
-        
+
         Invoke(nameof(TurnOnCollisions), _respawnInvulnerabilityTime); //3s after spawning, set the layer back to player to enable collisions
         isAlive = true;
     }
@@ -102,22 +78,7 @@ public class GameSession : MonoBehaviour
 
         Time.timeScale = 0f;
         gameOverScreen.Setup(score);
-
-        //here we can place gameover text
-        //score text etc - press X to play again
-        //destroy all other game objects??
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-
-        // this._lives = 3;
-        // this.score = 0;
-
-        //player._health = 300;
-        //EnemySpawner._nextWave = 0;
-        //Invoke(nameof(Respawn), this._respawnTime);
-        //later
     }
-
-
 
     private void SetUpSingleton()
     {
@@ -126,10 +87,6 @@ public class GameSession : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        //else
-        //{
-            //DontDestroyOnLoad(gameObject);
-       // }
     }
 
     public int GetScore()
@@ -140,21 +97,43 @@ public class GameSession : MonoBehaviour
     public void AddToScore(int scoreValue)
     {
         score += scoreValue;
-       /** if(score == 500 || score == 1500 || score == 2500 || score == 3000 || score == 3800 || score == 4500 || score == 5500 || score == 6000 || score == 6500 || score == 8000)
+        if(score == 1000 || score == 2500 || score == 5000 || score == 10000)
         {
             SpawnEnemy(_enemy);
-        }**/
+        }
+        if(score == 15000 || score == 20000 || score == 25000)
+        {
+            SpawnEnemy(_enemy);
+            SpawnEnemy(_enemy);
+        }
+        if (score == 35000 || score == 40000 || score == 50000)
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                SpawnEnemy(_enemy);
+            }
+        }
+        if (score == 75000)
+        {
+            for (int i = 0; i < 9; i++)
+            {
+                SpawnEnemy(_enemy);
+            }
+
+        }
+        if (score == 100000)
+        {
+            Time.timeScale = 0f;
+            winScreen.Setup(score);
+        }
     }
 
-   /** void SpawnEnemy(Transform _enemy) 
+    void SpawnEnemy(Transform _enemy) 
     {
         Debug.Log("Spawning Enemy: " + _enemy.name);
-
-
         Transform _sp = spawnPoint[Random.Range(0, spawnPoint.Length)];
         Instantiate(_enemy, _sp.position, _sp.rotation, _EnemyHolder.transform);  //spawn enemy
-
-    } **/
+    } 
 
     public void ResetGame()
     {
