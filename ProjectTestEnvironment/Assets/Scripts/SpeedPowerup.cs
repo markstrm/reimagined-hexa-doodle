@@ -7,6 +7,7 @@ public class SpeedPowerup : MonoBehaviour
     // Start is called before the first frame update
 
     public PlayerMovement player;
+    public float maxLifetime = 10f;
 
     [SerializeField]
     private float speedboost;
@@ -20,6 +21,11 @@ public class SpeedPowerup : MonoBehaviour
         rb=GetComponent<Rigidbody2D>();
 
     }
+    private void Start()
+    {
+        Destroy(this.gameObject, this.maxLifetime); //destroy the bullet after 10s
+    }
+
     private void OnTriggerEnter2D(Collider2D other) // If Player collides with powerup
     {
 
@@ -39,9 +45,9 @@ public class SpeedPowerup : MonoBehaviour
         player.Speedtime = true;
         player.Speedtimer();
 
-        
 
         Destroy(gameObject);
+
 
     }
 

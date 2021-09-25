@@ -259,7 +259,7 @@ public class PlayerMovement : MonoBehaviour
     {
         GetComponent<PlayerMovement>();
 
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(10f);
         speed = 12f;
         Speedtime = false;
         yield break;

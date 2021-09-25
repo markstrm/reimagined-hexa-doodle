@@ -19,6 +19,7 @@ public class EnemyTwoFollowPlayer : MonoBehaviour
     private Transform[] _wayPoints;
     private GameObject _waypointsGO;
     public GameObject healthPickUp;
+    public GameObject speedPickUp;
 
     public float _respawnInvulnerabilityTime = 3.0f;
     public Animator animator;
@@ -46,6 +47,7 @@ public class EnemyTwoFollowPlayer : MonoBehaviour
     GameSession gameSession;
     public GameObject _bullet; //the bullet that the enemy will shoot
     public GameObject _bulletParent; //the place where the bullet will be shot from
+    private PlayerMovement player;
 
     //private int spawnedEnemiesAmount = 0;
 
@@ -204,11 +206,20 @@ public class EnemyTwoFollowPlayer : MonoBehaviour
 
     private void Die()//enemy death
     {
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
         FindObjectOfType<GameSession>().AddToScore(_scoreValue);
         GameObject explosion = Instantiate(_deathVFX, transform.position, transform.rotation);//explosion vfx
         //Destroy(explosion, _durationOfExplosion);
 
-        Instantiate(healthPickUp, transform.position, Quaternion.identity);
+        if(player._health < 300) // if player is damaged, the enemy will drop health refill pickup, else if player is full health it will drop a speed pick up.
+        {
+            Instantiate(healthPickUp, transform.position, Quaternion.identity);
+        }
+        else
+        {
+            Instantiate(speedPickUp, transform.position, Quaternion.identity);
+        }
+        
         Destroy(gameObject);
         AudioSource.PlayClipAtPoint(_deathSFX, transform.position, _deathSFXVol);
 

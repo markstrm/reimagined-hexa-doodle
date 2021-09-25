@@ -179,11 +179,15 @@ public class EnemyFollowPlayer : MonoBehaviour
         if (randomNumber >= 80)
         {
 
-            if (randomNumber >= 90 && gameSession.isAlive && player._health == 100)
+            if (randomNumber >= 85 && gameSession.isAlive && player._health == 100)
             {
                 //spawn health pickup
                 Instantiate(healthPickUp, transform.position, Quaternion.identity);
                 Debug.Log(randomNumber);
+            }
+            else if (randomNumber >= 90 && gameSession.isAlive && player._health == 200)
+            {
+                Instantiate(healthPickUp, transform.position, Quaternion.identity);
             }
             else
             {
