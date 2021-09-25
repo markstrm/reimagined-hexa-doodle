@@ -101,6 +101,7 @@ MonoBehaviour:
   movementSpeed: 10
   fireRate: 2
   shootingDistance: 17
+  healthPickUp: {fileID: 6434406367299683585, guid: 146d67c78d0b8dd43ad1e0d1fdbb63a8, type: 3}
   _respawnInvulnerabilityTime: 1.5
   animator: {fileID: 0}
   _health: 3000

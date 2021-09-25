@@ -18,6 +18,7 @@ public class EnemyTwoFollowPlayer : MonoBehaviour
     private float _previousShootTime;
     private Transform[] _wayPoints;
     private GameObject _waypointsGO;
+    public GameObject healthPickUp;
 
     public float _respawnInvulnerabilityTime = 3.0f;
     public Animator animator;
@@ -204,6 +205,8 @@ public class EnemyTwoFollowPlayer : MonoBehaviour
         FindObjectOfType<GameSession>().AddToScore(_scoreValue);
         GameObject explosion = Instantiate(_deathVFX, transform.position, transform.rotation);//explosion vfx
         //Destroy(explosion, _durationOfExplosion);
+
+        Instantiate(healthPickUp, transform.position, Quaternion.identity);
         Destroy(gameObject);
         AudioSource.PlayClipAtPoint(_deathSFX, transform.position, _deathSFXVol);
 
