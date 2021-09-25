@@ -58,7 +58,7 @@ public class EnemyTwoFollowPlayer : MonoBehaviour
         _playerTransform = go.transform;
         CreateWaypoints();
         
-        healthBar.SetMaxHealth(_health);
+        //healthBar.SetMaxHealth(_health);
 
         this.GetComponent<PolygonCollider2D>().enabled = false;
         this.gameObject.SetActive(true);
@@ -176,7 +176,7 @@ public class EnemyTwoFollowPlayer : MonoBehaviour
             AudioSource.PlayClipAtPoint(_shieldHitSFX, transform.position, _shieldHitSFXVol);
             StartCoroutine(_DamageEffectSequence());
         }
-        healthBar.SetHealth(_health);
+        //healthBar.SetHealth(_health);
     }
     IEnumerator _DamageEffectSequence()
     {
