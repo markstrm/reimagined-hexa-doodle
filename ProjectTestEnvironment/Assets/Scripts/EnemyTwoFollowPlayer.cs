@@ -19,6 +19,9 @@ public class EnemyTwoFollowPlayer : MonoBehaviour
     private Transform[] _wayPoints;
     private GameObject _waypointsGO;
 
+    public float _respawnInvulnerabilityTime = 3.0f;
+    public Animator animator;
+
     public int _health = 600;
     public int _scoreValue = 300;
 
@@ -56,6 +59,18 @@ public class EnemyTwoFollowPlayer : MonoBehaviour
         CreateWaypoints();
         
         healthBar.SetMaxHealth(_health);
+
+        this.GetComponent<PolygonCollider2D>().enabled = false;
+        this.gameObject.SetActive(true);
+
+        animator = gameObject.GetComponent<Animator>();
+
+        animator.SetTrigger("Enemy2Respawn");
+        Invoke(nameof(TurnOnCollisions), _respawnInvulnerabilityTime);
+    }
+        private void TurnOnCollisions()
+    {
+        this.GetComponent<PolygonCollider2D>().enabled = true;
     }
 
     private void CreateWaypoints()

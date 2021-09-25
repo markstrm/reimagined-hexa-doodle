@@ -126,6 +126,8 @@ MonoBehaviour:
   movementSpeed: 10
   fireRate: 2
   shootingDistance: 17
+  _respawnInvulnerabilityTime: 1.5
+  animator: {fileID: 0}
   _health: 3000
   _scoreValue: 0
   _shieldDuration: 0.2
@@ -139,6 +141,7 @@ MonoBehaviour:
   _bulletSFXVol: 0.7
   _shieldHitSFX: {fileID: 8300000, guid: e0a3a802126109d4aa9c53c840fdf173, type: 3}
   _shieldHitSFXVol: 0.7
+  healthBar: {fileID: 0}
   _bullet: {fileID: 4577341841675433198, guid: ea3a593626c890d44b27e13ea0e4e8ea, type: 3}
   _bulletParent: {fileID: 1014392561248845015}
 --- !u!1 &1014392561248845015
