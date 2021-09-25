@@ -7,7 +7,10 @@ public class ShieldBar : MonoBehaviour
 {
 
     public Slider slider;
+    Color color;
 
+    float flashing;
+    public Image shieldBar;
 
     public void SetMaxHealth(int health)
     {
@@ -18,5 +21,25 @@ public class ShieldBar : MonoBehaviour
     {
 
         slider.value = health;
+
+        
     }
+
+    private void Update()
+    {
+        if (slider.value <= 100)
+        {
+            flashing += Time.deltaTime * 20f;
+        }
+        else
+        {
+            flashing = 0;
+        }
+
+        var sinedFlasing = Mathf.Sin(flashing - Mathf.PI * 0.5f) * 0.5f + 0.5f;
+
+        shieldBar.color = Color.Lerp(Color.white, Color.red, sinedFlasing);
+    }
+
 }
+
