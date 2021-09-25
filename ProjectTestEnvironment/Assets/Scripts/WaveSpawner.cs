@@ -114,24 +114,6 @@ public class WaveSpawner : MonoBehaviour
         return true;
     }
 
-   /** IEnumerator SpawnEnemy2(Transform _enemy2)
-    {
-        int score = gameSession.GetScore();
-
-        if (score == 500)
-        {
-            for (int i = 0; i < 1; i++)
-            {
-                Transform _sp = spawnPoint[Random.Range(0, spawnPoint.Length)];
-                Instantiate(_enemy2, _sp.position, _sp.rotation, _EnemyHolder.transform);
-                score = score + 100;
-                yield return new WaitForSeconds(1f);
-            }
-            yield break;
-        }
-    }
-   **/
-
     IEnumerator SpawnWave(Wave _wave) //we want to be able to wait x seconds inside the method | need to use systems.collections for IEnumerator
     {
         Debug.Log("Spawning Wave: " + _wave._name);
