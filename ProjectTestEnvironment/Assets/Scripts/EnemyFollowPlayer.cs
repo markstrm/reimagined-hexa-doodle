@@ -64,7 +64,6 @@ public class EnemyFollowPlayer : MonoBehaviour
         animator.SetTrigger("EnemyRespawn2");
         Invoke(nameof(TurnOnCollisions), _respawnInvulnerabilityTime);
 
-
     }
 
     private void TurnOnCollisions()

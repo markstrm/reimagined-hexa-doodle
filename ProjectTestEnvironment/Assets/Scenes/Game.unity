@@ -316,7 +316,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 15.7452, y: 106}
+  m_AnchoredPosition: {x: -2, y: 106}
   m_SizeDelta: {x: 401.4905, y: 75.28769}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &129671558
@@ -4428,7 +4428,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 1.5228729, y: 0}
+  m_AnchoredPosition: {x: 1.5228577, y: 0}
   m_SizeDelta: {x: -27.4133, y: -15.2295}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1105356626
@@ -5358,6 +5358,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1422924705}
   - component: {fileID: 1422924706}
+  - component: {fileID: 1422924707}
   m_Layer: 5
   m_Name: EnemyHealthBar
   m_TagString: Untagged
@@ -5374,7 +5375,7 @@ RectTransform:
   m_GameObject: {fileID: 1422924704}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.73172, y: 0.73172, z: 0.73172}
   m_Children:
   - {fileID: 1105356625}
   - {fileID: 672363269}
@@ -5437,6 +5438,19 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1422924707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1422924704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2eb532c348050b4cae1eaceabd8d674, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 1422924706}
 --- !u!1 &1441955012
 GameObject:
   m_ObjectHideFlags: 0

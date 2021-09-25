@@ -19,7 +19,7 @@ public class EnemyTwoFollowPlayer : MonoBehaviour
     private Transform[] _wayPoints;
     private GameObject _waypointsGO;
 
-    public float _health = 600;
+    public int _health = 600;
     public int _scoreValue = 300;
 
     public float _shieldDuration = 1f;
@@ -37,6 +37,7 @@ public class EnemyTwoFollowPlayer : MonoBehaviour
     public float _bulletSFXVol = 0.7f;
     public AudioClip _shieldHitSFX;
     public float _shieldHitSFXVol = 0.7f;
+    public EnemyHealthBar healthBar;
 
     GameSession gameSession;
     public GameObject _bullet; //the bullet that the enemy will shoot
@@ -53,6 +54,8 @@ public class EnemyTwoFollowPlayer : MonoBehaviour
         if (go == null) return;
         _playerTransform = go.transform;
         CreateWaypoints();
+        
+        healthBar.SetMaxHealth(_health);
     }
 
     private void CreateWaypoints()
@@ -70,6 +73,8 @@ public class EnemyTwoFollowPlayer : MonoBehaviour
         _waypointsGO.transform.position = _playerTransform.position;
         RotateTowardsPlayer();
         float distance = Vector2.Distance(_playerTransform.position, transform.position);
+        //healthBar.SetHealth((int)_health);
+
         if (_isInRange)
         {
             if (Vector2.Distance(_wayPoints[_currentWaypoint].position, transform.position) < 0.1f)
@@ -156,6 +161,7 @@ public class EnemyTwoFollowPlayer : MonoBehaviour
             AudioSource.PlayClipAtPoint(_shieldHitSFX, transform.position, _shieldHitSFXVol);
             StartCoroutine(_DamageEffectSequence());
         }
+        healthBar.SetHealth(_health);
     }
     IEnumerator _DamageEffectSequence()
     {

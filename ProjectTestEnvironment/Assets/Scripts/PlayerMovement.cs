@@ -63,8 +63,6 @@ public class PlayerMovement : MonoBehaviour
         defaultColor = sr.color;//saves default sprite color
         shieldBar.SetMaxHealth(_health);
 
-
-
     }
 
 
