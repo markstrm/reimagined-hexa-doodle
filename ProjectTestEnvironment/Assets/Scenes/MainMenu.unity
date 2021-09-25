@@ -2083,7 +2083,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &539813192
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7678,6 +7678,10 @@ PrefabInstance:
     - target: {fileID: 8206573873336344463, guid: 1be45381a9433c4499986432cab58751, type: 3}
       propertyPath: m_Name
       value: LevelLoader
+      objectReference: {fileID: 0}
+    - target: {fileID: 8206573873336344463, guid: 1be45381a9433c4499986432cab58751, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8206573874332588434, guid: 1be45381a9433c4499986432cab58751, type: 3}
       propertyPath: m_Alpha
