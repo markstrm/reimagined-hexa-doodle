@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1014392560454912486}
   - component: {fileID: 1014392560454912485}
-  - component: {fileID: 3693700813193213024}
   - component: {fileID: 1014392560454912506}
+  - component: {fileID: 4866549751178579507}
   m_Layer: 6
   m_Name: EnemyTwo
   m_TagString: Enemy2
@@ -85,32 +85,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &3693700813193213024
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1014392560454912507}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.002516508, y: 0.0050326586}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.98, y: 1.5}
-    newSize: {x: 0.64, y: 0.64}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.6528811, y: 1.3490219}
-  m_EdgeRadius: 0
 --- !u!114 &1014392560454912506
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,6 +118,62 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   _bullet: {fileID: 4577341841675433198, guid: ea3a593626c890d44b27e13ea0e4e8ea, type: 3}
   _bulletParent: {fileID: 1014392561248845015}
+--- !u!60 &4866549751178579507
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1014392560454912507}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.98, y: 1.5}
+    newSize: {x: 0.64, y: 0.64}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.7269541, y: -0.33008066}
+      - {x: 0.8192989, y: -0.13008027}
+      - {x: 0.8040671, y: 0.19625852}
+      - {x: 0.7501612, y: 0.25773528}
+      - {x: 0.75164384, y: 0.5392989}
+      - {x: 0.6623448, y: 0.63164383}
+      - {x: 0.4776275, y: 0.54888916}
+      - {x: 0.10197375, y: 0.55041647}
+      - {x: 0.08797896, y: 0.6687995}
+      - {x: -0.09468977, y: 0.67312634}
+      - {x: -0.12398873, y: 0.54711515}
+      - {x: -0.2778969, y: 0.5962527}
+      - {x: -0.4487591, y: 0.5532877}
+      - {x: -0.64851725, y: 0.62242526}
+      - {x: -0.756253, y: 0.5623449}
+      - {x: -0.7639888, y: 0.42687285}
+      - {x: -0.796253, y: -0.1315628}
+      - {x: -0.74703467, y: -0.30851746}
+      - {x: -0.60539085, y: -0.31633338}
+      - {x: -0.20859793, y: -0.34547132}
+      - {x: -0.1332071, y: -0.49469}
+      - {x: -0.09460917, y: -0.4779776}
+      - {x: 0.11304593, y: -0.46415007}
+      - {x: 0.19617243, y: -0.34727648}
+      - {x: 0.32843676, y: -0.33164382}
+      - {x: 0.5731265, y: -0.31477016}
+    - - {x: -0.03, y: -0.53}
+      - {x: 0.01, y: -0.48999998}
+      - {x: -0.01, y: -0.48999998}
+      - {x: 0.03, y: -0.53}
+      - {x: -0.020701038, y: -0.4778163}
 --- !u!1 &1014392561248845015
 GameObject:
   m_ObjectHideFlags: 0
