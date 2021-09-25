@@ -109,7 +109,7 @@ MonoBehaviour:
   _shieldDelay: 0
   _shieldColor: {r: 1, g: 0.051016767, b: 0, a: 0}
   _durationOfExplosion: 1
-  _deathVFX: {fileID: 4803261777714319761, guid: 318aa05ff3dce6a44a71d539c60148b4, type: 3}
+  _deathVFX: {fileID: 5985129658539636249, guid: 35c97697b8be84f41b40f67e904e06de, type: 3}
   _deathSFX: {fileID: 8300000, guid: fcaef2f7d0ced574b93c664dc374c02d, type: 3}
   _deathSFXVol: 0.7
   _bulletSFX: {fileID: 8300000, guid: 1fa7474420b16ff48b60baf0f7ec641b, type: 3}
