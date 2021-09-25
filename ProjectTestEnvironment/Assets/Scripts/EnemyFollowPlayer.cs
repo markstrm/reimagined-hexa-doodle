@@ -13,6 +13,14 @@ public class EnemyFollowPlayer : MonoBehaviour
     public float _health = 100;
     public GameObject _deathVFX;
 
+
+    private int randomNumber;
+    private int dropChance = 90;
+
+   // public PlayerMovement player;
+    public GameObject speedPickUp;
+    public GameObject healthPickUp;
+
     GameSession gameSession;
     public Transform[] spawnPoint; //array with all the possible spawn locations for enemy2
 
@@ -43,6 +51,8 @@ public class EnemyFollowPlayer : MonoBehaviour
     public GameObject _bullet; //the bullet that the enemy will shoot
     public GameObject _bulletParent; //the place where the bullet will be shot from
     private Transform _player; //target the player
+
+    private PlayerMovement player;
 
     // Start is called before the first frame update
     void Start()
@@ -154,7 +164,30 @@ public class EnemyFollowPlayer : MonoBehaviour
     {
         FindObjectOfType<GameSession>().AddToScore(_scoreValue);
         GameObject explosion = Instantiate(_deathVFX, transform.position, transform.rotation);//explosion vfx
-        //Destroy(explosion, _durationOfExplosion);
+                                                                                              //Destroy(explosion, _durationOfExplosion);
+       
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+        
+
+        randomNumber = Random.Range(0, 100);
+        Debug.Log(randomNumber);
+        if (randomNumber >= 90)
+        {
+
+            if (gameSession.isAlive && player._health == 100)
+            {
+                //spawn health pickup
+                Instantiate(healthPickUp, transform.position, Quaternion.identity);
+                Debug.Log(randomNumber);
+            }
+            else
+            {
+                //spawn speed pickup
+                Instantiate(speedPickUp, transform.position, Quaternion.identity);
+                Debug.Log(randomNumber);
+            }
+        }
+
         Destroy(gameObject);
         AudioSource.PlayClipAtPoint(_deathSFX, transform.position, _deathSFXVol);
 

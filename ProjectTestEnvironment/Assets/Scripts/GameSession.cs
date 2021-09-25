@@ -17,10 +17,10 @@ public class GameSession : MonoBehaviour
 
     public PlayerMovement player;
     //public EnemyTwoFollowPlayer enemy;
-    public Transform _enemy; //reference to the prefab that we want to instantiate
-    public Transform[] spawnPoint; //array with all the possible spawn locations
+   //    public Transform _enemy; //reference to the prefab that we want to instantiate
+   //    public Transform[] spawnPoint; //array with all the possible spawn locations
 
-    public GameObject _EnemyHolder;
+   //    public GameObject _EnemyHolder;
     private WaveSpawner EnemySpawner;
     public LifeCounter lifeCounter;
 
@@ -33,11 +33,11 @@ public class GameSession : MonoBehaviour
 
      animator.SetBool("Respawn",true);
 
-        if (spawnPoint.Length == 0)
+       /** if (spawnPoint.Length == 0)
         {
             Debug.LogError("No spawn points referenced");
         }
-
+       **/
     }
 
 
@@ -100,6 +100,7 @@ public class GameSession : MonoBehaviour
     private void GameOver()
     {
 
+        Time.timeScale = 0f;
         gameOverScreen.Setup(score);
 
         //here we can place gameover text
@@ -125,10 +126,10 @@ public class GameSession : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        else
-        {
+        //else
+        //{
             //DontDestroyOnLoad(gameObject);
-        }
+       // }
     }
 
     public int GetScore()
@@ -139,13 +140,13 @@ public class GameSession : MonoBehaviour
     public void AddToScore(int scoreValue)
     {
         score += scoreValue;
-        if(score == 500 || score == 1500 || score == 2500 || score == 3000 || score == 3800 || score == 4500 || score == 5500 || score == 6000 || score == 6500 || score == 8000)
+       /** if(score == 500 || score == 1500 || score == 2500 || score == 3000 || score == 3800 || score == 4500 || score == 5500 || score == 6000 || score == 6500 || score == 8000)
         {
             SpawnEnemy(_enemy);
-        }
+        }**/
     }
 
-    void SpawnEnemy(Transform _enemy) 
+   /** void SpawnEnemy(Transform _enemy) 
     {
         Debug.Log("Spawning Enemy: " + _enemy.name);
 
@@ -153,7 +154,7 @@ public class GameSession : MonoBehaviour
         Transform _sp = spawnPoint[Random.Range(0, spawnPoint.Length)];
         Instantiate(_enemy, _sp.position, _sp.rotation, _EnemyHolder.transform);  //spawn enemy
 
-    }
+    } **/
 
     public void ResetGame()
     {

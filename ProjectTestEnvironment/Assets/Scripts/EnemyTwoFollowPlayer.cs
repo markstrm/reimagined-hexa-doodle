@@ -23,7 +23,7 @@ public class EnemyTwoFollowPlayer : MonoBehaviour
     public Animator animator;
 
     public int _health = 600;
-    public int _scoreValue = 300;
+    public int _scoreValue = 500;
 
     public float _shieldDuration = 1f;
     public float _shieldDelay = 1f;
@@ -46,7 +46,7 @@ public class EnemyTwoFollowPlayer : MonoBehaviour
     public GameObject _bullet; //the bullet that the enemy will shoot
     public GameObject _bulletParent; //the place where the bullet will be shot from
 
-    private int spawnedEnemiesAmount = 0;
+    //private int spawnedEnemiesAmount = 0;
 
     private void Start()
     {

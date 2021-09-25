@@ -10,6 +10,7 @@ public class MainMenu : MonoBehaviour
     public void PlayGame()
     {
         StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
+        Time.timeScale = 1f;
     }
 
     IEnumerator LoadLevel(int levelIndex)

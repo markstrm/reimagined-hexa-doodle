@@ -10,6 +10,7 @@ TagManager:
   - Enemy Projectile
   - Laser
   - Enemy2
+  - Game Session
   layers:
   - Default
   - TransparentFX
