@@ -167,9 +167,6 @@ public class EnemyFollowPlayer : MonoBehaviour
         FindObjectOfType<GameSession>().AddToScore(_scoreValue);
         GameObject explosion = Instantiate(_deathVFX, transform.position, transform.rotation);
 
-        //explosion vfx
-        //Destroy(explosion, _durationOfExplosion);
-       
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
         _EnemyHolder = GameObject.FindGameObjectWithTag("EnemyHolder");
 
