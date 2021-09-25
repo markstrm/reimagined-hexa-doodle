@@ -106,10 +106,10 @@ MonoBehaviour:
   _scoreValue: 100
   _health: 200
   _deathVFX: {fileID: 4803261777714319761, guid: 318aa05ff3dce6a44a71d539c60148b4, type: 3}
-  player: {fileID: 0}
   speedPickUp: {fileID: 6434406367299683585, guid: 536de6fa4c94acb4db69b35822079123, type: 3}
   healthPickUp: {fileID: 6434406367299683585, guid: 146d67c78d0b8dd43ad1e0d1fdbb63a8, type: 3}
-  spawnPoint: []
+  spawnPoint:
+  - {fileID: 0}
   _durationOfExplosion: 1
   _shieldDuration: 0.2
   _shieldDelay: 0
@@ -124,6 +124,7 @@ MonoBehaviour:
   _shieldHitSFXVol: 1
   _bullet: {fileID: 4577341841675433198, guid: 6736d709680019e499793be2ad19075c, type: 3}
   _bulletParent: {fileID: 5749915850677261010}
+  _enemy: {fileID: 1014392560454912486, guid: a2aa76ae152663f4a9da0ddb25c8922d, type: 3}
 --- !u!60 &844886379801088613
 PolygonCollider2D:
   m_ObjectHideFlags: 0

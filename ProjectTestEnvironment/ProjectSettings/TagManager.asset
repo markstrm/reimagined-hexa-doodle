@@ -11,6 +11,8 @@ TagManager:
   - Laser
   - Enemy2
   - Game Session
+  - EnemyHolder
+  - E2S
   layers:
   - Default
   - TransparentFX

@@ -22,7 +22,7 @@ public class EnemyFollowPlayer : MonoBehaviour
     public GameObject healthPickUp;
 
     GameSession gameSession;
-    public Transform[] spawnPoint; //array with all the possible spawn locations for enemy2
+    public GameObject spawnPoint; //array with all the possible spawn locations for enemy2
 
     // public GameObject _BulletHolder;
     public float _durationOfExplosion = 1f;
@@ -53,6 +53,8 @@ public class EnemyFollowPlayer : MonoBehaviour
     private Transform _player; //target the player
 
     private PlayerMovement player;
+    private GameObject _EnemyHolder;
+    public Transform _enemy; //reference to the prefab that we want to instantiate
 
     // Start is called before the first frame update
     void Start()
@@ -163,14 +165,17 @@ public class EnemyFollowPlayer : MonoBehaviour
     private void Die()//enemy death
     {
         FindObjectOfType<GameSession>().AddToScore(_scoreValue);
-        GameObject explosion = Instantiate(_deathVFX, transform.position, transform.rotation);//explosion vfx
-                                                                                              //Destroy(explosion, _durationOfExplosion);
+        GameObject explosion = Instantiate(_deathVFX, transform.position, transform.rotation);
+
+        //explosion vfx
+        //Destroy(explosion, _durationOfExplosion);
        
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
-        
+        _EnemyHolder = GameObject.FindGameObjectWithTag("EnemyHolder");
 
         randomNumber = Random.Range(0, 100);
         Debug.Log(randomNumber);
+
         if (randomNumber >= 90)
         {
 
@@ -188,10 +193,20 @@ public class EnemyFollowPlayer : MonoBehaviour
             }
         }
 
+        if(randomNumber >= 95)
+        {
+            var spawnPoints = GameObject.FindGameObjectsWithTag("E2S");
+            Debug.Log("Spawn points " + spawnPoints.Length);
+
+            Transform _sp = spawnPoints[Random.Range(0, spawnPoints.Length)].transform;
+            Instantiate(_enemy, _sp.position, _sp.rotation, _EnemyHolder.transform);  //spawn enemy
+        }
+
         Destroy(gameObject);
         AudioSource.PlayClipAtPoint(_deathSFX, transform.position, _deathSFXVol);
 
     }
+
 
     private void OnDrawGizmosSelected() //draws a circle with a size that we can decide
     {
