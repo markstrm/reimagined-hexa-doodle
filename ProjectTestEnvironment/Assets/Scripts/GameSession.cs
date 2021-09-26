@@ -9,7 +9,7 @@ public class GameSession : MonoBehaviour
     public GameOverScreen gameOverScreen;
     public WinScreen winScreen;
 
-    int score = 0;
+    public int score = 0;
     public int _lives = 3;
     public bool isAlive = true;
     public float _respawnTime = 2.0f;
@@ -97,7 +97,7 @@ public class GameSession : MonoBehaviour
     public void AddToScore(int scoreValue)
     {
         score += scoreValue;
-        if(score == 1000 || score == 2500 || score == 5000 || score == 10000)
+        if(score == 1000 || score == 5000 || score == 10000)
         {
             SpawnEnemy(_enemy);
         }

@@ -1322,9 +1322,9 @@ MonoBehaviour:
   shieldBar: {fileID: 129671558}
   lifeCounter: {fileID: 1621689833}
   _deathSFX: {fileID: 8300000, guid: 97e59177993a42241ba86e0564808dcb, type: 3}
-  _deathSFXVol: 1
+  _deathSFXVol: 0.75
   _bulletSFX: {fileID: 8300000, guid: 91e34261b9ff89f4a85173b2f5bf9704, type: 3}
-  _bulletSFXVol: 1
+  _bulletSFXVol: 0.5
   _shieldHitSFX: {fileID: 8300000, guid: 64103bed04460d9489fbc8312ab4d949, type: 3}
   _shieldHitSFXVol: 1.5
   _laserSFX: {fileID: 8300000, guid: a6e6a3d2736805d449800f69976aaa71, type: 3}
@@ -2024,7 +2024,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 24300002, guid: 0924e208d1c4e7342b65886cd98ad99d, type: 2}
   m_audioClip: {fileID: 8300000, guid: 39eb4320caab20440ade205428dec2f5, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.2
+  m_Volume: 0.175
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -2542,7 +2542,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0000019073486, y: -1.000001, z: -10}
+  m_LocalPosition: {x: 0.000002861023, y: -1.000001, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -8594,107 +8594,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7980335098046287210, guid: 058510f4c17ae7e45ad9d051e2e36692, type: 3}
   m_PrefabInstance: {fileID: 1678397814}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1703932310
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1703932312}
-  - component: {fileID: 1703932311}
-  m_Layer: 0
-  m_Name: BigEnemySpawner
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1703932311
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1703932310}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d776e2c357646543abbf50b745a9958, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnRate:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 2
-      outSlope: 2
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 0.100014895
-      value: 1.1582313
-      inSlope: 3.042057
-      outSlope: 3.042057
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.3794975
-      value: 3.659746
-      inSlope: 5.018184
-      outSlope: 5.018184
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.6438891
-      value: 5.9950433
-      inSlope: 5.311015
-      outSlope: 5.311015
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1.9984131
-      value: 10
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  _enemy: {fileID: 1014392560454912486, guid: a2aa76ae152663f4a9da0ddb25c8922d, type: 3}
-  spawnPoint:
-  - {fileID: 841878746}
-  - {fileID: 1867657717}
-  - {fileID: 2126930141}
-  - {fileID: 2014347166}
-  _EnemyHolder: {fileID: 1291693394}
---- !u!4 &1703932312
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1703932310}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 376.56567, y: 126.340866, z: -145.26866}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 13
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1713297176
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14790,7 +14689,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2059238922}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0000019073486, y: -1.000001, z: -10}
+  m_LocalPosition: {x: 0.000002861023, y: -1.000001, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 425623936}

@@ -133,7 +133,7 @@ public class PlayerMovement : MonoBehaviour
     IEnumerator CanShoot()
     {
         canShoot = false;
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(1.25f);
         canShoot = true;
     }
 

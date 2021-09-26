@@ -196,11 +196,22 @@ public class EnemyFollowPlayer : MonoBehaviour
 
         if(randomNumber >= 95)
         {
-            var spawnPoints = GameObject.FindGameObjectsWithTag("E2S");
-            Debug.Log("Spawn points " + spawnPoints.Length);
+            if (gameSession.score > 10000)
+            {
+                var spawnPoints = GameObject.FindGameObjectsWithTag("E2S");
+                Debug.Log("Spawn points " + spawnPoints.Length);
 
-            Transform _sp = spawnPoints[Random.Range(0, spawnPoints.Length)].transform;
-            Instantiate(_enemy, _sp.position, _sp.rotation, _EnemyHolder.transform);  //spawn enemy
+                Transform _sp = spawnPoints[Random.Range(0, spawnPoints.Length)].transform;
+                Instantiate(_enemy, _sp.position, _sp.rotation, _EnemyHolder.transform);  //spawn enemy
+            }
+            else if(randomNumber >= 97)
+            {
+                var spawnPoints = GameObject.FindGameObjectsWithTag("E2S");
+                Debug.Log("Spawn points " + spawnPoints.Length);
+
+                Transform _sp = spawnPoints[Random.Range(0, spawnPoints.Length)].transform;
+                Instantiate(_enemy, _sp.position, _sp.rotation, _EnemyHolder.transform);  //spawn enemy
+            }
         }
 
         Destroy(gameObject);

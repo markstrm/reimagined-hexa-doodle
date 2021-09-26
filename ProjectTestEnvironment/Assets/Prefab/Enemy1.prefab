@@ -108,8 +108,7 @@ MonoBehaviour:
   _deathVFX: {fileID: 4803261777714319761, guid: 318aa05ff3dce6a44a71d539c60148b4, type: 3}
   speedPickUp: {fileID: 6434406367299683585, guid: 536de6fa4c94acb4db69b35822079123, type: 3}
   healthPickUp: {fileID: 6434406367299683585, guid: 146d67c78d0b8dd43ad1e0d1fdbb63a8, type: 3}
-  spawnPoint:
-  - {fileID: 0}
+  spawnPoint: {fileID: 0}
   _durationOfExplosion: 1
   _shieldDuration: 0.2
   _shieldDelay: 0
@@ -117,7 +116,7 @@ MonoBehaviour:
   _respawnInvulnerabilityTime: 1.5
   animator: {fileID: 0}
   _deathSFX: {fileID: 8300000, guid: fcaef2f7d0ced574b93c664dc374c02d, type: 3}
-  _deathSFXVol: 1
+  _deathSFXVol: 0.75
   _bulletSFX: {fileID: 8300000, guid: 1fa7474420b16ff48b60baf0f7ec641b, type: 3}
   _bulletSFXVol: 1
   _shieldHitSFX: {fileID: 8300000, guid: e0a3a802126109d4aa9c53c840fdf173, type: 3}
