@@ -7,20 +7,18 @@ using UnityEngine.SceneManagement;
 
 public class WinScreen : MonoBehaviour
 {
-    public TMP_Text pointsText;
-
+    public TMP_Text PointsText;
 
     public void Setup(int score)
     {
         gameObject.SetActive(true);
-        pointsText.text = score.ToString() + " POINTS";
+        PointsText.text = score.ToString() + " POINTS";
     }
 
     public void RestartButton()
     {
         SceneManager.LoadScene("Game");
         Time.timeScale = 1f;
-
     }
 
     public void ExitButton()

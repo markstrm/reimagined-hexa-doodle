@@ -189,7 +189,7 @@ MonoBehaviour:
   _respawnInvulnerabilityTime: 1.5
   animator: {fileID: 0}
   _health: 3000
-  _scoreValue: 0
+  _scoreValue: 300
   _shieldDuration: 0.2
   _shieldDelay: 0
   _shieldColor: {r: 1, g: 0.051016767, b: 0, a: 0}

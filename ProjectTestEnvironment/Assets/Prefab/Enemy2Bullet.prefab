@@ -120,8 +120,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e05c4ef2e7295154a9c427b171d826bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 3
-  maxLifetime: 10
+  Speed: 3
+  MaxLifetime: 10
 --- !u!114 &6571795539693188623
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -134,7 +134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20849bff4d00bfe478e7f45ef95c19c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 150
+  _damage: 150
   _ionBurstSFX: {fileID: 0}
   _ionBurstSFXVol: 0
   _burstVFX: {fileID: 0}

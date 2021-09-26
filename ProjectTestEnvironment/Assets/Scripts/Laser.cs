@@ -6,8 +6,8 @@ public class Laser : MonoBehaviour
 {
     private Rigidbody2D _Rigidbody;
 
-    public float speed = 4000f;
-    public float maxLifetime = 8f;
+    public float Speed = 4000f;
+    public float MaxLifetime = 8f;
 
     private void Awake()
     {
@@ -16,9 +16,9 @@ public class Laser : MonoBehaviour
 
     public void Project(Vector2 direction)
     {
-        _Rigidbody.AddForce(direction * this.speed); //force of the bullet
+        _Rigidbody.AddForce(direction * this.Speed); //force of the bullet
 
-        Destroy(this.gameObject, this.maxLifetime); //destroy the bullet after 8s
+        Destroy(this.gameObject, this.MaxLifetime); //destroy the bullet after 8s
     }
 
 }

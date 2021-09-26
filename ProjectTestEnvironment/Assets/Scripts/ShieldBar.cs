@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class ShieldBar : MonoBehaviour
 {
 
-    public Slider slider;
+    public Slider Slider;
     Color color;
 
     float flashing;
@@ -14,20 +14,17 @@ public class ShieldBar : MonoBehaviour
 
     public void SetMaxHealth(int health)
     {
-        slider.maxValue = health ;
-        slider.value = health;
+        Slider.maxValue = health;
+        Slider.value = health;
     }
     public void SetShield(int health)
     {
-
-        slider.value = health;
-
-        
+        Slider.value = health;
     }
 
     private void Update()
     {
-        if (slider.value <= 100)
+        if (Slider.value <= 100)
         {
             flashing += Time.deltaTime * 20f;
         }
@@ -37,7 +34,6 @@ public class ShieldBar : MonoBehaviour
         }
 
         var sinedFlasing = Mathf.Sin(flashing - Mathf.PI * 0.5f) * 0.5f + 0.5f;
-
         shieldBar.color = Color.Lerp(Color.white, Color.red, sinedFlasing);
     }
 

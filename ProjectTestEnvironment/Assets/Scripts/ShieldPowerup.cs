@@ -5,7 +5,7 @@ using UnityEngine;
 public class ShieldPowerup : MonoBehaviour
 {
     public PlayerMovement player;
-    public float maxLifetime = 10f;
+    public float MaxLifetime = 10f;
 
     Rigidbody2D rb;
 
@@ -18,7 +18,7 @@ public class ShieldPowerup : MonoBehaviour
 
     private void Start()
     {
-        Destroy(this.gameObject, this.maxLifetime); //destroy the bullet after 10s
+        Destroy(this.gameObject, this.MaxLifetime); //destroy the bullet after 10s
     }
 
     private void OnTriggerEnter2D(Collider2D other) // If Player collides with powerup

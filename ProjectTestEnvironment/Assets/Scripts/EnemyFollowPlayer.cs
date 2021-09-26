@@ -13,9 +13,7 @@ public class EnemyFollowPlayer : MonoBehaviour
     public float _health = 100;
     public GameObject _deathVFX;
 
-
     private int randomNumber;
-    private int dropChance = 90;
 
    // public PlayerMovement player;
     public GameObject speedPickUp;

@@ -5,18 +5,18 @@ using UnityEngine.UI;
 
 public class EnemyHealthBar : MonoBehaviour
 {
-    public Slider slider;
+    public Slider Slider;
 
 
     public void SetMaxHealth(int health)
     {
-        slider.maxValue = health;
-        slider.value = health;
+        Slider.maxValue = health;
+        Slider.value = health;
     }
     public void SetHealth(int health)
     {
 
-        slider.value = health;
+        Slider.value = health;
     }
 
 

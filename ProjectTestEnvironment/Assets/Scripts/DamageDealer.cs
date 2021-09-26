@@ -6,14 +6,14 @@ public class DamageDealer : MonoBehaviour
 
 {
 
-    [SerializeField] int damage = 100;
+    [SerializeField] int _damage = 100;
     [SerializeField] AudioClip _ionBurstSFX;
     [SerializeField] float _ionBurstSFXVol;
     [SerializeField] ParticleSystem _burstVFX;
 
     public int GetDamage()
     {
-        return damage;
+        return _damage;
     }
 
     public void Hit()

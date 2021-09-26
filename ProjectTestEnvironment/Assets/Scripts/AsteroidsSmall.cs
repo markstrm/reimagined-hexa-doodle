@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class AsteroidsSmall : MonoBehaviour
 {
-    private float _Rotation;
-    public float _RotationSpeed;
-    public bool _ClockwiseRotation;
+    private float _rotation;
+    public float RotationSpeed;
+    public bool ClockwiseRotation;
 
     private Rigidbody2D _Rigidbody;
 
@@ -18,16 +18,16 @@ public class AsteroidsSmall : MonoBehaviour
 
     void Update()
     {
-        if (_ClockwiseRotation == false)
+        if (ClockwiseRotation == false)
         {
-            _Rotation += Time.deltaTime * _RotationSpeed;
+            _rotation += Time.deltaTime * RotationSpeed;
         }
         else
         {
-            _Rotation += -Time.deltaTime * _RotationSpeed;
+            _rotation += -Time.deltaTime * RotationSpeed;
         }
 
-        transform.rotation = Quaternion.Euler(0, 0, _Rotation);
+        transform.rotation = Quaternion.Euler(0, 0, _rotation);
 
     }
 }

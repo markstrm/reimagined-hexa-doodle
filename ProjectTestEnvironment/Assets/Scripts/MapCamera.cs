@@ -5,10 +5,10 @@ using UnityEngine;
 public class MapCamera : MonoBehaviour
 {
 
-    public Transform target;
+    public Transform Target;
  
     void Update()
     {
-        transform.position = new Vector2(target.position.x, transform.position.y); //minimap camera will follow the player
+        transform.position = new Vector2(Target.position.x, transform.position.y); //minimap camera will follow the player
     }
 }

@@ -8,60 +8,60 @@ using TMPro;
 
 public class SettingsMenu : MonoBehaviour
 {
-    private const int defaultQualityIndex = 3;
+    private const int _defaultQualityIndex = 3;
 
-    [SerializeField] private AudioMixer audioMixer;
+    [SerializeField] private AudioMixer _audioMixer;
 
-    [SerializeField] private TMP_Dropdown resolutionDropdown;
+    [SerializeField] private TMP_Dropdown _resolutionDropdown;
 
-    [SerializeField] private TMP_Dropdown qualityDropdown;
+    [SerializeField] private TMP_Dropdown _qualityDropdown;
 
-    public Texture2D cursorArrow; //reference to our new cursor
+    public Texture2D CursorArrow; //reference to our new cursor
 
-    Resolution[] resolutions;
+    Resolution[] _resolutions;
 
     void Start()
     {
-        Cursor.SetCursor(cursorArrow, Vector2.zero, CursorMode.ForceSoftware);
+        Cursor.SetCursor(CursorArrow, Vector2.zero, CursorMode.ForceSoftware);
 
-        resolutions = Screen.resolutions;
+        _resolutions = Screen.resolutions;
 
-        resolutionDropdown.ClearOptions();
+        _resolutionDropdown.ClearOptions();
 
         List<string> options = new List<string>();
 
         int currentResolutionIndex = 0;
 
-        for (int i = 0; i < resolutions.Length; i++)
+        for (int i = 0; i < _resolutions.Length; i++)
         {
-            string option = resolutions[i].width + " x " + resolutions[i].height;
+            string option = _resolutions[i].width + " x " + _resolutions[i].height;
             options.Add(option);
 
-            if(resolutions[i].width == Screen.currentResolution.width && resolutions[i].height == Screen.currentResolution.height)
+            if(_resolutions[i].width == Screen.currentResolution.width && _resolutions[i].height == Screen.currentResolution.height)
             {
                 currentResolutionIndex = i;
             }
 
         }
 
-        resolutionDropdown.AddOptions(options);
-        resolutionDropdown.value = currentResolutionIndex;
-        resolutionDropdown.RefreshShownValue();
+        _resolutionDropdown.AddOptions(options);
+        _resolutionDropdown.value = currentResolutionIndex;
+        _resolutionDropdown.RefreshShownValue();
 
-        qualityDropdown.value = defaultQualityIndex;
-        qualityDropdown.RefreshShownValue();
+        _qualityDropdown.value = _defaultQualityIndex;
+        _qualityDropdown.RefreshShownValue();
     }
 
     public void SetResolution(int resolutionIndex)
     {
-        Resolution resolution = resolutions[resolutionIndex];
+        Resolution resolution = _resolutions[resolutionIndex];
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
     }
 
     public void SetVolume(float volume)
     {
 
-        audioMixer.SetFloat("volume", volume);
+        _audioMixer.SetFloat("volume", volume);
         Debug.Log(volume);
     }
 

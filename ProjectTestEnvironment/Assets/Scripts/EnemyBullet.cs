@@ -5,20 +5,17 @@ using UnityEngine;
 public class EnemyBullet : MonoBehaviour
 {
     GameObject _target;
-    public float _speed;
+    public float Speed;
     Rigidbody2D _rigidbody;
-    public float maxLifetime = 1f;
+    public float MaxLifetime = 1f;
     private float _searchCountdown = 0.5f;
-
 
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>(); //reference to the rigidbody
         _target = GameObject.FindGameObjectWithTag("Player"); //when spawn, will look at the player
-        Vector2 _moveDirection = (_target.transform.position - transform.position).normalized * _speed;
-        _rigidbody.velocity = _moveDirection * _speed;
-        
-
+        Vector2 _moveDirection = (_target.transform.position - transform.position).normalized * Speed;
+        _rigidbody.velocity = _moveDirection * Speed;        
         transform.eulerAngles = new Vector3(0, 0, Vector2ToAngle(_moveDirection) - 90f);
         
     }
@@ -27,7 +24,7 @@ public class EnemyBullet : MonoBehaviour
     {
         if(_BulletExists() == true)
         {
-            Destroy(this.gameObject, this.maxLifetime); //destroy the bullet after 0.5s
+            Destroy(this.gameObject, this.MaxLifetime); //destroy the bullet after 0.5s
         }
     }
 

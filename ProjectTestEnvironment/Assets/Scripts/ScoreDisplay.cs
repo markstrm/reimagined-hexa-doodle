@@ -7,19 +7,19 @@ using TMPro;
 public class ScoreDisplay : MonoBehaviour
 {
 
-    TMP_Text scoreText;
-    GameSession gameSession;
+    TMP_Text ScoreText;
+    GameSession GameSession;
 
     // Start is called before the first frame update
     void Start()
     {
-        scoreText = GetComponent<TMP_Text>();
-        gameSession = FindObjectOfType<GameSession>();
+        ScoreText = GetComponent<TMP_Text>();
+        GameSession = FindObjectOfType<GameSession>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        scoreText.text = gameSession.GetScore().ToString();
+        ScoreText.text = GameSession.GetScore().ToString();
     }
 }
