@@ -217,7 +217,6 @@ public class EnemyFollowPlayer : MonoBehaviour
 
     }
 
-
     private void OnDrawGizmosSelected() //draws a circle with a size that we can decide
     {
         Gizmos.color = Color.green;
