@@ -4021,7 +4021,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Shield recharge
+  m_text: Shield Recharge
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dd09dc9d2815ebf4eab6fcc0f3c202f9, type: 2}
   m_sharedMaterial: {fileID: 8162035901029807152, guid: dd09dc9d2815ebf4eab6fcc0f3c202f9, type: 2}
