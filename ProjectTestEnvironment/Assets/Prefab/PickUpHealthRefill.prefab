@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 1882872752895246634}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 10}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 6434406367299683590}
   m_RootOrder: 0
@@ -207,7 +207,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  maxLifetime: 10
+  MaxLifetime: 10
 --- !u!50 &6434406367299683589
 Rigidbody2D:
   serializedVersion: 4
