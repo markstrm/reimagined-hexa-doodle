@@ -181,8 +181,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2830c83c68fd17143ba31b7f8b618878, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 10
-  fireRate: 1.5
+  movementSpeed: 15
+  fireRate: 2
   shootingDistance: 17
   _waypointName: Waypoints(Enemy2)
   healthPickUp: {fileID: 6434406367299683585, guid: 146d67c78d0b8dd43ad1e0d1fdbb63a8, type: 3}

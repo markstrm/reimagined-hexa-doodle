@@ -233,18 +233,21 @@ public class EnemyTwoFollowPlayer : MonoBehaviour
         GameObject explosion = Instantiate(_deathVFX, transform.position, transform.rotation);//explosion vfx
         //Destroy(explosion, _durationOfExplosion);
 
-        if(player._health < 300) // if player is damaged, the enemy will drop health refill pickup, else if player is full health it will drop a speed pick up.
+        if (transform.position.x < _gameSession.GetBoundsWidth() && transform.position.x > -_gameSession.GetBoundsWidth()
+            && transform.position.y < _gameSession.GetBoundsHeight() && transform.position.y > -_gameSession.GetBoundsHeight()) 
         {
-            Instantiate(healthPickUp, transform.position, Quaternion.identity);
-        }
-        else
-        {
-            Instantiate(speedPickUp, transform.position, Quaternion.identity);
-        }
-        
+
+            if (player._health < 300) // if player is damaged, the enemy will drop health refill pickup, else if player is full health it will drop a speed pick up.
+            {
+                Instantiate(healthPickUp, transform.position, Quaternion.identity);
+            }
+            else
+            {
+                Instantiate(speedPickUp, transform.position, Quaternion.identity);
+            }
+        }       
         Destroy(gameObject);
         AudioSource.PlayClipAtPoint(_deathSFX, transform.position, _deathSFXVol);
-
     }
 
     private void Shoot()

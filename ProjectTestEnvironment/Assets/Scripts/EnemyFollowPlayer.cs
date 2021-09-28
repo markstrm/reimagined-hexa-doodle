@@ -126,6 +126,11 @@ public class EnemyFollowPlayer : MonoBehaviour
 
     private void ProcessHit(DamageDealer damageDealer)//calculates damage received
     {
+        if (!damageDealer)
+        {
+            return;
+        }
+
         _health -= damageDealer.GetDamage();
         damageDealer.Hit();
         if (_health <= 0)
@@ -171,50 +176,51 @@ public class EnemyFollowPlayer : MonoBehaviour
         randomNumber = Random.Range(0, 100);
         Debug.Log(randomNumber);
 
-        if (randomNumber >= 80)
+        if(transform.position.x < gameSession.GetBoundsWidth() && transform.position.x > -gameSession.GetBoundsWidth()
+            && transform.position.y < gameSession.GetBoundsHeight() && transform.position.y > -gameSession.GetBoundsHeight())
         {
+            if (randomNumber >= 10)
+            {
+                if (randomNumber >= 85 && gameSession.isAlive && player._health == 100)
+                {
+                    //spawn health pickup
+                    Instantiate(healthPickUp, transform.position, Quaternion.identity);
+                    Debug.Log(randomNumber);
+                }
+                else if (randomNumber >= 90 && gameSession.isAlive && player._health == 200)
+                {
+                    Instantiate(healthPickUp, transform.position, Quaternion.identity);
+                }
+                else
+                {
+                    //spawn speed pickup
+                    Instantiate(speedPickUp, transform.position, Quaternion.identity);
+                    Debug.Log(randomNumber);
+                }
+            }
 
-            if (randomNumber >= 85 && gameSession.isAlive && player._health == 100)
+            if (randomNumber >= 95)
             {
-                //spawn health pickup
-                Instantiate(healthPickUp, transform.position, Quaternion.identity);
-                Debug.Log(randomNumber);
-            }
-            else if (randomNumber >= 90 && gameSession.isAlive && player._health == 200)
-            {
-                Instantiate(healthPickUp, transform.position, Quaternion.identity);
-            }
-            else
-            {
-                //spawn speed pickup
-                Instantiate(speedPickUp, transform.position, Quaternion.identity);
-                Debug.Log(randomNumber);
+                if (gameSession.score > 10000)
+                {
+                    var spawnPoints = GameObject.FindGameObjectsWithTag("E2S");
+                    Debug.Log("Spawn points " + spawnPoints.Length);
+
+                    Transform _sp = spawnPoints[Random.Range(0, spawnPoints.Length)].transform;
+                    Instantiate(_enemy, _sp.position, _sp.rotation, _EnemyHolder.transform);  //spawn enemy
+                }
+                else if (randomNumber >= 97)
+                {
+                    var spawnPoints = GameObject.FindGameObjectsWithTag("E2S");
+                    Debug.Log("Spawn points " + spawnPoints.Length);
+
+                    Transform _sp = spawnPoints[Random.Range(0, spawnPoints.Length)].transform;
+                    Instantiate(_enemy, _sp.position, _sp.rotation, _EnemyHolder.transform);  //spawn enemy
+                }
             }
         }
-
-        if(randomNumber >= 95)
-        {
-            if (gameSession.score > 10000)
-            {
-                var spawnPoints = GameObject.FindGameObjectsWithTag("E2S");
-                Debug.Log("Spawn points " + spawnPoints.Length);
-
-                Transform _sp = spawnPoints[Random.Range(0, spawnPoints.Length)].transform;
-                Instantiate(_enemy, _sp.position, _sp.rotation, _EnemyHolder.transform);  //spawn enemy
-            }
-            else if(randomNumber >= 97)
-            {
-                var spawnPoints = GameObject.FindGameObjectsWithTag("E2S");
-                Debug.Log("Spawn points " + spawnPoints.Length);
-
-                Transform _sp = spawnPoints[Random.Range(0, spawnPoints.Length)].transform;
-                Instantiate(_enemy, _sp.position, _sp.rotation, _EnemyHolder.transform);  //spawn enemy
-            }
-        }
-
         Destroy(gameObject);
         AudioSource.PlayClipAtPoint(_deathSFX, transform.position, _deathSFXVol);
-
     }
 
     private void OnDrawGizmosSelected() //draws a circle with a size that we can decide

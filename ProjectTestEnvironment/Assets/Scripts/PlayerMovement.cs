@@ -189,6 +189,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void ProcessHit(DamageDealer damageDealer)//calculates damage received
     {
+        if(!damageDealer)
+        {
+            return;
+        }
         _health -= damageDealer.GetDamage();
         damageDealer.Hit();
         if (_health <= 0)
