@@ -646,11 +646,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 24532682}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a00b4135ff68155498b6279246859041, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 5
-  ClockwiseRotation: 0
+  _maxRotSpeed: 10
+  _minRotSpeed: 2
 --- !u!50 &24532684
 Rigidbody2D:
   serializedVersion: 4
@@ -837,11 +837,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 50400606}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c3df5c8a80bff840979b431a1de6943, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 12
-  ClockwiseRotation: 0
+  _maxRotSpeed: 200
+  _minRotSpeed: 50
 --- !u!50 &50400608
 Rigidbody2D:
   serializedVersion: 4
@@ -1035,11 +1035,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 71021252}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a00b4135ff68155498b6279246859041, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 5
-  ClockwiseRotation: 0
+  _maxRotSpeed: 10
+  _minRotSpeed: 2
 --- !u!50 &71021255
 Rigidbody2D:
   serializedVersion: 4
@@ -1075,11 +1075,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 91231061}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c3df5c8a80bff840979b431a1de6943, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 12
-  ClockwiseRotation: 0
+  _maxRotSpeed: 200
+  _minRotSpeed: 50
 --- !u!50 &91231063
 Rigidbody2D:
   serializedVersion: 4
@@ -1474,12 +1474,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1416072628507055035, guid: 0d18f1a7832f6a44fa77efb30bde703e, type: 3}
   m_PrefabInstance: {fileID: 1908052204}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &123106561 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 969904161304041633, guid: 0d18f1a7832f6a44fa77efb30bde703e, type: 3}
-  m_PrefabInstance: {fileID: 1908052204}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &123106562
+--- !u!114 &123106560
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1488,11 +1483,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 123106559}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a00b4135ff68155498b6279246859041, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 5
-  ClockwiseRotation: 0
+  _maxRotSpeed: 10
+  _minRotSpeed: 2
+--- !u!4 &123106561 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 969904161304041633, guid: 0d18f1a7832f6a44fa77efb30bde703e, type: 3}
+  m_PrefabInstance: {fileID: 1908052204}
+  m_PrefabAsset: {fileID: 0}
 --- !u!50 &123106563
 Rigidbody2D:
   serializedVersion: 4
@@ -2101,11 +2101,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 166557269}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c3df5c8a80bff840979b431a1de6943, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 12
-  ClockwiseRotation: 0
+  _maxRotSpeed: 200
+  _minRotSpeed: 50
 --- !u!50 &166557272
 Rigidbody2D:
   serializedVersion: 4
@@ -2132,12 +2132,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8869476336097629157, guid: a928b6b7e9852c6429b1e3022b0ca7ed, type: 3}
   m_PrefabInstance: {fileID: 427608311}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &171798651 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4706317341639660141, guid: a928b6b7e9852c6429b1e3022b0ca7ed, type: 3}
-  m_PrefabInstance: {fileID: 427608311}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &171798652
+--- !u!114 &171798650
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2146,11 +2141,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 171798649}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a00b4135ff68155498b6279246859041, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 5
-  ClockwiseRotation: 0
+  _maxRotSpeed: 10
+  _minRotSpeed: 2
+--- !u!4 &171798651 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4706317341639660141, guid: a928b6b7e9852c6429b1e3022b0ca7ed, type: 3}
+  m_PrefabInstance: {fileID: 427608311}
+  m_PrefabAsset: {fileID: 0}
 --- !u!50 &171798653
 Rigidbody2D:
   serializedVersion: 4
@@ -2732,11 +2732,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 207518132}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c3df5c8a80bff840979b431a1de6943, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 12
-  ClockwiseRotation: 0
+  _maxRotSpeed: 200
+  _minRotSpeed: 50
 --- !u!50 &207518135
 Rigidbody2D:
   serializedVersion: 4
@@ -2915,11 +2915,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 215468032}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a00b4135ff68155498b6279246859041, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 5
-  ClockwiseRotation: 0
+  _maxRotSpeed: 10
+  _minRotSpeed: 2
 --- !u!50 &215468034
 Rigidbody2D:
   serializedVersion: 4
@@ -3173,11 +3173,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 235724699}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c3df5c8a80bff840979b431a1de6943, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 12
-  ClockwiseRotation: 0
+  _maxRotSpeed: 200
+  _minRotSpeed: 50
 --- !u!50 &235724702
 Rigidbody2D:
   serializedVersion: 4
@@ -3438,11 +3438,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 269387517}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a00b4135ff68155498b6279246859041, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 5
-  ClockwiseRotation: 0
+  _maxRotSpeed: 10
+  _minRotSpeed: 2
 --- !u!50 &269387519
 Rigidbody2D:
   serializedVersion: 4
@@ -3565,11 +3565,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 271023049}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c3df5c8a80bff840979b431a1de6943, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 12
-  ClockwiseRotation: 0
+  _maxRotSpeed: 200
+  _minRotSpeed: 50
 --- !u!50 &271023052
 Rigidbody2D:
   serializedVersion: 4
@@ -3774,11 +3774,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 285498482}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c3df5c8a80bff840979b431a1de6943, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 12
-  ClockwiseRotation: 0
+  _maxRotSpeed: 200
+  _minRotSpeed: 50
 --- !u!50 &285498485
 Rigidbody2D:
   serializedVersion: 4
@@ -4193,7 +4193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cac262dedce89349919e670017811e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 12
+  speed: 20
   _Camera: {fileID: 519420031}
   bulletPrefab: {fileID: 3577999947024319260, guid: 5f8dc7cb48b2fba4f8976bbffab4419c, type: 3}
   PlayerLaser: {fileID: -6520467710060151718, guid: 613687533eefe7749a1f0c87d02d3e64, type: 3}
@@ -4203,7 +4203,6 @@ MonoBehaviour:
   Speedtime: 0
   canShoot: 1
   canShootL: 1
-  minTolerance: 0.5
   _health: 300
   _deathVFX: {fileID: 4803261777714319761, guid: 87cbd56028703304b975033d754bfefe, type: 3}
   _durationOfExplosion: 2
@@ -4393,18 +4392,19 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.13969207, y: -0.55371326}
-      - {x: -0.12571383, y: -0.56751776}
-      - {x: -0.1362536, y: -0.3130141}
-      - {x: -0.82227945, y: -0.1700471}
-      - {x: -0.8184428, y: 0.015782714}
-      - {x: -0.18309665, y: 0.07445225}
-      - {x: -0.11977148, y: 0.3503702}
-      - {x: 0.11977148, y: 0.34653354}
-      - {x: 0.21603346, y: 0.053369075}
-      - {x: 0.7914758, y: -0.011474952}
-      - {x: 0.8261163, y: -0.15686706}
-      - {x: 0.1278441, y: -0.31200367}
+    - - {x: 0.09731555, y: -0.31923044}
+      - {x: -0.103113115, y: -0.32173455}
+      - {x: -0.10517758, y: -0.2084856}
+      - {x: -0.68950003, y: -0.14744635}
+      - {x: -0.6884885, y: -0.037894085}
+      - {x: -0.32069656, y: -0.036788814}
+      - {x: -0.12941986, y: -0.044201717}
+      - {x: -0.13389695, y: 0.1893398}
+      - {x: 0.11129624, y: 0.19158058}
+      - {x: 0.10867989, y: -0.045509204}
+      - {x: 0.66152143, y: -0.028425515}
+      - {x: 0.64248526, y: -0.16251725}
+      - {x: 0.102418184, y: -0.1989999}
 --- !u!95 &356091703
 Animator:
   serializedVersion: 3
@@ -6272,12 +6272,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1416072628507055035, guid: 0d18f1a7832f6a44fa77efb30bde703e, type: 3}
   m_PrefabInstance: {fileID: 955850553}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &505178255 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 969904161304041633, guid: 0d18f1a7832f6a44fa77efb30bde703e, type: 3}
-  m_PrefabInstance: {fileID: 955850553}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &505178256
+--- !u!114 &505178254
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6286,11 +6281,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 505178253}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a00b4135ff68155498b6279246859041, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 5
-  ClockwiseRotation: 0
+  _maxRotSpeed: 10
+  _minRotSpeed: 2
+--- !u!4 &505178255 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 969904161304041633, guid: 0d18f1a7832f6a44fa77efb30bde703e, type: 3}
+  m_PrefabInstance: {fileID: 955850553}
+  m_PrefabAsset: {fileID: 0}
 --- !u!50 &505178257
 Rigidbody2D:
   serializedVersion: 4
@@ -6899,11 +6899,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 549062735}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c3df5c8a80bff840979b431a1de6943, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 12
-  ClockwiseRotation: 0
+  _maxRotSpeed: 200
+  _minRotSpeed: 50
 --- !u!50 &549062737
 Rigidbody2D:
   serializedVersion: 4
@@ -7177,11 +7177,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 563929641}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a00b4135ff68155498b6279246859041, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 5
-  ClockwiseRotation: 0
+  _maxRotSpeed: 10
+  _minRotSpeed: 2
 --- !u!50 &563929643
 Rigidbody2D:
   serializedVersion: 4
@@ -7703,11 +7703,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 595308723}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c3df5c8a80bff840979b431a1de6943, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 12
-  ClockwiseRotation: 0
+  _maxRotSpeed: 200
+  _minRotSpeed: 50
 --- !u!50 &595308725
 Rigidbody2D:
   serializedVersion: 4
@@ -7898,12 +7898,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3525697572991576568, guid: 70c536de7d9d92449ae52a7ff80766e1, type: 3}
   m_PrefabInstance: {fileID: 1399834710}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &617164744 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2493879033538797139, guid: 70c536de7d9d92449ae52a7ff80766e1, type: 3}
-  m_PrefabInstance: {fileID: 1399834710}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &617164745
+--- !u!114 &617164743
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7912,11 +7907,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 617164742}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a00b4135ff68155498b6279246859041, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 5
-  ClockwiseRotation: 0
+  _maxRotSpeed: 10
+  _minRotSpeed: 2
+--- !u!4 &617164744 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2493879033538797139, guid: 70c536de7d9d92449ae52a7ff80766e1, type: 3}
+  m_PrefabInstance: {fileID: 1399834710}
+  m_PrefabAsset: {fileID: 0}
 --- !u!50 &617164746
 Rigidbody2D:
   serializedVersion: 4
@@ -8293,11 +8293,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 641244396}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a00b4135ff68155498b6279246859041, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 5
-  ClockwiseRotation: 0
+  _maxRotSpeed: 10
+  _minRotSpeed: 2
 --- !u!50 &641244399
 Rigidbody2D:
   serializedVersion: 4
@@ -8737,11 +8737,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 663956300}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c3df5c8a80bff840979b431a1de6943, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 12
-  ClockwiseRotation: 0
+  _maxRotSpeed: 200
+  _minRotSpeed: 50
 --- !u!50 &663956302
 Rigidbody2D:
   serializedVersion: 4
@@ -9077,11 +9077,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 689819220}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c3df5c8a80bff840979b431a1de6943, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 12
-  ClockwiseRotation: 0
+  _maxRotSpeed: 200
+  _minRotSpeed: 50
 --- !u!50 &689819223
 Rigidbody2D:
   serializedVersion: 4
@@ -9199,11 +9199,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 698484843}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c3df5c8a80bff840979b431a1de6943, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 12
-  ClockwiseRotation: 0
+  _maxRotSpeed: 200
+  _minRotSpeed: 50
 --- !u!50 &698484845
 Rigidbody2D:
   serializedVersion: 4
@@ -9528,11 +9528,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 722609811}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c3df5c8a80bff840979b431a1de6943, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 12
-  ClockwiseRotation: 0
+  _maxRotSpeed: 200
+  _minRotSpeed: 50
 --- !u!50 &722609813
 Rigidbody2D:
   serializedVersion: 4
@@ -9697,12 +9697,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1416072628507055035, guid: 0d18f1a7832f6a44fa77efb30bde703e, type: 3}
   m_PrefabInstance: {fileID: 1943756385}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &742222638 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 969904161304041633, guid: 0d18f1a7832f6a44fa77efb30bde703e, type: 3}
-  m_PrefabInstance: {fileID: 1943756385}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &742222639
+--- !u!114 &742222637
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9711,11 +9706,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 742222636}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a00b4135ff68155498b6279246859041, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 5
-  ClockwiseRotation: 0
+  _maxRotSpeed: 10
+  _minRotSpeed: 2
+--- !u!4 &742222638 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 969904161304041633, guid: 0d18f1a7832f6a44fa77efb30bde703e, type: 3}
+  m_PrefabInstance: {fileID: 1943756385}
+  m_PrefabAsset: {fileID: 0}
 --- !u!50 &742222640
 Rigidbody2D:
   serializedVersion: 4
@@ -9824,12 +9824,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1416072628507055035, guid: 0d18f1a7832f6a44fa77efb30bde703e, type: 3}
   m_PrefabInstance: {fileID: 699886316}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &751479427 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 969904161304041633, guid: 0d18f1a7832f6a44fa77efb30bde703e, type: 3}
-  m_PrefabInstance: {fileID: 699886316}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &751479428
+--- !u!114 &751479426
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9838,11 +9833,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 751479425}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a00b4135ff68155498b6279246859041, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 5
-  ClockwiseRotation: 0
+  _maxRotSpeed: 10
+  _minRotSpeed: 2
+--- !u!4 &751479427 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 969904161304041633, guid: 0d18f1a7832f6a44fa77efb30bde703e, type: 3}
+  m_PrefabInstance: {fileID: 699886316}
+  m_PrefabAsset: {fileID: 0}
 --- !u!50 &751479429
 Rigidbody2D:
   serializedVersion: 4
@@ -10505,11 +10505,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 803289174}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a00b4135ff68155498b6279246859041, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 5
-  ClockwiseRotation: 0
+  _maxRotSpeed: 10
+  _minRotSpeed: 2
 --- !u!50 &803289177
 Rigidbody2D:
   serializedVersion: 4
@@ -10545,11 +10545,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 807996747}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c3df5c8a80bff840979b431a1de6943, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 12
-  ClockwiseRotation: 0
+  _maxRotSpeed: 200
+  _minRotSpeed: 50
 --- !u!50 &807996749
 Rigidbody2D:
   serializedVersion: 4
@@ -10576,12 +10576,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6542101368399430838, guid: 5c3659959ebb30a489d7eef3009f8afc, type: 3}
   m_PrefabInstance: {fileID: 410339867}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &812991136 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1989084925316332678, guid: 5c3659959ebb30a489d7eef3009f8afc, type: 3}
-  m_PrefabInstance: {fileID: 410339867}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &812991137
+--- !u!114 &812991135
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10590,11 +10585,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 812991134}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a00b4135ff68155498b6279246859041, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 5
-  ClockwiseRotation: 0
+  _maxRotSpeed: 10
+  _minRotSpeed: 2
+--- !u!4 &812991136 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1989084925316332678, guid: 5c3659959ebb30a489d7eef3009f8afc, type: 3}
+  m_PrefabInstance: {fileID: 410339867}
+  m_PrefabAsset: {fileID: 0}
 --- !u!50 &812991138
 Rigidbody2D:
   serializedVersion: 4
@@ -10690,12 +10690,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3525697572991576568, guid: 70c536de7d9d92449ae52a7ff80766e1, type: 3}
   m_PrefabInstance: {fileID: 1653835928}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &813568220 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2493879033538797139, guid: 70c536de7d9d92449ae52a7ff80766e1, type: 3}
-  m_PrefabInstance: {fileID: 1653835928}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &813568221
+--- !u!114 &813568219
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10704,11 +10699,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 813568218}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a00b4135ff68155498b6279246859041, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 5
-  ClockwiseRotation: 0
+  _maxRotSpeed: 10
+  _minRotSpeed: 2
+--- !u!4 &813568220 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2493879033538797139, guid: 70c536de7d9d92449ae52a7ff80766e1, type: 3}
+  m_PrefabInstance: {fileID: 1653835928}
+  m_PrefabAsset: {fileID: 0}
 --- !u!50 &813568222
 Rigidbody2D:
   serializedVersion: 4
@@ -10818,11 +10818,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 814272273}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c3df5c8a80bff840979b431a1de6943, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 12
-  ClockwiseRotation: 0
+  _maxRotSpeed: 200
+  _minRotSpeed: 50
 --- !u!50 &814272275
 Rigidbody2D:
   serializedVersion: 4
@@ -10849,12 +10849,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6192019827025467921, guid: 46fd36c0039a3de4e8a017dd1652a1c9, type: 3}
   m_PrefabInstance: {fileID: 706599769}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &814684621 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5413199681401816606, guid: 46fd36c0039a3de4e8a017dd1652a1c9, type: 3}
-  m_PrefabInstance: {fileID: 706599769}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &814684622
+--- !u!114 &814684620
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10863,11 +10858,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 814684619}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a00b4135ff68155498b6279246859041, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 5
-  ClockwiseRotation: 0
+  _maxRotSpeed: 10
+  _minRotSpeed: 2
+--- !u!4 &814684621 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5413199681401816606, guid: 46fd36c0039a3de4e8a017dd1652a1c9, type: 3}
+  m_PrefabInstance: {fileID: 706599769}
+  m_PrefabAsset: {fileID: 0}
 --- !u!50 &814684623
 Rigidbody2D:
   serializedVersion: 4
@@ -11262,12 +11262,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3525697572991576568, guid: 70c536de7d9d92449ae52a7ff80766e1, type: 3}
   m_PrefabInstance: {fileID: 1393365879}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &846696042 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2493879033538797139, guid: 70c536de7d9d92449ae52a7ff80766e1, type: 3}
-  m_PrefabInstance: {fileID: 1393365879}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &846696043
+--- !u!114 &846696041
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -11276,11 +11271,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 846696040}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a00b4135ff68155498b6279246859041, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 5
-  ClockwiseRotation: 0
+  _maxRotSpeed: 10
+  _minRotSpeed: 2
+--- !u!4 &846696042 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2493879033538797139, guid: 70c536de7d9d92449ae52a7ff80766e1, type: 3}
+  m_PrefabInstance: {fileID: 1393365879}
+  m_PrefabAsset: {fileID: 0}
 --- !u!50 &846696044
 Rigidbody2D:
   serializedVersion: 4
@@ -11390,11 +11390,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 846748032}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c3df5c8a80bff840979b431a1de6943, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 12
-  ClockwiseRotation: 0
+  _maxRotSpeed: 200
+  _minRotSpeed: 50
 --- !u!50 &846748034
 Rigidbody2D:
   serializedVersion: 4
@@ -11964,11 +11964,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 880580387}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c3df5c8a80bff840979b431a1de6943, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 12
-  ClockwiseRotation: 0
+  _maxRotSpeed: 200
+  _minRotSpeed: 50
 --- !u!50 &880580390
 Rigidbody2D:
   serializedVersion: 4
@@ -11995,12 +11995,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3955418798240587005, guid: 18bb600265b4a4a4fa29f69b9f5b8404, type: 3}
   m_PrefabInstance: {fileID: 1754638186}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &883013989 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4644351440221104986, guid: 18bb600265b4a4a4fa29f69b9f5b8404, type: 3}
-  m_PrefabInstance: {fileID: 1754638186}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &883013990
+--- !u!114 &883013988
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -12009,11 +12004,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 883013987}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a00b4135ff68155498b6279246859041, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 5
-  ClockwiseRotation: 0
+  _maxRotSpeed: 10
+  _minRotSpeed: 2
+--- !u!4 &883013989 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4644351440221104986, guid: 18bb600265b4a4a4fa29f69b9f5b8404, type: 3}
+  m_PrefabInstance: {fileID: 1754638186}
+  m_PrefabAsset: {fileID: 0}
 --- !u!50 &883013991
 Rigidbody2D:
   serializedVersion: 4
@@ -12054,11 +12054,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 892847877}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a00b4135ff68155498b6279246859041, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 5
-  ClockwiseRotation: 0
+  _maxRotSpeed: 10
+  _minRotSpeed: 2
 --- !u!50 &892847880
 Rigidbody2D:
   serializedVersion: 4
@@ -12094,11 +12094,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 896086415}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c3df5c8a80bff840979b431a1de6943, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 12
-  ClockwiseRotation: 0
+  _maxRotSpeed: 200
+  _minRotSpeed: 50
 --- !u!50 &896086417
 Rigidbody2D:
   serializedVersion: 4
@@ -12819,11 +12819,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 920758538}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c3df5c8a80bff840979b431a1de6943, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 12
-  ClockwiseRotation: 0
+  _maxRotSpeed: 200
+  _minRotSpeed: 50
 --- !u!50 &920758541
 Rigidbody2D:
   serializedVersion: 4
@@ -12932,12 +12932,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6542101368399430838, guid: 5c3659959ebb30a489d7eef3009f8afc, type: 3}
   m_PrefabInstance: {fileID: 2144064761}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &924409309 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1989084925316332678, guid: 5c3659959ebb30a489d7eef3009f8afc, type: 3}
-  m_PrefabInstance: {fileID: 2144064761}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &924409310
+--- !u!114 &924409308
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -12946,11 +12941,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 924409307}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a00b4135ff68155498b6279246859041, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 5
-  ClockwiseRotation: 0
+  _maxRotSpeed: 10
+  _minRotSpeed: 2
+--- !u!4 &924409309 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1989084925316332678, guid: 5c3659959ebb30a489d7eef3009f8afc, type: 3}
+  m_PrefabInstance: {fileID: 2144064761}
+  m_PrefabAsset: {fileID: 0}
 --- !u!50 &924409311
 Rigidbody2D:
   serializedVersion: 4
@@ -13236,12 +13236,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6542101368399430838, guid: 5c3659959ebb30a489d7eef3009f8afc, type: 3}
   m_PrefabInstance: {fileID: 197063249}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &951939904 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1989084925316332678, guid: 5c3659959ebb30a489d7eef3009f8afc, type: 3}
-  m_PrefabInstance: {fileID: 197063249}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &951939905
+--- !u!114 &951939903
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -13250,11 +13245,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 951939902}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a00b4135ff68155498b6279246859041, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 5
-  ClockwiseRotation: 0
+  _maxRotSpeed: 10
+  _minRotSpeed: 2
+--- !u!4 &951939904 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1989084925316332678, guid: 5c3659959ebb30a489d7eef3009f8afc, type: 3}
+  m_PrefabInstance: {fileID: 197063249}
+  m_PrefabAsset: {fileID: 0}
 --- !u!50 &951939906
 Rigidbody2D:
   serializedVersion: 4
@@ -13350,12 +13350,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8869476336097629157, guid: a928b6b7e9852c6429b1e3022b0ca7ed, type: 3}
   m_PrefabInstance: {fileID: 3145922}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &961714982 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4706317341639660141, guid: a928b6b7e9852c6429b1e3022b0ca7ed, type: 3}
-  m_PrefabInstance: {fileID: 3145922}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &961714983
+--- !u!114 &961714981
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -13364,11 +13359,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 961714980}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a00b4135ff68155498b6279246859041, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 5
-  ClockwiseRotation: 0
+  _maxRotSpeed: 10
+  _minRotSpeed: 2
+--- !u!4 &961714982 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4706317341639660141, guid: a928b6b7e9852c6429b1e3022b0ca7ed, type: 3}
+  m_PrefabInstance: {fileID: 3145922}
+  m_PrefabAsset: {fileID: 0}
 --- !u!50 &961714984
 Rigidbody2D:
   serializedVersion: 4
@@ -13854,11 +13854,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1003025981}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a00b4135ff68155498b6279246859041, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 5
-  ClockwiseRotation: 0
+  _maxRotSpeed: 10
+  _minRotSpeed: 2
 --- !u!50 &1003025983
 Rigidbody2D:
   serializedVersion: 4
@@ -13885,12 +13885,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6542101368399430838, guid: 5c3659959ebb30a489d7eef3009f8afc, type: 3}
   m_PrefabInstance: {fileID: 664204527}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1004442516 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1989084925316332678, guid: 5c3659959ebb30a489d7eef3009f8afc, type: 3}
-  m_PrefabInstance: {fileID: 664204527}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1004442517
+--- !u!114 &1004442515
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -13899,11 +13894,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1004442514}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a00b4135ff68155498b6279246859041, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 5
-  ClockwiseRotation: 0
+  _maxRotSpeed: 10
+  _minRotSpeed: 2
+--- !u!4 &1004442516 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1989084925316332678, guid: 5c3659959ebb30a489d7eef3009f8afc, type: 3}
+  m_PrefabInstance: {fileID: 664204527}
+  m_PrefabAsset: {fileID: 0}
 --- !u!50 &1004442518
 Rigidbody2D:
   serializedVersion: 4
@@ -14590,11 +14590,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1047868576}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a00b4135ff68155498b6279246859041, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 5
-  ClockwiseRotation: 0
+  _maxRotSpeed: 10
+  _minRotSpeed: 2
 --- !u!50 &1047868579
 Rigidbody2D:
   serializedVersion: 4
@@ -15105,12 +15105,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6192019827025467921, guid: 46fd36c0039a3de4e8a017dd1652a1c9, type: 3}
   m_PrefabInstance: {fileID: 843382587}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1066765932 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5413199681401816606, guid: 46fd36c0039a3de4e8a017dd1652a1c9, type: 3}
-  m_PrefabInstance: {fileID: 843382587}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1066765933
+--- !u!114 &1066765931
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -15119,11 +15114,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1066765930}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a00b4135ff68155498b6279246859041, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 5
-  ClockwiseRotation: 0
+  _maxRotSpeed: 10
+  _minRotSpeed: 2
+--- !u!4 &1066765932 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5413199681401816606, guid: 46fd36c0039a3de4e8a017dd1652a1c9, type: 3}
+  m_PrefabInstance: {fileID: 843382587}
+  m_PrefabAsset: {fileID: 0}
 --- !u!50 &1066765934
 Rigidbody2D:
   serializedVersion: 4
@@ -15150,12 +15150,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3525697572991576568, guid: 70c536de7d9d92449ae52a7ff80766e1, type: 3}
   m_PrefabInstance: {fileID: 1161071293}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1068109676 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2493879033538797139, guid: 70c536de7d9d92449ae52a7ff80766e1, type: 3}
-  m_PrefabInstance: {fileID: 1161071293}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1068109677
+--- !u!114 &1068109675
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -15164,11 +15159,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1068109674}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a00b4135ff68155498b6279246859041, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 5
-  ClockwiseRotation: 0
+  _maxRotSpeed: 10
+  _minRotSpeed: 2
+--- !u!4 &1068109676 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2493879033538797139, guid: 70c536de7d9d92449ae52a7ff80766e1, type: 3}
+  m_PrefabInstance: {fileID: 1161071293}
+  m_PrefabAsset: {fileID: 0}
 --- !u!50 &1068109678
 Rigidbody2D:
   serializedVersion: 4
@@ -15617,11 +15617,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1118953892}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c3df5c8a80bff840979b431a1de6943, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 12
-  ClockwiseRotation: 0
+  _maxRotSpeed: 200
+  _minRotSpeed: 50
 --- !u!50 &1118953894
 Rigidbody2D:
   serializedVersion: 4
@@ -15648,12 +15648,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1416072628507055035, guid: 0d18f1a7832f6a44fa77efb30bde703e, type: 3}
   m_PrefabInstance: {fileID: 412531941}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1121153380 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 969904161304041633, guid: 0d18f1a7832f6a44fa77efb30bde703e, type: 3}
-  m_PrefabInstance: {fileID: 412531941}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1121153381
+--- !u!114 &1121153379
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -15662,11 +15657,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1121153378}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a00b4135ff68155498b6279246859041, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 5
-  ClockwiseRotation: 0
+  _maxRotSpeed: 10
+  _minRotSpeed: 2
+--- !u!4 &1121153380 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 969904161304041633, guid: 0d18f1a7832f6a44fa77efb30bde703e, type: 3}
+  m_PrefabInstance: {fileID: 412531941}
+  m_PrefabAsset: {fileID: 0}
 --- !u!50 &1121153382
 Rigidbody2D:
   serializedVersion: 4
@@ -15702,11 +15702,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1124165805}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c3df5c8a80bff840979b431a1de6943, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 12
-  ClockwiseRotation: 0
+  _maxRotSpeed: 200
+  _minRotSpeed: 50
 --- !u!50 &1124165807
 Rigidbody2D:
   serializedVersion: 4
@@ -15980,11 +15980,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1145212972}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a00b4135ff68155498b6279246859041, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 5
-  ClockwiseRotation: 0
+  _maxRotSpeed: 10
+  _minRotSpeed: 2
 --- !u!50 &1145212975
 Rigidbody2D:
   serializedVersion: 4
@@ -16519,12 +16519,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3955418798240587005, guid: 18bb600265b4a4a4fa29f69b9f5b8404, type: 3}
   m_PrefabInstance: {fileID: 1179226795}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1163035834 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4644351440221104986, guid: 18bb600265b4a4a4fa29f69b9f5b8404, type: 3}
-  m_PrefabInstance: {fileID: 1179226795}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1163035835
+--- !u!114 &1163035833
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -16533,11 +16528,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1163035832}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a00b4135ff68155498b6279246859041, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 5
-  ClockwiseRotation: 0
+  _maxRotSpeed: 10
+  _minRotSpeed: 2
+--- !u!4 &1163035834 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4644351440221104986, guid: 18bb600265b4a4a4fa29f69b9f5b8404, type: 3}
+  m_PrefabInstance: {fileID: 1179226795}
+  m_PrefabAsset: {fileID: 0}
 --- !u!50 &1163035836
 Rigidbody2D:
   serializedVersion: 4
@@ -16729,11 +16729,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1170497803}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a00b4135ff68155498b6279246859041, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 5
-  ClockwiseRotation: 0
+  _maxRotSpeed: 10
+  _minRotSpeed: 2
 --- !u!50 &1170497805
 Rigidbody2D:
   serializedVersion: 4
@@ -17288,12 +17288,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3955418798240587005, guid: 18bb600265b4a4a4fa29f69b9f5b8404, type: 3}
   m_PrefabInstance: {fileID: 2118986622}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1180275800 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4644351440221104986, guid: 18bb600265b4a4a4fa29f69b9f5b8404, type: 3}
-  m_PrefabInstance: {fileID: 2118986622}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1180275801
+--- !u!114 &1180275799
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -17302,11 +17297,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1180275798}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a00b4135ff68155498b6279246859041, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 5
-  ClockwiseRotation: 0
+  _maxRotSpeed: 10
+  _minRotSpeed: 2
+--- !u!4 &1180275800 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4644351440221104986, guid: 18bb600265b4a4a4fa29f69b9f5b8404, type: 3}
+  m_PrefabInstance: {fileID: 2118986622}
+  m_PrefabAsset: {fileID: 0}
 --- !u!50 &1180275802
 Rigidbody2D:
   serializedVersion: 4
@@ -17416,11 +17416,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1184422526}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a00b4135ff68155498b6279246859041, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 5
-  ClockwiseRotation: 0
+  _maxRotSpeed: 10
+  _minRotSpeed: 2
 --- !u!50 &1184422528
 Rigidbody2D:
   serializedVersion: 4
@@ -17694,11 +17694,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1206497235}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c3df5c8a80bff840979b431a1de6943, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 12
-  ClockwiseRotation: 0
+  _maxRotSpeed: 200
+  _minRotSpeed: 50
 --- !u!50 &1206497237
 Rigidbody2D:
   serializedVersion: 4
@@ -18797,11 +18797,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1254493686}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c3df5c8a80bff840979b431a1de6943, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 12
-  ClockwiseRotation: 0
+  _maxRotSpeed: 200
+  _minRotSpeed: 50
 --- !u!50 &1254493689
 Rigidbody2D:
   serializedVersion: 4
@@ -18924,11 +18924,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1264801832}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a00b4135ff68155498b6279246859041, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 5
-  ClockwiseRotation: 0
+  _maxRotSpeed: 10
+  _minRotSpeed: 2
 --- !u!50 &1264801835
 Rigidbody2D:
   serializedVersion: 4
@@ -19400,11 +19400,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1298132799}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a00b4135ff68155498b6279246859041, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 5
-  ClockwiseRotation: 0
+  _maxRotSpeed: 10
+  _minRotSpeed: 2
 --- !u!50 &1298132802
 Rigidbody2D:
   serializedVersion: 4
@@ -19431,12 +19431,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3955418798240587005, guid: 18bb600265b4a4a4fa29f69b9f5b8404, type: 3}
   m_PrefabInstance: {fileID: 795802578}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1308210728 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4644351440221104986, guid: 18bb600265b4a4a4fa29f69b9f5b8404, type: 3}
-  m_PrefabInstance: {fileID: 795802578}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1308210729
+--- !u!114 &1308210727
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -19445,11 +19440,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1308210726}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a00b4135ff68155498b6279246859041, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 5
-  ClockwiseRotation: 0
+  _maxRotSpeed: 10
+  _minRotSpeed: 2
+--- !u!4 &1308210728 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4644351440221104986, guid: 18bb600265b4a4a4fa29f69b9f5b8404, type: 3}
+  m_PrefabInstance: {fileID: 795802578}
+  m_PrefabAsset: {fileID: 0}
 --- !u!50 &1308210730
 Rigidbody2D:
   serializedVersion: 4
@@ -19572,11 +19572,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1312288529}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a00b4135ff68155498b6279246859041, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 5
-  ClockwiseRotation: 0
+  _maxRotSpeed: 10
+  _minRotSpeed: 2
 --- !u!50 &1312288532
 Rigidbody2D:
   serializedVersion: 4
@@ -20766,11 +20766,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1405199945}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c3df5c8a80bff840979b431a1de6943, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 12
-  ClockwiseRotation: 0
+  _maxRotSpeed: 200
+  _minRotSpeed: 50
 --- !u!50 &1405199947
 Rigidbody2D:
   serializedVersion: 4
@@ -20961,12 +20961,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6542101368399430838, guid: 5c3659959ebb30a489d7eef3009f8afc, type: 3}
   m_PrefabInstance: {fileID: 1921634405}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1417943225 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1989084925316332678, guid: 5c3659959ebb30a489d7eef3009f8afc, type: 3}
-  m_PrefabInstance: {fileID: 1921634405}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1417943226
+--- !u!114 &1417943224
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20975,11 +20970,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1417943223}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a00b4135ff68155498b6279246859041, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 5
-  ClockwiseRotation: 0
+  _maxRotSpeed: 10
+  _minRotSpeed: 2
+--- !u!4 &1417943225 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1989084925316332678, guid: 5c3659959ebb30a489d7eef3009f8afc, type: 3}
+  m_PrefabInstance: {fileID: 1921634405}
+  m_PrefabAsset: {fileID: 0}
 --- !u!50 &1417943227
 Rigidbody2D:
   serializedVersion: 4
@@ -21334,12 +21334,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1416072628507055035, guid: 0d18f1a7832f6a44fa77efb30bde703e, type: 3}
   m_PrefabInstance: {fileID: 210482281}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1451781178 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 969904161304041633, guid: 0d18f1a7832f6a44fa77efb30bde703e, type: 3}
-  m_PrefabInstance: {fileID: 210482281}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1451781179
+--- !u!114 &1451781177
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -21348,11 +21343,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1451781176}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a00b4135ff68155498b6279246859041, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 5
-  ClockwiseRotation: 0
+  _maxRotSpeed: 10
+  _minRotSpeed: 2
+--- !u!4 &1451781178 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 969904161304041633, guid: 0d18f1a7832f6a44fa77efb30bde703e, type: 3}
+  m_PrefabInstance: {fileID: 210482281}
+  m_PrefabAsset: {fileID: 0}
 --- !u!50 &1451781180
 Rigidbody2D:
   serializedVersion: 4
@@ -21724,11 +21724,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1456287442}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c3df5c8a80bff840979b431a1de6943, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 12
-  ClockwiseRotation: 0
+  _maxRotSpeed: 200
+  _minRotSpeed: 50
 --- !u!50 &1456287445
 Rigidbody2D:
   serializedVersion: 4
@@ -21981,11 +21981,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1468448883}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a00b4135ff68155498b6279246859041, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 5
-  ClockwiseRotation: 0
+  _maxRotSpeed: 10
+  _minRotSpeed: 2
 --- !u!50 &1468448885
 Rigidbody2D:
   serializedVersion: 4
@@ -22021,11 +22021,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1470474208}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c3df5c8a80bff840979b431a1de6943, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 12
-  ClockwiseRotation: 0
+  _maxRotSpeed: 200
+  _minRotSpeed: 50
 --- !u!50 &1470474210
 Rigidbody2D:
   serializedVersion: 4
@@ -22135,11 +22135,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1475092795}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a00b4135ff68155498b6279246859041, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 5
-  ClockwiseRotation: 0
+  _maxRotSpeed: 10
+  _minRotSpeed: 2
 --- !u!50 &1475092797
 Rigidbody2D:
   serializedVersion: 4
@@ -22262,11 +22262,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1484112058}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c3df5c8a80bff840979b431a1de6943, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 12
-  ClockwiseRotation: 0
+  _maxRotSpeed: 200
+  _minRotSpeed: 50
 --- !u!50 &1484112061
 Rigidbody2D:
   serializedVersion: 4
@@ -22384,11 +22384,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1491025547}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c3df5c8a80bff840979b431a1de6943, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 12
-  ClockwiseRotation: 0
+  _maxRotSpeed: 200
+  _minRotSpeed: 50
 --- !u!50 &1491025549
 Rigidbody2D:
   serializedVersion: 4
@@ -23060,11 +23060,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1528205135}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c3df5c8a80bff840979b431a1de6943, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 12
-  ClockwiseRotation: 0
+  _maxRotSpeed: 200
+  _minRotSpeed: 50
 --- !u!50 &1528205137
 Rigidbody2D:
   serializedVersion: 4
@@ -23283,11 +23283,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1536833018}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a00b4135ff68155498b6279246859041, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 5
-  ClockwiseRotation: 0
+  _maxRotSpeed: 10
+  _minRotSpeed: 2
 --- !u!50 &1536833021
 Rigidbody2D:
   serializedVersion: 4
@@ -23323,11 +23323,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1552230568}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c3df5c8a80bff840979b431a1de6943, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 12
-  ClockwiseRotation: 0
+  _maxRotSpeed: 200
+  _minRotSpeed: 50
 --- !u!50 &1552230570
 Rigidbody2D:
   serializedVersion: 4
@@ -23919,11 +23919,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1607230654}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a00b4135ff68155498b6279246859041, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 5
-  ClockwiseRotation: 0
+  _maxRotSpeed: 10
+  _minRotSpeed: 2
 --- !u!50 &1607230657
 Rigidbody2D:
   serializedVersion: 4
@@ -24012,12 +24012,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8869476336097629157, guid: a928b6b7e9852c6429b1e3022b0ca7ed, type: 3}
   m_PrefabInstance: {fileID: 717958336}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1608520690 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4706317341639660141, guid: a928b6b7e9852c6429b1e3022b0ca7ed, type: 3}
-  m_PrefabInstance: {fileID: 717958336}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1608520691
+--- !u!114 &1608520689
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -24026,11 +24021,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1608520688}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a00b4135ff68155498b6279246859041, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 5
-  ClockwiseRotation: 0
+  _maxRotSpeed: 10
+  _minRotSpeed: 2
+--- !u!4 &1608520690 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4706317341639660141, guid: a928b6b7e9852c6429b1e3022b0ca7ed, type: 3}
+  m_PrefabInstance: {fileID: 717958336}
+  m_PrefabAsset: {fileID: 0}
 --- !u!50 &1608520692
 Rigidbody2D:
   serializedVersion: 4
@@ -24511,12 +24511,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6192019827025467921, guid: 46fd36c0039a3de4e8a017dd1652a1c9, type: 3}
   m_PrefabInstance: {fileID: 1498825650}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1651637840 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5413199681401816606, guid: 46fd36c0039a3de4e8a017dd1652a1c9, type: 3}
-  m_PrefabInstance: {fileID: 1498825650}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1651637841
+--- !u!114 &1651637839
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -24525,11 +24520,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1651637838}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a00b4135ff68155498b6279246859041, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 5
-  ClockwiseRotation: 0
+  _maxRotSpeed: 10
+  _minRotSpeed: 2
+--- !u!4 &1651637840 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5413199681401816606, guid: 46fd36c0039a3de4e8a017dd1652a1c9, type: 3}
+  m_PrefabInstance: {fileID: 1498825650}
+  m_PrefabAsset: {fileID: 0}
 --- !u!50 &1651637842
 Rigidbody2D:
   serializedVersion: 4
@@ -24885,11 +24885,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1676810167}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a00b4135ff68155498b6279246859041, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 5
-  ClockwiseRotation: 0
+  _maxRotSpeed: 10
+  _minRotSpeed: 2
 --- !u!50 &1676810170
 Rigidbody2D:
   serializedVersion: 4
@@ -24992,11 +24992,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1690959866}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c3df5c8a80bff840979b431a1de6943, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 12
-  ClockwiseRotation: 0
+  _maxRotSpeed: 200
+  _minRotSpeed: 50
 --- !u!50 &1690959869
 Rigidbody2D:
   serializedVersion: 4
@@ -25037,11 +25037,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1692065210}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a00b4135ff68155498b6279246859041, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 5
-  ClockwiseRotation: 0
+  _maxRotSpeed: 10
+  _minRotSpeed: 2
 --- !u!50 &1692065213
 Rigidbody2D:
   serializedVersion: 4
@@ -25082,11 +25082,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1697397269}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c3df5c8a80bff840979b431a1de6943, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 12
-  ClockwiseRotation: 0
+  _maxRotSpeed: 200
+  _minRotSpeed: 50
 --- !u!50 &1697397272
 Rigidbody2D:
   serializedVersion: 4
@@ -25977,12 +25977,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6747026704579016348, guid: ae4d463454dcd3f4f8546cef1366ff03, type: 3}
   m_PrefabInstance: {fileID: 899565175}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1743155298 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3170027746248751975, guid: ae4d463454dcd3f4f8546cef1366ff03, type: 3}
-  m_PrefabInstance: {fileID: 899565175}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1743155299
+--- !u!114 &1743155297
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -25991,11 +25986,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1743155296}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a00b4135ff68155498b6279246859041, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 5
-  ClockwiseRotation: 0
+  _maxRotSpeed: 10
+  _minRotSpeed: 2
+--- !u!4 &1743155298 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3170027746248751975, guid: ae4d463454dcd3f4f8546cef1366ff03, type: 3}
+  m_PrefabInstance: {fileID: 899565175}
+  m_PrefabAsset: {fileID: 0}
 --- !u!50 &1743155300
 Rigidbody2D:
   serializedVersion: 4
@@ -26022,12 +26022,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 122214560388886015, guid: 0cc97290e5be8a24a95be78aef2fc1a6, type: 3}
   m_PrefabInstance: {fileID: 1967523160}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1747788199 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2360023489459513345, guid: 0cc97290e5be8a24a95be78aef2fc1a6, type: 3}
-  m_PrefabInstance: {fileID: 1967523160}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1747788200
+--- !u!114 &1747788198
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -26036,11 +26031,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1747788197}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a00b4135ff68155498b6279246859041, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 5
-  ClockwiseRotation: 0
+  _maxRotSpeed: 10
+  _minRotSpeed: 2
+--- !u!4 &1747788199 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2360023489459513345, guid: 0cc97290e5be8a24a95be78aef2fc1a6, type: 3}
+  m_PrefabInstance: {fileID: 1967523160}
+  m_PrefabAsset: {fileID: 0}
 --- !u!50 &1747788201
 Rigidbody2D:
   serializedVersion: 4
@@ -26067,12 +26067,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6542101368399430838, guid: 5c3659959ebb30a489d7eef3009f8afc, type: 3}
   m_PrefabInstance: {fileID: 1249297485}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1750074856 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1989084925316332678, guid: 5c3659959ebb30a489d7eef3009f8afc, type: 3}
-  m_PrefabInstance: {fileID: 1249297485}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1750074857
+--- !u!114 &1750074855
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -26081,11 +26076,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1750074854}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a00b4135ff68155498b6279246859041, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 5
-  ClockwiseRotation: 0
+  _maxRotSpeed: 10
+  _minRotSpeed: 2
+--- !u!4 &1750074856 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1989084925316332678, guid: 5c3659959ebb30a489d7eef3009f8afc, type: 3}
+  m_PrefabInstance: {fileID: 1249297485}
+  m_PrefabAsset: {fileID: 0}
 --- !u!50 &1750074858
 Rigidbody2D:
   serializedVersion: 4
@@ -26252,11 +26252,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1756644561}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c3df5c8a80bff840979b431a1de6943, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 12
-  ClockwiseRotation: 0
+  _maxRotSpeed: 200
+  _minRotSpeed: 50
 --- !u!50 &1756644563
 Rigidbody2D:
   serializedVersion: 4
@@ -26528,11 +26528,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1773167241}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c3df5c8a80bff840979b431a1de6943, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 12
-  ClockwiseRotation: 0
+  _maxRotSpeed: 200
+  _minRotSpeed: 50
 --- !u!50 &1773167244
 Rigidbody2D:
   serializedVersion: 4
@@ -26568,11 +26568,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1786145675}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c3df5c8a80bff840979b431a1de6943, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 12
-  ClockwiseRotation: 0
+  _maxRotSpeed: 200
+  _minRotSpeed: 50
 --- !u!50 &1786145677
 Rigidbody2D:
   serializedVersion: 4
@@ -31499,11 +31499,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1791729424}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c3df5c8a80bff840979b431a1de6943, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 12
-  ClockwiseRotation: 0
+  _maxRotSpeed: 200
+  _minRotSpeed: 50
 --- !u!50 &1791729427
 Rigidbody2D:
   serializedVersion: 4
@@ -31716,12 +31716,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 122214560388886015, guid: 0cc97290e5be8a24a95be78aef2fc1a6, type: 3}
   m_PrefabInstance: {fileID: 1571716760}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1822137617 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2360023489459513345, guid: 0cc97290e5be8a24a95be78aef2fc1a6, type: 3}
-  m_PrefabInstance: {fileID: 1571716760}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1822137618
+--- !u!114 &1822137616
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -31730,11 +31725,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1822137615}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a00b4135ff68155498b6279246859041, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 5
-  ClockwiseRotation: 0
+  _maxRotSpeed: 10
+  _minRotSpeed: 2
+--- !u!4 &1822137617 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2360023489459513345, guid: 0cc97290e5be8a24a95be78aef2fc1a6, type: 3}
+  m_PrefabInstance: {fileID: 1571716760}
+  m_PrefabAsset: {fileID: 0}
 --- !u!50 &1822137619
 Rigidbody2D:
   serializedVersion: 4
@@ -31918,11 +31918,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1827289513}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c3df5c8a80bff840979b431a1de6943, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 12
-  ClockwiseRotation: 0
+  _maxRotSpeed: 200
+  _minRotSpeed: 50
 --- !u!50 &1827289515
 Rigidbody2D:
   serializedVersion: 4
@@ -32652,11 +32652,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1909375354}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a00b4135ff68155498b6279246859041, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 5
-  ClockwiseRotation: 0
+  _maxRotSpeed: 10
+  _minRotSpeed: 2
 --- !u!50 &1909375357
 Rigidbody2D:
   serializedVersion: 4
@@ -32899,11 +32899,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1925347660}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c3df5c8a80bff840979b431a1de6943, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 12
-  ClockwiseRotation: 0
+  _maxRotSpeed: 200
+  _minRotSpeed: 50
 --- !u!50 &1925347662
 Rigidbody2D:
   serializedVersion: 4
@@ -33141,11 +33141,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1936013853}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c3df5c8a80bff840979b431a1de6943, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 12
-  ClockwiseRotation: 0
+  _maxRotSpeed: 200
+  _minRotSpeed: 50
 --- !u!50 &1936013856
 Rigidbody2D:
   serializedVersion: 4
@@ -33556,11 +33556,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1955024294}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c3df5c8a80bff840979b431a1de6943, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 12
-  ClockwiseRotation: 0
+  _maxRotSpeed: 200
+  _minRotSpeed: 50
 --- !u!50 &1955024297
 Rigidbody2D:
   serializedVersion: 4
@@ -33587,12 +33587,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8869476336097629157, guid: a928b6b7e9852c6429b1e3022b0ca7ed, type: 3}
   m_PrefabInstance: {fileID: 1844249719}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1962290554 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4706317341639660141, guid: a928b6b7e9852c6429b1e3022b0ca7ed, type: 3}
-  m_PrefabInstance: {fileID: 1844249719}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1962290555
+--- !u!114 &1962290553
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -33601,11 +33596,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1962290552}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a00b4135ff68155498b6279246859041, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 5
-  ClockwiseRotation: 0
+  _maxRotSpeed: 10
+  _minRotSpeed: 2
+--- !u!4 &1962290554 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4706317341639660141, guid: a928b6b7e9852c6429b1e3022b0ca7ed, type: 3}
+  m_PrefabInstance: {fileID: 1844249719}
+  m_PrefabAsset: {fileID: 0}
 --- !u!50 &1962290556
 Rigidbody2D:
   serializedVersion: 4
@@ -34038,11 +34038,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1991855502}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c3df5c8a80bff840979b431a1de6943, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 12
-  ClockwiseRotation: 0
+  _maxRotSpeed: 200
+  _minRotSpeed: 50
 --- !u!50 &1991855504
 Rigidbody2D:
   serializedVersion: 4
@@ -34448,11 +34448,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2036547699}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c3df5c8a80bff840979b431a1de6943, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 12
-  ClockwiseRotation: 0
+  _maxRotSpeed: 200
+  _minRotSpeed: 50
 --- !u!50 &2036547701
 Rigidbody2D:
   serializedVersion: 4
@@ -34672,7 +34672,7 @@ Transform:
   m_Children:
   - {fileID: 425623936}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2060815914
 GameObject:
@@ -34775,11 +34775,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2070721617}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c3df5c8a80bff840979b431a1de6943, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 12
-  ClockwiseRotation: 0
+  _maxRotSpeed: 200
+  _minRotSpeed: 50
 --- !u!50 &2070721620
 Rigidbody2D:
   serializedVersion: 4
@@ -34889,11 +34889,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2073073069}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c3df5c8a80bff840979b431a1de6943, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 12
-  ClockwiseRotation: 0
+  _maxRotSpeed: 200
+  _minRotSpeed: 50
 --- !u!50 &2073073071
 Rigidbody2D:
   serializedVersion: 4
@@ -35868,11 +35868,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2128315515}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c3df5c8a80bff840979b431a1de6943, type: 3}
+  m_Script: {fileID: 11500000, guid: d241c82a1d4f1d64eb1b2355fab21703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationSpeed: 12
-  ClockwiseRotation: 0
+  _maxRotSpeed: 200
+  _minRotSpeed: 50
 --- !u!50 &2128315517
 Rigidbody2D:
   serializedVersion: 4
@@ -36342,7 +36342,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 852444158586096645, guid: e88f912e5733c894cbc6e49bf24a59fa, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 852444158586096645, guid: e88f912e5733c894cbc6e49bf24a59fa, type: 3}
       propertyPath: m_LocalPosition.x

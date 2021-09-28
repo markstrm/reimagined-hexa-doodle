@@ -66,7 +66,7 @@ public class GameSession : MonoBehaviour
     {
         player.transform.position = Vector3.zero; //spawns the player at the center of the board
         player._health = 300;
-        player.speed = 12f;
+        player.speed = 20f;
 
         player.GetComponent<PolygonCollider2D>().enabled = false;
         //this.player.gameObject.layer = LayerMask.NameToLayer("Ignore Collisions"); //when player respawns, temporarily change layer to ignore all collisions
