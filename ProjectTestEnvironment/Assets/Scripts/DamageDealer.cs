@@ -21,7 +21,7 @@ public class DamageDealer : MonoBehaviour
        Destroy(gameObject);
         if (gameObject.tag == "Bullet")
         {
-            var explosion = Instantiate(_burstVFX, transform.position, transform.rotation);//ion burst vfx
+           // var explosion = Instantiate(_burstVFX, transform.position, transform.rotation);//ion burst vfx
             AudioSource.PlayClipAtPoint(_ionBurstSFX, transform.position, _ionBurstSFXVol);
         }
     }

@@ -134,8 +134,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 50
-  _ionBurstSFX: {fileID: 0}
-  _ionBurstSFXVol: 0
+  _ionBurstSFX: {fileID: 8300000, guid: 649b6394dbfbec34a93f01126f126017, type: 3}
+  _ionBurstSFXVol: 0.2
   _burstVFX: {fileID: 0}
 --- !u!70 &-6641391899937262949
 CapsuleCollider2D:
