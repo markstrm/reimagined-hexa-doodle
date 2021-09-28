@@ -20,6 +20,9 @@ public class GameSession : MonoBehaviour
     public Transform _enemy; //reference to the prefab that we want to instantiate
     public Transform[] spawnPoint; //array with all the possible spawn locations
 
+    [SerializeField] private int _outOfBoundsWidth = 72;
+    [SerializeField] private int _outOfBoundsHeight = 48;
+
     public GameObject _EnemyHolder;
     private WaveSpawner EnemySpawner;
     public LifeCounter lifeCounter;
@@ -33,6 +36,16 @@ public class GameSession : MonoBehaviour
     {
         EnemySpawner = GameObject.FindGameObjectWithTag("EnemySpawner").GetComponent<WaveSpawner>();
         SetUpSingleton();
+    }
+
+    public int GetBoundsWidth()
+    {
+        return _outOfBoundsWidth;
+    }
+
+    public int GetBoundsHeight()
+    {
+        return _outOfBoundsHeight;
     }
 
     public void PlayerDied()

@@ -11,6 +11,7 @@ public class EnemyTwoFollowPlayer : MonoBehaviour
     private float fireRate;
     [SerializeField]
     private float shootingDistance;
+    [SerializeField] private string _waypointName;
 
     private int _currentWaypoint;
     private bool _isInRange;
@@ -44,18 +45,18 @@ public class EnemyTwoFollowPlayer : MonoBehaviour
     public float _shieldHitSFXVol = 0.7f;
     public EnemyHealthBar healthBar;
 
-    GameSession gameSession;
+    private GameSession _gameSession;
     public GameObject _bullet; //the bullet that the enemy will shoot
     public GameObject _bulletParent; //the place where the bullet will be shot from
     private PlayerMovement player;
+    
 
     //private int spawnedEnemiesAmount = 0;
 
     private void Start()
     {
         movementSpeed = Random.Range(8, 12); //random movementspeed to try mitigate the clumping
-
-        gameSession = GameObject.Find("Game Session").GetComponent<GameSession>();
+        _gameSession = FindObjectOfType<GameSession>();
         sr = GetComponent<SpriteRenderer>();
         defaultColor = sr.color;//saves default sprite color
         GameObject go = GameObject.FindWithTag("Player");
@@ -80,7 +81,7 @@ public class EnemyTwoFollowPlayer : MonoBehaviour
 
     private void CreateWaypoints()
     {
-        _waypointsGO = GameObject.Find("Waypoints");
+        _waypointsGO = GameObject.Find(_waypointName);
         _wayPoints = new Transform[_waypointsGO.transform.childCount];
         for (int i = _waypointsGO.transform.childCount - 1; i >= 0; i--)
         {
@@ -101,9 +102,13 @@ public class EnemyTwoFollowPlayer : MonoBehaviour
             {
                 GetNextWayPoint();
             }
-            FollowWaypoints();
+            else
+            {
+                FollowWaypoints();
+            }
+            
             // TODO Fix alive check
-            if (gameSession.isAlive)
+            if (_gameSession.isAlive)
             {
                 if (Time.time - _previousShootTime >= fireRate)
                 {
@@ -125,18 +130,33 @@ public class EnemyTwoFollowPlayer : MonoBehaviour
                 SetClosestWayPointToCurrent();
             }
         }
+        
+    }
+
+    private bool CheckOutOfBounds(int waypoint)
+    {
+        return _wayPoints[waypoint].position.x > _gameSession.GetBoundsWidth() || _wayPoints[waypoint].position.x < -_gameSession.GetBoundsWidth()
+         || _wayPoints[waypoint].position.y > _gameSession.GetBoundsHeight() || _wayPoints[waypoint].position.y < -_gameSession.GetBoundsHeight();
+        
     }
 
     private void GetNextWayPoint()
     {
-        if (_currentWaypoint < _wayPoints.Length - 1)
+        int wp = _currentWaypoint;
+
+        if (wp < _wayPoints.Length - 1)
         {
-            _currentWaypoint++;
+            wp++;
         }
         else
         {
-            _currentWaypoint = 0;
+            wp = 0;
         }
+        if (!CheckOutOfBounds(wp))
+        {
+            _currentWaypoint = wp;
+        }
+
     }
 
     private void SetClosestWayPointToCurrent()
@@ -161,6 +181,8 @@ public class EnemyTwoFollowPlayer : MonoBehaviour
         // When done save the closest waypoint to the class variable
         _currentWaypoint = closestWaypoint;
     }
+
+    
 
     private void OnTriggerEnter2D(Collider2D other)//receives damage from player bullet
     {
@@ -236,10 +258,10 @@ public class EnemyTwoFollowPlayer : MonoBehaviour
     private void FollowWaypoints()
     {
         transform.position = Vector2.MoveTowards(
-            transform.position,
-            _wayPoints[_currentWaypoint].position,
-            movementSpeed * Time.deltaTime
-            );
+        transform.position,
+        _wayPoints[_currentWaypoint].position,
+        movementSpeed * Time.deltaTime
+        );     
     }
 
     private void RotateTowardsPlayer()

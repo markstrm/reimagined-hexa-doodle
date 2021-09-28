@@ -23,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
     public bool canShoot = true;
     public bool canShootL = true;
     private float _oldPos;
-    [SerializeField] private float minTolerance;
+    // [SerializeField] private float minTolerance;
 
     public int _health = 300;
     public GameObject _deathVFX;
@@ -50,11 +50,14 @@ public class PlayerMovement : MonoBehaviour
 
     public ParticleSystem PlayerTrail;
 
+    private GameSession _gameSession;
+
     SpriteRenderer sr;
     Color defaultColor;
 
     private void Awake()
     {
+        _gameSession = FindObjectOfType<GameSession>();
         _Input = new PlayerInputActions();
         _Rigidbody = GetComponent<Rigidbody2D>();
         SetUpSingleton();
@@ -62,7 +65,6 @@ public class PlayerMovement : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         defaultColor = sr.color;//saves default sprite color
         shieldBar.SetMaxHealth(_health);
-
     }
 
 
@@ -71,19 +73,23 @@ public class PlayerMovement : MonoBehaviour
         transform.position += Vector3.right * speed * Time.deltaTime * movement.normalized.x;
         transform.position += Vector3.up * speed * Time.deltaTime * movement.normalized.y;
 
-        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -72f, 72f), Mathf.Clamp(transform.position.y, -48f, 48f));
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, - _gameSession.GetBoundsWidth(), _gameSession.GetBoundsWidth()), Mathf.Clamp(transform.position.y, -_gameSession.GetBoundsHeight(), _gameSession.GetBoundsHeight()));
         shieldBar.SetShield(_health);
     }
 
     private void FixedUpdate()
     {
-        Vector2 facingDirection = _MousePos - _Rigidbody.position;
-   
-        if(Mathf.Abs(facingDirection.x) > minTolerance && Mathf.Abs(facingDirection.y) > minTolerance)
-        {
-            float angle = Mathf.Atan2(facingDirection.y, facingDirection.x) * Mathf.Rad2Deg - 90;
-            _Rigidbody.MoveRotation(angle);
-        }
+
+        Vector2 globalMousePosition = _Camera.ScreenToWorldPoint(_MousePos);
+        Vector2 facingDirection = globalMousePosition - _Rigidbody.position; //_Rigidbody
+
+
+        //if (Mathf.Abs(facingDirection.x) > minTolerance && Mathf.Abs(facingDirection.y) > minTolerance)
+        // {
+        float angle = Mathf.Atan2(facingDirection.y, facingDirection.x) * Mathf.Rad2Deg - 90;
+        //_Rigidbody.MoveRotation(angle); 
+        transform.rotation = Quaternion.AngleAxis(angle,Vector3.forward);
+        //}
         
     }
 
@@ -112,9 +118,10 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void OnMousePos(InputAction.CallbackContext context)
+    public void OnMousePos(InputAction.CallbackContext context)
     {
-        _MousePos = _Camera.ScreenToWorldPoint(context.ReadValue<Vector2>());
+        _MousePos = (context.ReadValue<Vector2>());
+        //_MousePos = _Camera.ScreenToWorldPoint(context.ReadValue<Vector2>());
     }
 
     public void Shoot(InputAction.CallbackContext context)
@@ -127,6 +134,7 @@ public class PlayerMovement : MonoBehaviour
             bullet.Project(this.transform.up); //projects in the same positon as the player
             AudioSource.PlayClipAtPoint(_bulletSFX, transform.position, _bulletSFXVol);
             StartCoroutine(CanShoot());
+
         }
     }
 
@@ -173,7 +181,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Enemy")
+        if (collision.gameObject.CompareTag("Enemy"))
         {
             Die();
         }

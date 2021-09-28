@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 4866549751178579507}
   - component: {fileID: -6263602921417795219}
   m_Layer: 6
-  m_Name: Enemy2
+  m_Name: Enemy3
   m_TagString: Enemy2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -158,7 +158,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 261e9486c3602c044ab96212da50a53f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 272f18030e9e6af4788949c8b589df66, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -184,7 +184,7 @@ MonoBehaviour:
   movementSpeed: 10
   fireRate: 1.5
   shootingDistance: 17
-  _waypointName: Waypoints(Enemy2)
+  _waypointName: Waypoints(Enemy3)
   healthPickUp: {fileID: 6434406367299683585, guid: 146d67c78d0b8dd43ad1e0d1fdbb63a8, type: 3}
   speedPickUp: {fileID: 6434406367299683585, guid: 536de6fa4c94acb4db69b35822079123, type: 3}
   _respawnInvulnerabilityTime: 1.5
@@ -222,7 +222,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.7, y: 1.46}
+    oldSize: {x: 2, y: 1}
     newSize: {x: 0.64, y: 0.64}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
