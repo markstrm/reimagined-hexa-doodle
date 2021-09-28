@@ -55,7 +55,7 @@ public class EnemyTwoFollowPlayer : MonoBehaviour
 
     private void Start()
     {
-        movementSpeed = Random.Range(8, 12); //random movementspeed to try mitigate the clumping
+        //movementSpeed = Random.Range(8, 12); //random movementspeed to try mitigate the clumping
         _gameSession = FindObjectOfType<GameSession>();
         sr = GetComponent<SpriteRenderer>();
         defaultColor = sr.color;//saves default sprite color
@@ -66,7 +66,8 @@ public class EnemyTwoFollowPlayer : MonoBehaviour
         
         //healthBar.SetMaxHealth(_health);
 
-        this.GetComponent<PolygonCollider2D>().enabled = false;
+        //this.GetComponent<PolygonCollider2D>().enabled = false;
+        this.GetComponent<BoxCollider2D>().enabled = false;
         this.gameObject.SetActive(true);
 
         animator = gameObject.GetComponent<Animator>();
@@ -76,7 +77,8 @@ public class EnemyTwoFollowPlayer : MonoBehaviour
     }
         private void TurnOnCollisions()
     {
-        this.GetComponent<PolygonCollider2D>().enabled = true;
+        //this.GetComponent<PolygonCollider2D>().enabled = true;
+        this.GetComponent<BoxCollider2D>().enabled = true;
     }
 
     private void CreateWaypoints()
@@ -274,7 +276,7 @@ public class EnemyTwoFollowPlayer : MonoBehaviour
 
     private void RotateTowardsPlayer()
     {
-        var offset = 90f;
+        var offset = 270f;
         Vector2 direction = (Vector2)_playerTransform.position - (Vector2)transform.position;
         direction.Normalize();
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
