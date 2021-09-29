@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 6434406367299683588}
   - component: {fileID: -1100002406127632196}
   - component: {fileID: 6434406367299683589}
+  - component: {fileID: 6637498462295205013}
   m_Layer: 11
   m_Name: PickUpHealthRefill
   m_TagString: Untagged
@@ -231,3 +232,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!95 &6637498462295205013
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6434406367299683585}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 258a7ad31a24d644883f889b99249667, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
