@@ -6,6 +6,7 @@ public class SpeedPowerup : MonoBehaviour
 {
     public PlayerMovement player;
     public float MaxLifetime = 10f;
+   // private float time;
 
     public AudioClip _speedBoost;
     public float _speedBoostVol = 0.7f;
@@ -14,15 +15,39 @@ public class SpeedPowerup : MonoBehaviour
     private float _speedboost;
     
     Rigidbody2D _rb;
+   // public Animator animator;
 
     private void Awake()
     {
         _rb=GetComponent<Rigidbody2D>();
+       // animator = GetComponent<Animator>();
     }
     private void Start()
     {
+
+        //animator = gameObject.GetComponent<Animator>();
         Destroy(this.gameObject, this.MaxLifetime); //destroy the bullet after 10s
+     
+
+       // if (MaxLifetime < 3f)
+      //  {
+
+         //   animator.Play("Speed_Powerup_Expire");
+
+
+      //  }
+
+
     }
+
+   // private void Update()
+   // {
+
+        //time -= Time.deltaTime;
+       // time = MaxLifetime;
+
+
+  //  }
 
     private void OnTriggerEnter2D(Collider2D other) // If Player collides with powerup
     {
@@ -43,7 +68,7 @@ public class SpeedPowerup : MonoBehaviour
     }
 
  
-
+    
 
 
 }
