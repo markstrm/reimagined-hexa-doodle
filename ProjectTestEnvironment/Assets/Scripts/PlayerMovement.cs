@@ -49,6 +49,7 @@ public class PlayerMovement : MonoBehaviour
     public float _laserSFXVol = 0.7f;
 
     public ParticleSystem PlayerTrail;
+    public ParticleSystem PlayerTrailGreen;
 
     private GameSession _gameSession;
 
@@ -112,8 +113,14 @@ public class PlayerMovement : MonoBehaviour
         {
             PlayerTrail.Play();
         }
-        if (movement.magnitude == 0 && PlayerTrail.isPlaying)
+        if (movement.magnitude == 0)
         {
+            PlayerTrail.Stop();
+            PlayerTrailGreen.Stop();
+        }
+        if (movement.magnitude > 0 && speed > 20f)
+        {
+            PlayerTrailGreen.Play();
             PlayerTrail.Stop();
         }
     }
@@ -260,8 +267,8 @@ public class PlayerMovement : MonoBehaviour
         if(Speedtime == true){
 
             StartCoroutine(SpeedboostDuration());
-
-
+            PlayerTrailGreen.Play();
+            PlayerTrail.Stop();
         }
         
 
@@ -274,7 +281,10 @@ public class PlayerMovement : MonoBehaviour
         yield return new WaitForSeconds(10f);
         speed = 20f;
         Speedtime = false;
+        PlayerTrailGreen.Stop();
+        PlayerTrail.Play();
         yield break;
+
     }
 
 
