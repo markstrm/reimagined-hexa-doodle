@@ -35,6 +35,7 @@ public class PlayerMovement : MonoBehaviour
 
     public ShieldBar shieldBar;
     public LifeCounter lifeCounter;
+    public SpeedBar speedBar;
 
     public AudioClip _deathSFX;
     public float _deathSFXVol = 0.7f;
@@ -249,6 +250,7 @@ public class PlayerMovement : MonoBehaviour
         this.gameObject.SetActive(false);
         lifeCounter.LoseLife();
         sr.color = defaultColor;
+        speedBar.speedTime = -10f;
     }
 
     private void SetUpSingleton()
@@ -273,6 +275,8 @@ public class PlayerMovement : MonoBehaviour
             StartCoroutine(SpeedboostDuration());
             PlayerTrailGreen.Play();
             PlayerTrail.Stop();
+            speedBar.SetBarTimer();
+
         }
         
 
