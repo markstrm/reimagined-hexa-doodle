@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Animator))]
+
 public class SpeedPowerup : MonoBehaviour
 {
     public PlayerMovement player;
@@ -13,15 +15,36 @@ public class SpeedPowerup : MonoBehaviour
 
     [SerializeField]
     private float _speedboost;
-    
+
+    [SerializeField] private float _timeUntilExpiration; //time until start anim
+
+    private bool _hasPlayedAnimation;
+
     Rigidbody2D _rb;
-   // public Animator animator;
+    // public Animator animator;
+
+    Animator anim;
+
+    private float _timeOfCreation;
 
     private void Awake()
     {
+        _timeOfCreation = Time.time; //saves the time when object was created
         _rb=GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
        // animator = GetComponent<Animator>();
     }
+
+    private void Update()
+    {
+        if (Time.time - _timeOfCreation > _timeUntilExpiration && _hasPlayedAnimation == false)
+        {
+             _hasPlayedAnimation = true;
+            anim.SetTrigger("OnDespawn");
+        }
+    }
+    
+
     private void Start()
     {
 
@@ -62,7 +85,7 @@ public class SpeedPowerup : MonoBehaviour
     void Pickup(PlayerMovement player) // the powerup speed buff given to the player and also starts a timer in the Playermovement script. Also destroys the powerup object
     {
         player.speed = _speedboost;
-        player.Speedtime = true;
+       // player.Speedtime = true;
         player.Speedtimer();
         Destroy(gameObject);
     }

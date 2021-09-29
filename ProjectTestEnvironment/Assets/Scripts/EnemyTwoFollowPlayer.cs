@@ -108,9 +108,8 @@ public class EnemyTwoFollowPlayer : MonoBehaviour
             else
             {
                 FollowWaypoints();
-            }
+            }          
             
-            // TODO Fix alive check
             if (_gameSession.isAlive)
             {
                 if (Time.time - _previousShootTime >= fireRate)
@@ -136,30 +135,19 @@ public class EnemyTwoFollowPlayer : MonoBehaviour
         
     }
 
-    private bool CheckOutOfBounds(int waypoint)
-    {
-        return _wayPoints[waypoint].position.x > _gameSession.GetBoundsWidth() || _wayPoints[waypoint].position.x < -_gameSession.GetBoundsWidth()
-         || _wayPoints[waypoint].position.y > _gameSession.GetBoundsHeight() || _wayPoints[waypoint].position.y < -_gameSession.GetBoundsHeight();
-        
-    }
-
     private void GetNextWayPoint()
     {
-        int wp = _currentWaypoint;
+        
 
-        if (wp < _wayPoints.Length - 1)
+        if (_currentWaypoint < _wayPoints.Length - 1)
         {
-            wp++;
+            _currentWaypoint++;
         }
         else
         {
-            wp = 0;
+            _currentWaypoint = 0;
         }
-        if (!CheckOutOfBounds(wp))
-        {
-            _currentWaypoint = wp;
-        }
-
+        
     }
 
     private void SetClosestWayPointToCurrent()
@@ -241,8 +229,7 @@ public class EnemyTwoFollowPlayer : MonoBehaviour
         GameObject explosion = Instantiate(_deathVFX, transform.position, transform.rotation);//explosion vfx
         //Destroy(explosion, _durationOfExplosion);
 
-        if (transform.position.x < _gameSession.GetBoundsWidth() && transform.position.x > -_gameSession.GetBoundsWidth()
-            && transform.position.y < _gameSession.GetBoundsHeight() && transform.position.y > -_gameSession.GetBoundsHeight()) 
+        if (InsideBounds(transform.position)) 
         {
 
             if (player._health < 300) // if player is damaged, the enemy will drop health refill pickup, else if player is full health it will drop a speed pick up.
@@ -258,6 +245,14 @@ public class EnemyTwoFollowPlayer : MonoBehaviour
         AudioSource.PlayClipAtPoint(_deathSFX, transform.position, _deathSFXVol);
     }
 
+    private bool InsideBounds(Vector2 position)
+    {
+        return
+        position.x < _gameSession.GetBoundsWidth() && position.x > -_gameSession.GetBoundsWidth()
+        && position.y < _gameSession.GetBoundsHeight() && position.y > -_gameSession.GetBoundsHeight();
+
+    }
+
     private void Shoot()
     {
         // TODO Add Instantiate bullet
@@ -268,11 +263,19 @@ public class EnemyTwoFollowPlayer : MonoBehaviour
 
     private void FollowWaypoints()
     {
-        transform.position = Vector2.MoveTowards(
-        transform.position,
-        _wayPoints[_currentWaypoint].position,
-        movementSpeed * Time.deltaTime
-        );     
+        if (InsideBounds(_wayPoints[_currentWaypoint].position))
+        { 
+            transform.position = Vector2.MoveTowards(
+            transform.position,
+            _wayPoints[_currentWaypoint].position,
+            movementSpeed * Time.deltaTime
+            );
+
+        }
+        else
+        {
+            GetNextWayPoint();
+        }
     }
 
     private void RotateTowardsPlayer()
