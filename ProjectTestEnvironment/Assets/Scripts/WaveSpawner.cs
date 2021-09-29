@@ -129,14 +129,7 @@ public class WaveSpawner : MonoBehaviour
         _state = SpawnState.Waiting; // when we are done spawning a wave, we want to wait for the next round (player kills all the enemies)
         yield break;
     }
-    /**public void ResetWave() 
-    {
-        for (int i = 0; i < _BulletHolder.transform.childCount; i++) //loop through the enemies that we want to spawn
-        {
-            Destroy(_BulletHolder.transform.GetChild(i).gameObject);
-        }
-    } **/
-    
+
     void SpawnEnemy(Transform _enemy)
     {
        

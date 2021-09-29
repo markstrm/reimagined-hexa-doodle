@@ -183,7 +183,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 10
   fireRate: 2
-  shootingDistance: 17
+  shootingDistance: 15
   _waypointName: Waypoints(Enemy2)
   _rotationOffset: 90
   healthPickUp: {fileID: 6434406367299683585, guid: 146d67c78d0b8dd43ad1e0d1fdbb63a8, type: 3}
