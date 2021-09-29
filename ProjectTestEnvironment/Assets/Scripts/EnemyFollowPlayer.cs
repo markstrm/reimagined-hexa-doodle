@@ -64,7 +64,7 @@ public class EnemyFollowPlayer : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         defaultColor = sr.color;//saves default sprite color
 
-        _movementSpeed = Random.Range(6, 9); //random movementspeed to try mitigate the clumping
+        _movementSpeed = Random.Range(10, 15); //random movementspeed to try mitigate the clumping
 
         //animator.SetBool("EnemyRespawn", true);
         this.GetComponent<PolygonCollider2D>().enabled = false;

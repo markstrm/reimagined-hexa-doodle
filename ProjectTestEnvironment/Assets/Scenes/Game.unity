@@ -17179,7 +17179,7 @@ MonoBehaviour:
   waves:
   - _name: Alien Invasion
     _enemy: {fileID: 5749915849884329955, guid: c5647c074b834dd43ba53a8dc65b0d9c, type: 3}
-    _amount: 0
+    _amount: 2
     _spawnRate: 10
   - _name: Alien Invasion 2.0
     _enemy: {fileID: 5749915849884329955, guid: c5647c074b834dd43ba53a8dc65b0d9c, type: 3}
@@ -17196,7 +17196,7 @@ MonoBehaviour:
   - _name: MADNESS30
     _enemy: {fileID: 5749915849884329955, guid: c5647c074b834dd43ba53a8dc65b0d9c, type: 3}
     _amount: 30
-    _spawnRate: 0
+    _spawnRate: 15
   - _name: MADNESS40
     _enemy: {fileID: 5749915849884329955, guid: c5647c074b834dd43ba53a8dc65b0d9c, type: 3}
     _amount: 40

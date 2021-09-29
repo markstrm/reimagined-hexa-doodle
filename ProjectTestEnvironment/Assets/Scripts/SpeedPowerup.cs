@@ -62,7 +62,7 @@ public class SpeedPowerup : MonoBehaviour
     void Pickup(PlayerMovement player) // the powerup speed buff given to the player and also starts a timer in the Playermovement script. Also destroys the powerup object
     {
         player.speed = _speedboost;
-        player.Speedtime = true;
+       // player.Speedtime = true;
         player.Speedtimer();
         Destroy(gameObject);
     }

@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 movement;
     private Vector2 _MousePos;
 
-    public bool Speedtime = false;
+   // public bool Speedtime = false;
     public bool canShoot = true;
     public bool canShootL = true;
     private float _oldPos;
@@ -59,6 +59,8 @@ public class PlayerMovement : MonoBehaviour
 
     SpriteRenderer sr;
     Color defaultColor;
+
+    private Coroutine _speedBoostCR;
 
     private void Awake()
     {
@@ -200,7 +202,7 @@ public class PlayerMovement : MonoBehaviour
         {
             Die();
         }
-        if (collision.gameObject.CompareTag("E3s"))
+        if (collision.gameObject.CompareTag("E3S"))
         {
             Die();
         }
@@ -279,26 +281,29 @@ public class PlayerMovement : MonoBehaviour
     public void Speedtimer() // to indentify if the bool is true so that it can start the timer 
     {
 
-        if(Speedtime == true){
-
-            StartCoroutine(SpeedboostDuration());
-            PlayerTrailGreen.Play();
-            PlayerTrail.Stop();
-            speedBar.SetBarTimer();
-
+        if(_speedBoostCR == null)
+        {
+            _speedBoostCR = StartCoroutine(SpeedboostDuration());   
         }
-        
-
+        else
+        {
+            StopCoroutine(_speedBoostCR);
+            _speedBoostCR = StartCoroutine(SpeedboostDuration());
+        }
+        //if(Speedtime == true){   
+        //}
     }
 
     IEnumerator SpeedboostDuration() // The timer that has the duration of the boost before turning the player back to it's orginal speed
     {
-        GetComponent<PlayerMovement>();
-
+        //GetComponent<PlayerMovement>();
+        PlayerTrailGreen.Play();
+        PlayerTrail.Stop();
+        speedBar.SetBarTimer();
         yield return new WaitForSeconds(10f);
         AudioSource.PlayClipAtPoint(_boostEndSFX, transform.position, _boostEndSFXVol);
         speed = 20f;
-        Speedtime = false;
+        //Speedtime = false;
         PlayerTrailGreen.Stop();
         PlayerTrail.Play();
         yield break;
