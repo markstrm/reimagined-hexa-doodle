@@ -114,14 +114,18 @@ public class GameSession : MonoBehaviour
     public void AddToScore(int scoreValue)
     {
         score += scoreValue;
-        if(score == 1000 || score == 5000 || score == 10000)
+        if(score == 1000 || score == 5000)
         {
             SpawnEnemy(_enemy);       
         }
-        if(score == 15000 || score == 20000 || score == 25000)
+        if (score == 7500 || score == 10000)
         {
             SpawnEnemy(_enemy);
             SpawnEnemy(_enemy);
+        }
+        if (score == 15000 || score == 20000 || score == 25000)
+        {
+            SpawnEnemyTwo(_enemytwo);
         }
         if (score == 35000 || score == 40000)
         {
@@ -129,21 +133,25 @@ public class GameSession : MonoBehaviour
             {
                 SpawnEnemy(_enemy);                
             }
+            SpawnEnemyTwo(_enemytwo);
+            SpawnEnemyTwo(_enemytwo);
         }
         if (score == 50000)
         {
-            SpawnEnemyTwo(_enemytwo);
-            SpawnEnemy(_enemy);
+            for (int i = 0; i < 5; i++)
+            {
+                SpawnEnemyTwo(_enemytwo);
+                SpawnEnemy(_enemy);
+            }
+
         }
         if (score == 75000)
         {
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 10; i++)
             {
-                SpawnEnemyTwo(_enemytwo);           
+                SpawnEnemyTwo(_enemytwo);
+                SpawnEnemy(_enemy);
             }
-            SpawnEnemy(_enemy);
-            SpawnEnemy(_enemy);
-
         }
         if (score == 100000)
         {

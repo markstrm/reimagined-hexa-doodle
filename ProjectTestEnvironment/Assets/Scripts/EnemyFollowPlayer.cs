@@ -202,7 +202,7 @@ public class EnemyFollowPlayer : MonoBehaviour
 
             if (randomNumber >= 95)
             {
-                if (gameSession.score > 10000 && gameSession.score < 40000)
+                if (gameSession.score > 10000 && gameSession.score < 25000)
                 {
                     var spawnPoints = GameObject.FindGameObjectsWithTag("E2S");
                     Debug.Log("Spawn points " + spawnPoints.Length);
@@ -210,13 +210,27 @@ public class EnemyFollowPlayer : MonoBehaviour
                     Transform _sp = spawnPoints[Random.Range(0, spawnPoints.Length)].transform;
                     Instantiate(_enemy, _sp.position, _sp.rotation, _EnemyHolder.transform);  //spawn enemy
                 }
-                else if (gameSession.score >= 40000)
+                else if (gameSession.score >= 25000 && gameSession.score <= 40000)
                 {
                     var spawnPoints = GameObject.FindGameObjectsWithTag("E3S");
                     Debug.Log("Spawn points " + spawnPoints.Length);
 
                     Transform _sp = spawnPoints[Random.Range(0, spawnPoints.Length)].transform;
                     Instantiate(_enemytwo, _sp.position, _sp.rotation, _EnemyHolder.transform);  //spawn enemy   
+                }
+                else if (gameSession.score > 40000)
+                {
+                    var spawnPoints = GameObject.FindGameObjectsWithTag("E3S");
+                    Debug.Log("Spawn points " + spawnPoints.Length);
+
+                    Transform _sp = spawnPoints[Random.Range(0, spawnPoints.Length)].transform;
+                    Instantiate(_enemytwo, _sp.position, _sp.rotation, _EnemyHolder.transform);  //spawn enemy   
+
+                    var spawnPointstwo = GameObject.FindGameObjectsWithTag("E2S");
+                    Debug.Log("Spawn points " + spawnPoints.Length);
+
+                    Transform _sptwo = spawnPoints[Random.Range(0, spawnPoints.Length)].transform;
+                    Instantiate(_enemy, _sptwo.position, _sptwo.rotation, _EnemyHolder.transform);  //spawn enemy
                 }
                 else if (randomNumber >= 97)
                 {
