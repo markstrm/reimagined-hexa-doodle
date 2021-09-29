@@ -245,6 +245,7 @@ public class PlayerMovement : MonoBehaviour
         Destroy(explosion, _durationOfExplosion);
         this.gameObject.SetActive(false);
         lifeCounter.LoseLife();
+        sr.color = defaultColor;
     }
 
     private void SetUpSingleton()
