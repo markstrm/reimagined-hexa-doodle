@@ -5452,6 +5452,8 @@ MonoBehaviour:
   _shieldHitSFXVol: 1.5
   _laserSFX: {fileID: 8300000, guid: a6e6a3d2736805d449800f69976aaa71, type: 3}
   _laserSFXVol: 0.7
+  _boostEndSFX: {fileID: 8300000, guid: 90d750d3a3c935441b0b6f1327b11c27, type: 3}
+  _boostEndSFXVol: 0.7
   PlayerTrail: {fileID: 1788416444}
   PlayerTrailGreen: {fileID: 1277139797}
 --- !u!114 &356091700

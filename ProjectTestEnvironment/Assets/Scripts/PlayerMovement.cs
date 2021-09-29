@@ -48,6 +48,9 @@ public class PlayerMovement : MonoBehaviour
     public AudioClip _laserSFX;
     public float _laserSFXVol = 0.7f;
 
+    public AudioClip _boostEndSFX;
+    public float _boostEndSFXVol = 0.7f;
+
     public ParticleSystem PlayerTrail;
     public ParticleSystem PlayerTrailGreen;
 
@@ -280,6 +283,7 @@ public class PlayerMovement : MonoBehaviour
         GetComponent<PlayerMovement>();
 
         yield return new WaitForSeconds(10f);
+        AudioSource.PlayClipAtPoint(_boostEndSFX, transform.position, _boostEndSFXVol);
         speed = 20f;
         Speedtime = false;
         PlayerTrailGreen.Stop();
