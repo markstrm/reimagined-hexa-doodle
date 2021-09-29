@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Animator))]
 public class ShieldPowerup : MonoBehaviour
 {
     public PlayerMovement player;
@@ -10,13 +11,29 @@ public class ShieldPowerup : MonoBehaviour
     public AudioClip _shieldRecharge;
     public float _shieldRechargeVol = 0.7f;
 
+    [SerializeField] private float _timeUntilExpiration; //time until start anim
+    private bool _hasPlayedAnimation;
+    Animator anim;
+
+    private float _timeOfCreation;
+
     Rigidbody2D rb;
 
     private void Awake()
     {
-
+        _timeOfCreation = Time.time; //saves the time when object was created
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
 
+    }
+
+    private void Update()
+    {
+        if (Time.time - _timeOfCreation > _timeUntilExpiration && _hasPlayedAnimation == false)
+        {
+            _hasPlayedAnimation = true;
+            anim.SetTrigger("OnDespawn");
+        }
     }
 
     private void Start()

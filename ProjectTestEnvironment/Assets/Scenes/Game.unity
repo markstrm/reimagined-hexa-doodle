@@ -17080,10 +17080,14 @@ MonoBehaviour:
   - _name: MADNESS60
     _enemy: {fileID: 5749915849884329955, guid: c5647c074b834dd43ba53a8dc65b0d9c, type: 3}
     _amount: 60
-    _spawnRate: 15
+    _spawnRate: 10
   - _name: MADNESS100
     _enemy: {fileID: 5749915849884329955, guid: c5647c074b834dd43ba53a8dc65b0d9c, type: 3}
     _amount: 100
+    _spawnRate: 20
+  - _name: MADNESS250
+    _enemy: {fileID: 5749915849884329955, guid: c5647c074b834dd43ba53a8dc65b0d9c, type: 3}
+    _amount: 250
     _spawnRate: 20
   - _name: MADNESS1000
     _enemy: {fileID: 5749915849884329955, guid: c5647c074b834dd43ba53a8dc65b0d9c, type: 3}
