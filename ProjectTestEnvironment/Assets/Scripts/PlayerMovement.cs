@@ -196,6 +196,15 @@ public class PlayerMovement : MonoBehaviour
         {
             Die();
         }
+        if (collision.gameObject.CompareTag("E2S"))
+        {
+            Die();
+        }
+        if (collision.gameObject.CompareTag("E3s"))
+        {
+            Die();
+        }
+
     }
 
     private void ProcessHit(DamageDealer damageDealer)//calculates damage received
