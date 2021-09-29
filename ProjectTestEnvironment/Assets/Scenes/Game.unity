@@ -17139,27 +17139,31 @@ MonoBehaviour:
   - _name: Alien Invasion
     _enemy: {fileID: 5749915849884329955, guid: c5647c074b834dd43ba53a8dc65b0d9c, type: 3}
     _amount: 2
-    _spawnRate: 1
+    _spawnRate: 10
   - _name: Alien Invasion 2.0
     _enemy: {fileID: 5749915849884329955, guid: c5647c074b834dd43ba53a8dc65b0d9c, type: 3}
     _amount: 5
-    _spawnRate: 2
+    _spawnRate: 10
   - _name: The end is near
     _enemy: {fileID: 5749915849884329955, guid: c5647c074b834dd43ba53a8dc65b0d9c, type: 3}
     _amount: 10
-    _spawnRate: 2
+    _spawnRate: 10
   - _name: MADNESS
     _enemy: {fileID: 5749915849884329955, guid: c5647c074b834dd43ba53a8dc65b0d9c, type: 3}
     _amount: 20
-    _spawnRate: 7
-  - _name: MADNESS
+    _spawnRate: 10
+  - _name: MADNESS30
     _enemy: {fileID: 5749915849884329955, guid: c5647c074b834dd43ba53a8dc65b0d9c, type: 3}
     _amount: 30
-    _spawnRate: 7
-  - _name: MADNESS
+    _spawnRate: 0
+  - _name: MADNESS40
     _enemy: {fileID: 5749915849884329955, guid: c5647c074b834dd43ba53a8dc65b0d9c, type: 3}
     _amount: 40
-    _spawnRate: 7
+    _spawnRate: 20
+  - _name: MADNESS40
+    _enemy: {fileID: 5749915849884329955, guid: c5647c074b834dd43ba53a8dc65b0d9c, type: 3}
+    _amount: 100
+    _spawnRate: 30
   spawnPoint:
   - {fileID: 942077432167369361}
   - {fileID: 1295529104}
