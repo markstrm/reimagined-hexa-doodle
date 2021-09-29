@@ -186,6 +186,7 @@ MonoBehaviour:
   _speedBoost: {fileID: 8300000, guid: 373e43b4a9ba82e4fa3bc5f0b956dd86, type: 3}
   _speedBoostVol: 0.7
   _speedboost: 30
+  _timeUntilExpiration: 7
 --- !u!61 &6434406367299683588
 BoxCollider2D:
   m_ObjectHideFlags: 0
