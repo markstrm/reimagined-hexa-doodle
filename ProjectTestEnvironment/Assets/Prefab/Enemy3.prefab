@@ -182,7 +182,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 20
-  fireRate: 0.3
+  fireRate: 0.5
   shootingDistance: 17
   _waypointName: Waypoints(Enemy3)
   _rotationOffset: 270
@@ -235,7 +235,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.000000029802322, y: -0.034929838}
