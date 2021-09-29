@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 4577341841675433184}
   - component: {fileID: 4577341841675433199}
   - component: {fileID: 6571795539693188623}
-  - component: {fileID: 1479305969436362133}
   - component: {fileID: 6239433128813975778}
+  - component: {fileID: 3301729039091775656}
   m_Layer: 7
   m_Name: Enemy3Bullet
   m_TagString: Enemy Projectile
@@ -138,22 +138,6 @@ MonoBehaviour:
   _ionBurstSFX: {fileID: 0}
   _ionBurstSFXVol: 0
   _burstVFX: {fileID: 0}
---- !u!70 &1479305969436362133
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4577341841675433198}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.09, y: 0.54}
-  m_Direction: 0
 --- !u!95 &6239433128813975778
 Animator:
   serializedVersion: 3
@@ -173,3 +157,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!58 &3301729039091775656
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4577341841675433198}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.11
