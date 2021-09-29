@@ -18,6 +18,9 @@ public class GameSession : MonoBehaviour
     public PlayerMovement player;
     public EnemyTwoFollowPlayer enemy;
     public Transform _enemy; //reference to the prefab that we want to instantiate
+
+    public Transform _enemytwo; //reference to the prefab that we want to instantiate
+
     public Transform[] spawnPoint; //array with all the possible spawn locations
 
     [SerializeField] private int _outOfBoundsWidth = 72;
@@ -113,26 +116,33 @@ public class GameSession : MonoBehaviour
         score += scoreValue;
         if(score == 1000 || score == 5000 || score == 10000)
         {
-            SpawnEnemy(_enemy);
+            SpawnEnemy(_enemy);       
         }
         if(score == 15000 || score == 20000 || score == 25000)
         {
             SpawnEnemy(_enemy);
             SpawnEnemy(_enemy);
         }
-        if (score == 35000 || score == 40000 || score == 50000)
+        if (score == 35000 || score == 40000)
         {
             for (int i = 0; i < 5; i++)
             {
-                SpawnEnemy(_enemy);
+                SpawnEnemy(_enemy);                
             }
+        }
+        if (score == 50000)
+        {
+            SpawnEnemyTwo(_enemytwo);
+            SpawnEnemy(_enemy);
         }
         if (score == 75000)
         {
-            for (int i = 0; i < 9; i++)
+            for (int i = 0; i < 5; i++)
             {
-                SpawnEnemy(_enemy);
+                SpawnEnemyTwo(_enemytwo);           
             }
+            SpawnEnemy(_enemy);
+            SpawnEnemy(_enemy);
 
         }
         if (score == 100000)
@@ -147,7 +157,14 @@ public class GameSession : MonoBehaviour
         Debug.Log("Spawning Enemy: " + _enemy.name);
         Transform _sp = spawnPoint[Random.Range(0, spawnPoint.Length)];
         Instantiate(_enemy, _sp.position, _sp.rotation, _EnemyHolder.transform);  //spawn enemy
-    } 
+    }
+
+    void SpawnEnemyTwo(Transform _enemytwo)
+    {
+        Debug.Log("Spawning Enemy: " + _enemy.name);
+        Transform _sp = spawnPoint[Random.Range(0, spawnPoint.Length)];
+        Instantiate(_enemytwo, _sp.position, _sp.rotation, _EnemyHolder.transform);  //spawn enemy
+    }
 
     public void ResetGame()
     {

@@ -12,6 +12,7 @@ public class EnemyTwoFollowPlayer : MonoBehaviour
     [SerializeField]
     private float shootingDistance;
     [SerializeField] private string _waypointName;
+    [SerializeField] private float _rotationOffset;
 
     private int _currentWaypoint;
     private bool _isInRange;
@@ -55,7 +56,7 @@ public class EnemyTwoFollowPlayer : MonoBehaviour
 
     private void Start()
     {
-        //movementSpeed = Random.Range(8, 12); //random movementspeed to try mitigate the clumping
+        movementSpeed = Random.Range(8, 12); //random movementspeed to try mitigate the clumping
         _gameSession = FindObjectOfType<GameSession>();
         sr = GetComponent<SpriteRenderer>();
         defaultColor = sr.color;//saves default sprite color
@@ -275,12 +276,11 @@ public class EnemyTwoFollowPlayer : MonoBehaviour
     }
 
     private void RotateTowardsPlayer()
-    {
-        var offset = 270f;
+    { 
         Vector2 direction = (Vector2)_playerTransform.position - (Vector2)transform.position;
         direction.Normalize();
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(Vector3.forward * (angle + offset));
+        transform.rotation = Quaternion.Euler(Vector3.forward * (angle + _rotationOffset));
     }
 
     private void MoveTowardsPlayer()

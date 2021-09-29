@@ -53,6 +53,7 @@ public class EnemyFollowPlayer : MonoBehaviour
     private PlayerMovement player;
     private GameObject _EnemyHolder;
     public Transform _enemy; //reference to the prefab that we want to instantiate
+    public Transform _enemytwo; //reference to the prefab that we want to instantiate
 
     // Start is called before the first frame update
     void Start()
@@ -179,7 +180,7 @@ public class EnemyFollowPlayer : MonoBehaviour
         if(transform.position.x < gameSession.GetBoundsWidth() && transform.position.x > -gameSession.GetBoundsWidth()
             && transform.position.y < gameSession.GetBoundsHeight() && transform.position.y > -gameSession.GetBoundsHeight())
         {
-            if (randomNumber >= 10)
+            if (randomNumber >= 85)
             {
                 if (randomNumber >= 85 && gameSession.isAlive && player._health == 100)
                 {
@@ -201,13 +202,21 @@ public class EnemyFollowPlayer : MonoBehaviour
 
             if (randomNumber >= 95)
             {
-                if (gameSession.score > 10000)
+                if (gameSession.score > 10000 && gameSession.score < 40000)
                 {
                     var spawnPoints = GameObject.FindGameObjectsWithTag("E2S");
                     Debug.Log("Spawn points " + spawnPoints.Length);
 
                     Transform _sp = spawnPoints[Random.Range(0, spawnPoints.Length)].transform;
                     Instantiate(_enemy, _sp.position, _sp.rotation, _EnemyHolder.transform);  //spawn enemy
+                }
+                else if (gameSession.score >= 40000)
+                {
+                    var spawnPoints = GameObject.FindGameObjectsWithTag("E3S");
+                    Debug.Log("Spawn points " + spawnPoints.Length);
+
+                    Transform _sp = spawnPoints[Random.Range(0, spawnPoints.Length)].transform;
+                    Instantiate(_enemytwo, _sp.position, _sp.rotation, _EnemyHolder.transform);  //spawn enemy   
                 }
                 else if (randomNumber >= 97)
                 {

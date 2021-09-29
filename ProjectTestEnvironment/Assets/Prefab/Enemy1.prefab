@@ -181,11 +181,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54b1abf9bc36f224db15adf1b2e8cef7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _movementSpeed: 7
+  _movementSpeed: 25
   _lineOfSight: 250
   _shootingRange: 20
   _stationaryRange: 8
-  _fireRate: 3
+  _fireRate: 1
   _scoreValue: 100
   _health: 200
   _deathVFX: {fileID: 4803261777714319761, guid: 318aa05ff3dce6a44a71d539c60148b4, type: 3}
@@ -201,12 +201,13 @@ MonoBehaviour:
   _deathSFX: {fileID: 8300000, guid: fcaef2f7d0ced574b93c664dc374c02d, type: 3}
   _deathSFXVol: 0.75
   _bulletSFX: {fileID: 8300000, guid: 1fa7474420b16ff48b60baf0f7ec641b, type: 3}
-  _bulletSFXVol: 1
+  _bulletSFXVol: 0.5
   _shieldHitSFX: {fileID: 8300000, guid: e0a3a802126109d4aa9c53c840fdf173, type: 3}
-  _shieldHitSFXVol: 1
+  _shieldHitSFXVol: 0.75
   _bullet: {fileID: 4577341841675433198, guid: 6736d709680019e499793be2ad19075c, type: 3}
   _bulletParent: {fileID: 5749915850677261010}
   _enemy: {fileID: 1014392560454912486, guid: a2aa76ae152663f4a9da0ddb25c8922d, type: 3}
+  _enemytwo: {fileID: 0}
 --- !u!60 &844886379801088613
 PolygonCollider2D:
   m_ObjectHideFlags: 0
