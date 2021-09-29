@@ -7,6 +7,9 @@ public class SpeedPowerup : MonoBehaviour
     public PlayerMovement player;
     public float MaxLifetime = 10f;
 
+    public AudioClip _speedBoost;
+    public float _speedBoostVol = 0.7f;
+
     [SerializeField]
     private float _speedboost;
     
@@ -27,6 +30,7 @@ public class SpeedPowerup : MonoBehaviour
         {
             Debug.Log("Speedy");
             Pickup(other.gameObject.GetComponent<PlayerMovement>());
+            AudioSource.PlayClipAtPoint(_speedBoost, transform.position, _speedBoostVol);
         }
     }
 

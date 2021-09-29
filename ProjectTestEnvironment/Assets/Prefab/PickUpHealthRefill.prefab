@@ -208,6 +208,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   MaxLifetime: 10
+  _shieldRecharge: {fileID: 8300000, guid: b500facbd436bf247b4726cf732fe6d9, type: 3}
+  _shieldRechargeVol: 0.7
 --- !u!50 &6434406367299683589
 Rigidbody2D:
   serializedVersion: 4

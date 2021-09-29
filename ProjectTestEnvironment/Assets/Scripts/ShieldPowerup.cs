@@ -7,6 +7,9 @@ public class ShieldPowerup : MonoBehaviour
     public PlayerMovement player;
     public float MaxLifetime = 10f;
 
+    public AudioClip _shieldRecharge;
+    public float _shieldRechargeVol = 0.7f;
+
     Rigidbody2D rb;
 
     private void Awake()
@@ -29,6 +32,7 @@ public class ShieldPowerup : MonoBehaviour
         {
             Debug.Log("More Shields");
             Pickup(other.gameObject.GetComponent<PlayerMovement>());
+            AudioSource.PlayClipAtPoint(_shieldRecharge, transform.position, _shieldRechargeVol);
         }
 
     }
