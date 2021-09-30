@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 1006963799650282074}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0.2, z: 10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 1014392560454912486}
   m_RootOrder: 1
@@ -181,17 +181,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2830c83c68fd17143ba31b7f8b618878, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 20
+  movementSpeed: 21
   fireRate: 0.5
-  shootingDistance: 17
+  shootingDistance: 18
   _waypointName: Waypoints(Enemy3)
   _rotationOffset: 270
   healthPickUp: {fileID: 6434406367299683585, guid: 146d67c78d0b8dd43ad1e0d1fdbb63a8, type: 3}
   speedPickUp: {fileID: 6434406367299683585, guid: 536de6fa4c94acb4db69b35822079123, type: 3}
   _respawnInvulnerabilityTime: 1.5
   animator: {fileID: 0}
-  _health: 3000
-  _scoreValue: 300
+  _health: 5000
+  _scoreValue: 500
   _shieldDuration: 0.2
   _shieldDelay: 0
   _shieldColor: {r: 1, g: 0.051016767, b: 0, a: 0}
