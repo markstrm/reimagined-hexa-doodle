@@ -121,7 +121,7 @@ public class GameSession : MonoBehaviour
         if (score == 7500 || score == 10000)
         {
             SpawnEnemy(_enemy);
-            SpawnEnemy(_enemy);
+            SpawnEnemyTwo(_enemytwo);
         }
         if (score == 15000 || score == 20000 || score == 25000)
         {
