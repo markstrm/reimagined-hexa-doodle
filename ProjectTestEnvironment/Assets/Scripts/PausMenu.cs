@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 
 public class PausMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
     public GameObject PauseMenuUI;
+
+    public AudioMixer audioMixer;
 
     void Update()
     {
@@ -41,6 +44,11 @@ public class PausMenu : MonoBehaviour
     public void LoadMenu()
     {
         SceneManager.LoadScene("MainMenu");
+    }
+
+    public void SetVolume (float volume)
+    {
+        audioMixer.SetFloat("volume", volume);
     }
 
     public void QuitGame()

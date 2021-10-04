@@ -181,7 +181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2830c83c68fd17143ba31b7f8b618878, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 21
+  movementSpeed: 25
   fireRate: 0.5
   shootingDistance: 18
   _waypointName: Waypoints(Enemy3)
@@ -198,7 +198,7 @@ MonoBehaviour:
   _durationOfExplosion: 1
   _deathVFX: {fileID: 5985129658539636249, guid: 35c97697b8be84f41b40f67e904e06de, type: 3}
   _deathSFX: {fileID: 8300000, guid: 809a2733e91839b419bfb12fd676942f, type: 3}
-  _deathSFXVol: 0.65
+  _deathSFXVol: 0.7
   _bulletSFX: {fileID: 8300000, guid: 53f88ee4fc14c9245ad065effe0d48f2, type: 3}
   _bulletSFXVol: 2
   _shieldHitSFX: {fileID: 8300000, guid: e0a3a802126109d4aa9c53c840fdf173, type: 3}
